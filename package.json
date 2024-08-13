@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky",
+    "prettier": "prettier --write app/",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
