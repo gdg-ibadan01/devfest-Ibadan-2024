@@ -79,7 +79,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${caleit.className} ${grotesk.className}`}>{children}</body>
+      <body className={`${grotesk.className}`}>{children}</body>
     </html>
   );
 }
