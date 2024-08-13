@@ -1,6 +1,6 @@
 import { DevfestLogo } from '@/app/components/icons';
 import { Button } from '@/app/components/ui/button';
-import { caleit } from './layout';
+import { caleit } from './shared/font';
 
 export default function Home() {
   return (
