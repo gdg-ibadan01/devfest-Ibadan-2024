@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { grotesk } from './shared/font';
+import { google_sans } from './shared/font';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${grotesk.className}`}>{children}</body>
+      <body className={`${google_sans.className}`}>{children}</body>
     </html>
   );
 }

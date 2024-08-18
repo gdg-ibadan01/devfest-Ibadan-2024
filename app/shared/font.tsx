@@ -60,3 +60,43 @@ export const caleit = localFont({
     },
   ],
 });
+
+export const google_sans = localFont({
+  src: [
+    {
+      path: '../../public/fonts/GoogleSans-Bold.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/GoogleSans-BoldItalic.ttf',
+      weight: '900',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/GoogleSans-BoldItalic.ttf',
+      weight: '900',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/GoogleSans-Medium.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/GoogleSans-MediumItalic.ttf',
+      weight: '700',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/GoogleSans-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/GoogleSans-Italic.ttf',
+      weight: '400',
+      style: 'italic',
+    },
+  ],
+});

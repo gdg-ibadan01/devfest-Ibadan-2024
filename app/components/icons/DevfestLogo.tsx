@@ -16,7 +16,7 @@ export const DevfestLogo = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_175_449)">
+      <g clipPath="url(#clip0_175_449)">
         <mask
           id="mask0_175_449"
           style={{ maskType: 'luminance' }}
