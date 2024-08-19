@@ -1,7 +1,6 @@
 export const menuItems = [
-  { label: 'About', slur: 'about' },
-  { label: 'Agenda', slur: 'agenda' },
   { label: 'Speakers', slur: 'speakers' },
-  { label: 'Venue', slur: 'venue' },
+  { label: 'Schedule', slur: 'schedule' },
   { label: 'Merch', slur: 'merch' },
+  { label: 'Team', slur: 'team' },
 ];
