@@ -1,4 +1,4 @@
-export default {
+export const speakersCardClass = {
   wrapper:
     'flex flex-col overflow-hidden border-2 border-black rounded-2xl cursor-pointer',
   section: 'w-full h-[294px]',

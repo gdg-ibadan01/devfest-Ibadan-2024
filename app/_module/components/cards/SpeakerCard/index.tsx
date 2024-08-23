@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
-import Styles from './speaker-card';
+import { speakersCardClass as Styles } from './speaker-card';
 
 export type TspeakerProps = {
   name: string;

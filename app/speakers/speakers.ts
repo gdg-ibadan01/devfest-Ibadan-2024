@@ -1,4 +1,4 @@
-export default {
+export const speakersClass = {
   container: 'bg-pastel-red min-h-[100vh] pb-[100px]',
   main: 'pt-[100px] md:pt-[200px] px-7 md:px-[70px] lg:px-[100px] flex flex-col gap-10',
   header: 'flex items-start justify-between gap-6 md:gap-10 flex-wrap',

@@ -3,7 +3,7 @@ import SpeakerCard from '../_module/components/cards/SpeakerCard';
 import DFIHeader from '../_module/components/common/DFIheader';
 import { Button } from '../_module/components/ui/button';
 import { SpeakersList } from '../_module/data/speakers-list';
-import Styles from './speakers';
+import { speakersClass as Styles } from './speakers';
 
 export default function Speakers() {
   return (
