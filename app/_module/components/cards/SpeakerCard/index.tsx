@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
+import { speakersCardClass as Styles } from './speaker-card';
 
 export type TspeakerProps = {
   name: string;
@@ -10,19 +11,19 @@ export type TspeakerProps = {
 const SpeakerCard: FC<TspeakerProps> = (props) => {
   const { name, src, title } = props;
   return (
-    <div className="flex flex-col overflow-hidden border-2 border-black rounded-2xl cursor-pointer">
-      <section className="w-full h-[294px]">
+    <div className={Styles.wrapper}>
+      <section className={Styles.section}>
         <Image
           alt={`${name}-${title}`}
           src={src}
-          className="w-full h-full object-cover"
+          className={Styles.img}
           width={100}
           height={100}
         />
       </section>
-      <div className="flex flex-col gap-2 p-4 pb-7 bg-white">
-        <h1 className="text-2xl font-bold">{name}</h1>
-        <p className="text-opacity-60 font-light">{title}</p>
+      <div className={Styles.nameTitleWrapper}>
+        <h1 className={Styles.name}>{name}</h1>
+        <p className={Styles.title}>{title}</p>
       </div>
     </div>
   );

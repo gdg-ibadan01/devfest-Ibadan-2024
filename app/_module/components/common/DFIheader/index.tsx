@@ -4,9 +4,9 @@ import { ReactNode, useState } from 'react';
 import styles from './styles.module.scss';
 import { DevfestLogo } from '../../icons';
 import Link from 'next/link';
-import { menuItems } from '@/app/config/constants/globals';
+import { menuItems } from '@/app/_module/config/constants/globals';
 import MenuLink from '../../menulink';
-import useMediaQueryWatcher from '@/app/config/hooks/useMediaQueryWatcher';
+import useMediaQueryWatcher from '@/app/_module/config/hooks/useMediaQueryWatcher';
 import Hamburger from '../../icons/Hamburger';
 import Cancel from '../../icons/Cancel';
 
