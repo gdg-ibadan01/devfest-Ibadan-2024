@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { grotesk } from './_module/shared/font';
+import DFIHeader from './_module/components/common/DFIheader';
+import DFIFooter from './_module/components/common/DFIfooter';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${grotesk.className}`}>{children}</body>
+      <body className={`${grotesk.className}`}>
+        <DFIHeader />
+        {children}
+        <DFIFooter />
+      </body>
     </html>
   );
 }

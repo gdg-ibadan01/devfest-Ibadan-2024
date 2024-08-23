@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import SpeakerCard from '../_module/components/cards/SpeakerCard';
-import DFIHeader from '../_module/components/common/DFIheader';
 import { Button } from '../_module/components/ui/button';
 import { SpeakersList } from '../_module/data/speakers-list';
 import { speakersClass as Styles } from './speakers';
@@ -8,7 +7,6 @@ import { speakersClass as Styles } from './speakers';
 export default function Speakers() {
   return (
     <div className={Styles.container}>
-      <DFIHeader />
       <main className={Styles.main}>
         <header className={Styles.header}>
           <section className={Styles.headerSection}>
