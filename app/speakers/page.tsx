@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
-import SpeakerCard from '../components/cards/SpeakerCard';
-import DFIHeader from '../components/common/DFIheader';
-import { Button } from '../components/ui/button';
-import { SpeakersList } from '../data/speakers-list';
+import SpeakerCard from '../_module/components/cards/SpeakerCard';
+import DFIHeader from '../_module/components/common/DFIheader';
+import { Button } from '../_module/components/ui/button';
+import { SpeakersList } from '../_module/data/speakers-list';
 import Styles from './speakers';
 
 export default function Speakers() {

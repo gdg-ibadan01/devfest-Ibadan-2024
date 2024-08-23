@@ -1,7 +1,7 @@
-import { DevfestLogo } from '@/app/components/icons';
-import { Button } from '@/app/components/ui/button';
-import { caleit } from './shared/font';
-import DFIHeader from './components/common/DFIheader';
+import { DevfestLogo } from '@/app/_module/components/icons';
+import { Button } from '@/app/_module/components/ui/button';
+import { caleit } from './_module/shared/font';
+import DFIHeader from './_module/components/common/DFIheader';
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { grotesk } from './shared/font';
+import { grotesk } from './_module/shared/font';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
