@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import styles from './styles.module.scss';
 import { usePathname } from 'next/navigation';
+
+import menulinkClasses from './menulink.classes';
 
 interface MenuLinkProps {
   label: string;
@@ -14,17 +15,21 @@ const MenuLink: FC<MenuLinkProps> = ({ slur, label }) => {
   const currentPath = splittedPathname[splittedPathname.length - 1];
 
   return (
-    <li className={styles.list}>
+    <li className={menulinkClasses.list}>
       {slur === 'speakers' ? (
         <Link
           href={`/${slur}`}
           aria-label={label}
-          className={`${(styles.link, currentPath === slur ? 'font-semibold' : '')}`}
+          className={`${(menulinkClasses.link, currentPath === slur ? 'font-semibold' : '')}`}
         >
           {label}
         </Link>
       ) : (
-        <Link href={`#${slur}`} aria-label={label} className={styles.link}>
+        <Link
+          href={`#${slur}`}
+          aria-label={label}
+          className={menulinkClasses.link}
+        >
           {label}
         </Link>
       )}

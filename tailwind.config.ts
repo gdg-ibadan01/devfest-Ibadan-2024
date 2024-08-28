@@ -37,6 +37,7 @@ const config = {
         'pastel-green': '#ccf6c5',
         'pastel-yellow': '#ffe7a5',
         'pastel-red': '#f8d8d8',
+        'social-dark': '#1e1e1e',
         red: '#EA4335',
         green: '#0F9D58',
         black: '#060606',
