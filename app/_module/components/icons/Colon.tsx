@@ -1,6 +1,6 @@
 import { TIconProps } from './types/icons';
 
-export const Column = ({ stroke, fill }: TIconProps) => (
+export const Colon = ({ stroke, fill }: TIconProps) => (
   <svg viewBox="0 0 268 187" fill="none">
     <path
       d="M142.949 139.147C171.197 159.501 210.596 153.101 230.949 124.854C251.303 96.606 244.904 57.2069 216.656 36.8534C188.408 16.4998 149.009 22.8992 128.656 51.1468C108.302 79.3945 114.702 118.793 142.949 139.147Z"
