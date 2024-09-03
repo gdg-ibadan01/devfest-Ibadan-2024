@@ -60,7 +60,12 @@ const Agenda = () => {
         <header className={Styles.header}>
           <h2 className={Styles.headerHeading}>The Promised Agenda</h2>
           <section className={Styles.dateContainer}>
-            <img src="/calendar-icon.png" alt="calendar icon" />
+            <Image
+              width={98}
+              height={98}
+              src="/calendar-icon.png"
+              alt="calendar icon"
+            />
             <p className={Styles.date}>
               December 3rd, 2024, and join us from 9:00 AM to 5:00 PM
             </p>
