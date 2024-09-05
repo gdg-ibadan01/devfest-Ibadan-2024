@@ -1,4 +1,4 @@
-export const speakersClass = {
+export const agendaClass = {
   container: 'bg-white min-h-[100vh] pb-[100px]',
   main: 'pt-[160px] px-7 md:px-[70px] lg:px-[100px] flex flex-col gap-[85px]',
   header: 'flex flex-col items-center justify-center mb-[65px]',

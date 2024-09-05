@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment, useState, useEffect } from 'react';
-import { speakersClass as Styles } from './agenda';
+import { agendaClass as Styles } from './agenda';
 import {
   Accordion,
   AccordionContent,
@@ -9,6 +9,9 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import Image from 'next/image';
+import { AccordionContentData } from '../_module/data/AccordionContent';
+import { generateRandomColors } from '../_module/lib/utils';
+import Calendar from '../_module/components/icons/Calendar';
 
 const Agenda = () => {
   const accordionItems = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -17,41 +20,15 @@ const Agenda = () => {
   const [backgroundColors, setBackgroundColors] = useState<string[]>([]);
   const [buttonColors, setButtonColors] = useState<string[]>([]);
 
-  const accordionContent = [
-    {
-      title: 'Open source: SDK, a way to get started - Talabi Opemipo',
-      location: 'Hall 1',
-    },
-    {
-      title:
-        'From code to market: how to build something people want - Arinze Onye',
-      location: 'Hall 2',
-    },
-    {
-      title:
-        'The future of work: how to build a remote team - Chukwudi Nwachukwu',
-      location: 'Hall 3',
-    },
-  ];
-
   useEffect(() => {
-    const generateRandomColors = () => {
-      return accordionItems.map(() => {
-        const randomIndex = Math.floor(
-          Math.random() * accordionContentColors.length
-        );
-        const randomButtonIndex = Math.floor(
-          Math.random() * accordionButtonColors.length
-        );
-        setButtonColors((prev) => [
-          ...prev,
-          accordionButtonColors[randomButtonIndex],
-        ]);
-        return accordionContentColors[randomIndex];
-      });
-    };
-
-    setBackgroundColors(generateRandomColors());
+    setBackgroundColors(
+      generateRandomColors({
+        accordionButtonColors,
+        accordionContentColors,
+        accordionItems,
+        setButtonColors,
+      })
+    );
   }, []);
 
   return (
@@ -60,12 +37,7 @@ const Agenda = () => {
         <header className={Styles.header}>
           <h2 className={Styles.headerHeading}>The Promised Agenda</h2>
           <section className={Styles.dateContainer}>
-            <Image
-              width={98}
-              height={98}
-              src="/calendar-icon.png"
-              alt="calendar icon"
-            />
+            <Calendar />
             <p className={Styles.date}>
               December 3rd, 2024, and join us from 9:00 AM to 5:00 PM
             </p>
@@ -78,7 +50,11 @@ const Agenda = () => {
           </p>
         </header>
         <section>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="max-w-[1000px] mx-auto"
+          >
             {accordionItems.map((item, index: number) => {
               return (
                 <AccordionItem
@@ -93,7 +69,7 @@ const Agenda = () => {
                   <AccordionContent
                     className={Styles.accordionContentContainer}
                   >
-                    {accordionContent.map((content, index) => {
+                    {AccordionContentData.map((content, index) => {
                       return (
                         <section
                           key={index}
