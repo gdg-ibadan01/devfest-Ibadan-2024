@@ -37,6 +37,15 @@
     --blue: '#4285F4';
     --white: '#ffffff';
     --paragraph: '#C3C3C3';
+    --accordion-content-1: "#CCF6C5";
+    --accordion-content-2: "#FFE7AS";
+    --accordion-content-3: '#F8D8D8';
+    --accordion-content-4: '#C3ECF6';
+    --accordion-button-1: '#FF7DAF';
+    --accordion-button-2: '#4285F4';
+    --accordion-button-3: '#FFD427';
+    --accordion-button-4: '#5CDB6D';
+    --accordion-item-border: '#1E1E1E';
   }
 
   .dark {
