@@ -1,16 +1,16 @@
 'use client';
 
+import { menuItems } from '@/app/_module/config/constants/globals';
+import useMediaQueryWatcher from '@/app/_module/config/hooks/useMediaQueryWatcher';
+import Link from 'next/link';
 import { ReactNode, useState } from 'react';
 import { DevfestLogo } from '../../icons';
-import Link from 'next/link';
-import { menuItems } from '@/app/_module/config/constants/globals';
-import MenuLink from '../../menulink';
-import useMediaQueryWatcher from '@/app/_module/config/hooks/useMediaQueryWatcher';
-import Hamburger from '../../icons/Hamburger';
 import Cancel from '../../icons/Cancel';
+import Hamburger from '../../icons/Hamburger';
+import MenuLink from '../../menulink';
 
-import { headerClass as styles } from './DFIheader.classes';
 import { Button } from '../../ui/button';
+import { headerClass as styles } from './DFIheader.classes';
 
 const DFIHeader = (): ReactNode => {
   const [showMenu, setShowMenu] = useState(false);
@@ -33,7 +33,9 @@ const DFIHeader = (): ReactNode => {
                 {menuItems.map(({ label, slur }) => (
                   <MenuLink key={slur} label={label} slur={slur} />
                 ))}
-                <Button className={styles.btn}>Play Puzzle Game</Button>
+                <Link href="https://dev2024-game.vercel.app/" target="_blank">
+                  <Button className={styles.btn}>Play Puzzle Game</Button>
+                </Link>
               </ul>
             </nav>
           </>
@@ -44,7 +46,9 @@ const DFIHeader = (): ReactNode => {
               {menuItems.map(({ label, slur }) => (
                 <MenuLink key={slur} label={label} slur={slur} />
               ))}
-              <Button className={styles.btn}>Play Puzzle Game</Button>
+              <Link href="https://dev2024-game.vercel.app/" target="_blank">
+                <Button className={styles.btn}>Play Puzzle Game</Button>
+              </Link>
             </ul>
           </nav>
         )}
