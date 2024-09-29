@@ -10,7 +10,7 @@ const Recap = () => {
     <>
       <div className="bg-pastel-green">
         <div className="w-full md:max-w-[1500px] mx-auto pt-80 md:pt-124">
-          <div className="px-24">
+          <div className="container">
             <div className="flex flex-row justify-between items-center mb-5 gap-3">
               <h1 className="font-bold text-2xl md:text-3xl">
                 Recap of DevFest Ibadan &apos;23
@@ -35,8 +35,8 @@ const Recap = () => {
               className="w-full relative z-10"
             />
           </div>
-          <IconsArt className="flex flex-col -mt-[200px] md:-mt-[390px]" />
         </div>
+        <IconsArt className="flex flex-col -mt-[200px] md:-mt-[390px]" />
       </div>
     </>
   );

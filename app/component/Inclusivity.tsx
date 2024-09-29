@@ -3,7 +3,7 @@ import BigAsterik from '@/public/Asterik.png';
 import UpCloud from '@/public/UpCloud.png';
 import Image from 'next/image';
 import { Calendar } from '../_module/components/icons';
-// import Skills from '../_module/components/animations/Skills';
+import Skills from '../_module/components/animations/Skills/Skills';
 
 const Inclusivity = () => {
   return (
@@ -21,7 +21,7 @@ const Inclusivity = () => {
             className="pr-24 w-[90px] md:w-[150px]"
           />
         </div>
-        <div className="w-full md:max-w-[1500px] m-auto px-24 -mt-52">
+        <div className="container w-full md:max-w-[1500px] m-auto px-24 -mt-52">
           <section className="flex gap-5 flex-col items-center py-24">
             <h1 className="text-5xl font-bold text-center">
               Devfest is for Everybody
@@ -43,7 +43,7 @@ const Inclusivity = () => {
               <span className="text-core-green">and connection.</span>
             </p>
           </section>
-          {/* <Skills /> */}
+          <Skills />
         </div>
       </div>
     </>

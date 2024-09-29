@@ -4,20 +4,22 @@ import Image from 'next/image';
 import heyfood from '@/public/heyfood.png';
 import LaCasera from '@/public/LaCasera.png';
 import cardify from '@/public/cardify.png';
+import { Button } from '../_module/components/ui/button';
 const OurSponsors = () => {
   return (
     <>
       <div className="bg-[#fcfcfc]">
         <div className="w-full md:max-w-[1500px] mx-auto py-32 md:py-80 px-24">
-          <div className="flex flex-col gap-52">
+          <div className="container flex flex-col gap-52">
             <div className="w-full flex flex-row items-center justify-between">
-              <h1 className="font-bold text-2xl md:text-5xl">Our sponsors</h1>
+              <h1 className="font-bold text-xl md:text-5xl">Our sponsors</h1>
               <Link
-                href="#"
-                className="flex flex-row items-center py-4 px-20 md:px-52 text-sm md:text-lg border-[1px] border-black bg-black text-white hover:bg-core-blue hover:text-white rounded-[100px]"
+                href="https://drive.google.com/file/d/11f8zdyoxljJ4TYRcHBDMfYtLqFkQDl_0/view"
+                target="_blank"
               >
-                Apply to Sponsor
-                <ArrowUpRight />
+                <Button className="text-sm md:text-xl rounded-[100px] bg-black text-white hover:bg-core-blue hover:border border-solid border-black px-20 md:px-52 py-4 md:py-10 flex items-center">
+                  Apply to Sponsor <ArrowUpRight />
+                </Button>
               </Link>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-24">

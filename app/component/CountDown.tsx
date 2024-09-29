@@ -41,8 +41,8 @@ const CountDown = () => {
   return (
     <>
       <div className="bg-pastel-red">
-        <div className="w-full md:max-w-[1500px] mx-auto px-24">
-          <div className="flex flex-col md:flex-row justify-between items-center py-48 gap-5">
+        <div className="w-full md:max-w-[1500px] mx-auto ">
+          <div className="container flex flex-col md:flex-row justify-between items-center py-48 gap-5">
             <div className="w-full md:w-1/3 ">
               <h1 className="font-bold text-3xl text-center md:text-left md:text-6xl">
                 We&apos;ll see you in

@@ -9,8 +9,8 @@ const OurMerch = () => {
   return (
     <>
       <div className="bg-pastel-red">
-        <div className="w-full md:max-w-[1500px] mx-auto pt-32 md:pt-52 px-24 h-max">
-          <div className="flex flex-col gap-24">
+        <div className="w-full md:max-w-[1500px] mx-auto pt-32 md:pt-52 h-max">
+          <div className="container flex flex-col gap-24">
             <div className="flex flex-col md:flex-row justify-between items-start">
               <div className="w-full md:w-3/5 flex flex-col gap-5">
                 <h1 className="font-bold text-3xl md:text-5xl">
