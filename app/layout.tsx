@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import DFIHeader from './_module/components/common/DFIheader';
+import DFIFooter from './_module/components/common/DFIfooter';
 import { google_sans } from './shared/font';
 
 export const metadata: Metadata = {
@@ -14,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${google_sans.className}`}>{children}</body>
+      <body className={`${google_sans.className}`}>
+        <DFIHeader />
+        {children}
+        <DFIFooter />
+      </body>
     </html>
   );
 }
