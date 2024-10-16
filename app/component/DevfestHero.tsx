@@ -21,7 +21,7 @@ const DevfestHero = () => {
               <Link
                 href="https://gdg.community.dev/events/details/google-gdg-ibadan-presents-devfest-ibadan-2024/"
                 target="_blank"
-                className="bg-black py-4 px-52 border-[1px] border-black text-white hover:bg-core-blue hover:text-white rounded-[100px] flex z-10"
+                className="bg-black py-4 px-52 border-[1px] border-black text-white hover:bg-core-blue hover:text-white rounded-[100px] flex"
               >
                 Get Ticket <ArrowUpRight />
               </Link>
@@ -29,7 +29,7 @@ const DevfestHero = () => {
               <Link
                 href="https://sessionize.com/devfest-ibadan-2024"
                 target="_blank"
-                className="bg-white py-4 px-52 border-[1px] border-black text-black hover:bg-core-blue hover:text-white rounded-[100px] z-10"
+                className="bg-white py-4 px-52 border-[1px] border-black text-black hover:bg-core-blue hover:text-white rounded-[100px]"
               >
                 Apply to Speak
               </Link>

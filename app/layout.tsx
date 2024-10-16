@@ -14,6 +14,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Define the route where you want to hide the footer
+  const hideFooterRoutes = ['/schedule'];
   return (
     <html lang="en">
       <body className={`${google_sans.className}`}>
