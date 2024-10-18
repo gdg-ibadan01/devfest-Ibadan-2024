@@ -11,9 +11,9 @@ import {
 import Image from 'next/image';
 import { AccordionContentData } from '../_module/data/AccordionContent';
 import { generateRandomColors } from '../_module/lib/utils';
-import Calendar from '../_module/components/icons/Calendar';
+import { Calendar } from '../_module/components/icons';
 
-const Agenda = () => {
+export default function Agenda() {
   const accordionItems = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const accordionContentColors = ['#CCF6C5', '#FFE7A5', '#F8D8D8', '#C3ECF6'];
   const accordionButtonColors = ['#FF7DAF', '#4285F4', '#FFD427', '#5CDB6D'];
@@ -96,6 +96,6 @@ const Agenda = () => {
       </main>
     </div>
   );
-};
+}
 
-export default Agenda;
+// export default Agenda;
