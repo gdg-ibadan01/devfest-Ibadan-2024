@@ -16,7 +16,7 @@ const MenuLink: FC<MenuLinkProps> = ({ slur, label }) => {
 
   return (
     <li className={menulinkClasses.list}>
-      {slur === 'speakers' ? (
+      {['speakers', 'schedule'].indexOf(slur) > -1 ? (
         <Link
           href={`/${slur}`}
           aria-label={label}
