@@ -16,7 +16,7 @@ const IconsArt_S = ({ className }: IconArt) => {
   return (
     <>
       <div className={className}>
-        <div className="flex justify-between items-end -mt-44">
+        <div className="flex justify-between items-end">
           <CurlyBraces fill="fill-pastel-green" stroke="stroke-black" />
           <Colon fill="fill-core-blue" stroke="stroke-black" />
           <Groundnut fill="fill-pastel-red" stroke="stroke-black" />

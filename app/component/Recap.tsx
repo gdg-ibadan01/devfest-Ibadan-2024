@@ -1,9 +1,8 @@
 import RecapImage from '@/public/Recap.png';
-import Image from 'next/image';
-import { Button } from '../_module/components/ui/button';
-import IconsArt from './IconsArt';
-import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import IconsArt from './IconsArt';
 
 const Recap = () => {
   return (

@@ -3,7 +3,7 @@
 import { menuItems } from '@/app/_module/config/constants/globals';
 import useMediaQueryWatcher from '@/app/_module/config/hooks/useMediaQueryWatcher';
 import Link from 'next/link';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { DevfestLogo } from '../../icons';
 import Cancel from '../../icons/Cancel';
 import Hamburger from '../../icons/Hamburger';
@@ -20,8 +20,27 @@ const DFIHeader = (): ReactNode => {
     setShowMenu(!showMenu);
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 100); // Change 100 to your desired scroll position
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={
+        isScrolled
+          ? 'lg:bg-white lg:bg-opacity-25 lg:backdrop-blur-lg ' + styles.header
+          : 'lg:bg-transparent ' + styles.header
+      }
+    >
       <div className={styles.wrapper}>
         <Link href="/" className={styles.logoContainer}>
           <DevfestLogo fill="fill-black" stroke="stroke-black" />
