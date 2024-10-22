@@ -1,9 +1,11 @@
-import Image from 'next/image';
-import IconsArt_S from './IconsArt_S';
-import backpack from '@/public/bagpack.png';
-import hoodie from '@/public/hoodie.jpeg';
-import Link from 'next/link';
+import bucket_cap from '@/public/bucket-cap.jpeg';
+import backpack from '@/public/dev-backpack.jpeg';
+import t_shirt from '@/public/t-shirt.jpeg';
+import thermo_bottle from '@/public/thermo-bottle.jpeg';
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import IconsArt_S from './IconsArt_S';
 
 const OurMerch = () => {
   return (
@@ -26,31 +28,31 @@ const OurMerch = () => {
               </div>
               <Link
                 href="https://selar.co/m/gdg-ibadan1"
-                className="mt-10 bg-black py-4 px-20 md:px-52 border-[1px] md:text-lg border-black text-white hover:bg-core-blue hover:text-white rounded-[100px] flex items-center"
+                className="mt-10 bg-black py-4 px-20 md:px-52 border-[1px] md:text-lg text-white hover:bg-core-blue hover:text-white rounded-[100px] flex items-center"
               >
                 Get Now <ArrowUpRight />
               </Link>
             </div>
-            <div className="w-full flex flex-col md:flex-row gap-24 z-10">
+            <div className="w-full flex flex-col md:flex-row justify-between z-10">
               <Image
                 src={backpack}
                 alt="backpack"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black"
+                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover object-center"
               />
               <Image
-                src={hoodie}
-                alt="hoodie"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover"
+                src={bucket_cap}
+                alt="bucket cap"
+                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover object-center"
               />
               <Image
-                src={hoodie}
-                alt="hoodie"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover"
+                src={t_shirt}
+                alt="t shirt"
+                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover object-center"
               />
               <Image
-                src={backpack}
-                alt="backpack"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black"
+                src={thermo_bottle}
+                alt="thermo bottle"
+                className="w-full md:w-1/5 rounded-2xl border-[1px] border-black object-cover object-center"
               />
             </div>
           </div>

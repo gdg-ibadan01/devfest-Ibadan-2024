@@ -1,7 +1,7 @@
-import RecapImage from '@/public/Recap.png';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { recapImages } from '../_module/data/recap-images';
 import IconsArt from './IconsArt';
 
 const Recap = () => {
@@ -16,7 +16,7 @@ const Recap = () => {
               </h1>
               <Link
                 href=""
-                className="hidden md:block py-7 px-52 border-[1px] border-black bg-white  text-black hover:text-white hover:bg-core-blue rounded-[100px]"
+                className="hidden md:block py-7 px-52 border-[1px] border-black hover:border-core-blue bg-white  text-black hover:text-white hover:bg-core-blue rounded-[100px]"
               >
                 Devfest &apos;23 website
               </Link>
@@ -28,11 +28,16 @@ const Recap = () => {
               </Link>
             </div>
             {/* will be replaced with the proper content when available */}
-            <Image
-              src={RecapImage}
-              alt="devfest recap"
-              className="w-full relative z-10"
-            />
+            <div className="w-full relative z-10 flex gap-10 overflow-x-scroll no-scrollbar">
+              {recapImages.map((each, idx) => (
+                <Image
+                  key={idx}
+                  src={each}
+                  alt="devfest recap"
+                  className="h-[430px] w-[405px] object-cover rounded-xl"
+                />
+              ))}
+            </div>
           </div>
         </div>
         <IconsArt className="flex flex-col -mt-[200px] md:-mt-[390px]" />

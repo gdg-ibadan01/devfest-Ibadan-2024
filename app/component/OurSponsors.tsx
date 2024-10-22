@@ -17,7 +17,7 @@ const OurSponsors = () => {
                 href="https://drive.google.com/file/d/11f8zdyoxljJ4TYRcHBDMfYtLqFkQDl_0/view"
                 target="_blank"
               >
-                <Button className="text-sm md:text-xl rounded-[100px] bg-black text-white hover:bg-core-blue hover:border border-solid border-black px-20 md:px-52 py-4 md:py-10 flex items-center">
+                <Button className="text-sm md:text-xl rounded-[100px] bg-black text-white hover:bg-core-blue px-20 md:px-52 py-4 md:py-10 flex items-center">
                   Apply to Sponsor <ArrowUpRight />
                 </Button>
               </Link>

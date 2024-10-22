@@ -21,7 +21,7 @@ const OurSpeakers = () => {
             </h1>
             <div className="flex flex-row gap-5">
               <Link href="/speakers">
-                <Button className="text-sm md:text-xl rounded-[100px] hover:bg-core-blue hover:border border-solid border-black px-20 md:px-52 py-4 md:py-10 flex items-center">
+                <Button className="text-sm md:text-xl rounded-[100px] hover:bg-core-blue px-20 md:px-52 py-4 md:py-10 flex items-center">
                   View All <ArrowUpRight />
                 </Button>
               </Link>
@@ -30,7 +30,7 @@ const OurSpeakers = () => {
                 href="https://sessionize.com/devfest-ibadan-2024"
                 target="_blank"
               >
-                <Button className="bg-white text-black hover:bg-core-blue  text-sm md:text-xl px-20 md:px-52 py-4 md:py-10 border-[1px] border-black rounded-[100px]">
+                <Button className="bg-white text-black hover:border-core-blue hover:bg-core-blue  text-sm md:text-xl px-20 md:px-52 py-4 md:py-10 border-[1px] border-black rounded-[100px]">
                   Apply to Speak
                 </Button>
               </Link>
