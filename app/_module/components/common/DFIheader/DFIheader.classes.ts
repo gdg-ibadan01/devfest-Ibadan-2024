@@ -12,5 +12,5 @@ export const headerClass = {
   toggleMenuBtn:
     'lg:hidden h-24 w-24 flex justify-center items-center border-none bg-transparent p-0',
   list: 'text-center my-4',
-  btn: 'text-sm rounded-3xl hover:bg-core-blue hover:border border-solid border-black',
+  btn: 'text-sm rounded-3xl hover:bg-core-blue border-solid border-black',
 };
