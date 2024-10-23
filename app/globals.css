@@ -105,6 +105,27 @@
   }
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 .flip-card {
   background-color: transparent;
   width: 100%;
@@ -137,11 +158,11 @@
 }
 
 .flip-card-front {
-  background-color: transparent; /* To keep the image as background */
+  background-color: transparent;
 }
 
 .flip-card-back {
-  background-color: #fff; /* Change this color as needed */
+  background-color: #fff;
   color: #1f1246;
   transform: rotateY(180deg);
   height: 315px;
@@ -153,4 +174,32 @@
   font-size: 1rem;
   color: #1f1246;
   text-align: center;
+}
+
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visible .letter {
+  animation: fadeInUp 0.5s forwards;
+}
+
+.headers {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.visible .headers {
+  opacity: 1;
 }
