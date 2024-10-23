@@ -16,7 +16,14 @@ const MenuLink: FC<MenuLinkProps> = ({ slur, label }) => {
 
   return (
     <li className={menulinkClasses.list}>
-      {['speakers', 'schedule'].indexOf(slur) > -1 ? (
+      {/* <Link
+        href={slur}
+        aria-label={label}
+        className={`${(menulinkClasses.link, currentPath === slur ? 'font-semibold' : '')}`}
+      >
+        {label}
+      </Link> */}
+      {['speakers', 'schedule', 'sponsors', 'team'].indexOf(slur) > -1 ? (
         <Link
           href={`/${slur}`}
           aria-label={label}
@@ -24,9 +31,19 @@ const MenuLink: FC<MenuLinkProps> = ({ slur, label }) => {
         >
           {label}
         </Link>
+      ) : slur === 'contact-us' ? (
+        <a
+          href="mailto:info@gdgibadan.com"
+          target="_blank"
+          aria-label={label}
+          className={menulinkClasses.link}
+        >
+          {label}
+        </a>
       ) : (
         <Link
-          href={`#${slur}`}
+          href={slur}
+          target="_blank"
           aria-label={label}
           className={menulinkClasses.link}
         >

@@ -1,22 +1,25 @@
 'use client';
 
+import { footerItems } from '@/app/_module/config/constants/globals';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import Link from 'next/link';
 import { ReactNode, useEffect, useRef } from 'react';
-import { footerClass as styles } from './DFIfooter.classes';
 import {
+  Colon,
   CurlyBraces,
   DevfestLogo,
-  Instagram,
   Facebook,
-  Linkedin,
-  Colon,
   Groundnut,
+  Instagram,
+  Linkedin,
   SemiColon,
   SplittedTag,
 } from '../../icons';
-import { footerItems } from '@/app/_module/config/constants/globals';
 import MenuLink from '../../menulink';
 import { Button } from '../../ui/button';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { footerClass as styles } from './DFIfooter.classes';
+import XIcon from '@/public/X_icon.svg';
+import Image from 'next/image';
 
 const DFIFooter = (): ReactNode => {
   const { frameOne, frameTwo, frameThree } = footerItems;
@@ -82,25 +85,48 @@ const DFIFooter = (): ReactNode => {
               <p className={styles.pSm}>Connect with us on our Social</p>
               <ul className={styles.socials}>
                 <li>
-                  <a href="" className={styles.socialLink}>
+                  <a
+                    href="https://www.instagram.com/gdgibadan"
+                    target="_blank"
+                    className={styles.socialLink}
+                  >
                     <Instagram color="fill-white" fill="fill-social-dark" />
                   </a>
                 </li>
                 <li>
-                  <a href="" className={styles.socialLink}>
+                  <a
+                    href="https://www.linkedin.com/company/gdg-ibadan"
+                    target="_blank"
+                    className={styles.socialLink}
+                  >
                     <Linkedin color="fill-white" fill="fill-social-dark" />
                   </a>
                 </li>
                 <li>
-                  <a href="" className={styles.socialLink}>
+                  <a
+                    href="https://web.facebook.com/gdgibadan1"
+                    target="_blank"
+                    className={styles.socialLink}
+                  >
                     <Facebook color="fill-white" fill="fill-social-dark" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/gdgibadan"
+                    target="_blank"
+                    className={styles.socialLink}
+                  >
+                    <Image src={XIcon} alt="XIcon" className="rounded-lg" />
                   </a>
                 </li>
               </ul>
             </div>
             <p className={styles.pSm}>@Devfest2024. All Right Reserved</p>
           </div>
-          <Button className={styles.btn}>Play Puzzle Game</Button>
+          <Link href="https://dev2024-game.vercel.app/" target="_blank">
+            <Button className={styles.btn}>Play Puzzle Game</Button>
+          </Link>
         </div>
       </div>
       <motion.div

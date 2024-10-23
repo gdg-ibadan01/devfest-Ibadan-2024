@@ -6,7 +6,7 @@ const DevfestHero = () => {
   return (
     <>
       <main className="pt-[150px] bg-pastel-yellow">
-        <div className="w-full md:max-w-[1500px] mx-auto">
+        <div className="w-full md:max-w-[1500px] mx-auto relative z-10">
           <header className="container flex gap-4 md:gap-7 flex-col items-center justify-between">
             <h1 className="font-bold text-4xl md:text-8xl">
               Devfest Ibadan &apos;24
@@ -21,7 +21,7 @@ const DevfestHero = () => {
               <Link
                 href="https://gdg.community.dev/events/details/google-gdg-ibadan-presents-devfest-ibadan-2024/"
                 target="_blank"
-                className="bg-black py-4 px-52 border-[1px] border-black text-white hover:bg-core-blue hover:text-white rounded-[100px] flex"
+                className="bg-black py-4 px-52 text-white hover:bg-core-blue hover:text-white rounded-[100px] flex"
               >
                 Get Ticket <ArrowUpRight />
               </Link>
@@ -29,7 +29,7 @@ const DevfestHero = () => {
               <Link
                 href="https://sessionize.com/devfest-ibadan-2024"
                 target="_blank"
-                className="bg-white py-4 px-52 border-[1px] border-black text-black hover:bg-core-blue hover:text-white rounded-[100px]"
+                className="bg-white py-4 px-52 border-[1px] border-black hover:border-core-blue text-black hover:bg-core-blue hover:text-white rounded-[100px]"
               >
                 Apply to Speak
               </Link>
