@@ -31,7 +31,7 @@ const OurMerch = () => {
                 Get Now <ArrowUpRight />
               </Link>
             </div>
-            <div className="w-full flex flex-col md:flex-row gap-24 z-10">
+            <div className="w-full flex flex-col md:flex-row gap-24 z-10 md:pl-[2rem] md:pr-[6rem]">
               <Image
                 src={backpack}
                 alt="backpack"

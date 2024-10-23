@@ -9,8 +9,25 @@
   align-items: center;
   font-weight: 300;
   cursor: pointer;
+  opacity: 0; // Start hidden
 
   p {
     white-space: nowrap;
+  }
+}
+
+.fallIn {
+  opacity: 1;
+  animation: fall 0.9s ease-out forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(var(--rotate-angle));
+    opacity: 1;
   }
 }

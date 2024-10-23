@@ -12,15 +12,18 @@
     "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
+    "@motionone/utils": "^10.18.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@studio-freight/react-lenis": "^0.0.47",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.30",
+    "framer-motion": "^11.11.9",
+    "gsap": "^3.12.5",
     "lucide-react": "^0.427.0",
     "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sass": "^1.77.8",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
