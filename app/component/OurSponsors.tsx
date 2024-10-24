@@ -2,9 +2,17 @@
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
-import heyfood from '@/public/heyfood.png';
-import LaCasera from '@/public/LaCasera.png';
-import cardify from '@/public/cardify.png';
+import oneapp from '@/public/1appnewlogo.8e95dfd0.png';
+import turing from '@/public/turing.png';
+import altschool from '@/public/altschool-africa-logo-4365C6B160-seeklogo.com.png';
+import cardify from '@/public/Cardify-Africa-Logo-Black-544-by-180.png';
+import codemagic from '@/public/codemagic.svg';
+import digitalocean from '@/public/digitalocean-2.svg';
+import google from '@/public/Google_Icons-09-512.webp';
+import youverify from '@/public/logo_iffgzd.svg';
+import heyfood from '@/public/logo-long.svg';
+import ship from '@/public/shiip.png';
+import halal from '@/public/SuegFTtO_400x400.jpg';
 import { Button } from '../_module/components/ui/button';
 import {
   motion,
@@ -87,20 +95,20 @@ const OurSponsors = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-24 overflow-hidden">
             <ParallaxImage
-              imageSrc={LaCasera}
-              alt="LaCasera"
+              imageSrc={oneapp}
+              alt="OneApp"
               baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <ParallaxImage
-              imageSrc={heyfood}
-              alt="heyfood"
+              imageSrc={turing}
+              alt="Turing"
               baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <ParallaxImage
-              imageSrc={cardify}
-              alt="cardify"
+              imageSrc={altschool}
+              alt="AltSchool"
               baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
@@ -112,27 +120,46 @@ const OurSponsors = () => {
             />
 
             <ParallaxImage
-              imageSrc={LaCasera}
-              alt="LaCasera"
+              imageSrc={codemagic}
+              alt="Codemagic"
               baseVelocity={30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
+            <ParallaxImage
+              imageSrc={digitalocean}
+              alt="DigitalOcean"
+              baseVelocity={30}
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <ParallaxImage
+              imageSrc={google}
+              alt="Google"
+              baseVelocity={30}
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <ParallaxImage
+              imageSrc={youverify}
+              alt="YouVerify"
+              baseVelocity={30}
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+
             <ParallaxImage
               imageSrc={heyfood}
-              alt="heyfood"
-              baseVelocity={30}
+              alt="Heyfood"
+              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <ParallaxImage
-              imageSrc={cardify}
-              alt="cardify"
-              baseVelocity={30}
+              imageSrc={ship}
+              alt="Ship"
+              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <ParallaxImage
-              imageSrc={cardify}
-              alt="cardify"
-              baseVelocity={30}
+              imageSrc={halal}
+              alt="Halal"
+              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
           </div>
