@@ -3,6 +3,7 @@ import './globals.css';
 import DFIHeader from './_module/components/common/DFIheader';
 import DFIFooter from './_module/components/common/DFIfooter';
 import { google_sans } from './shared/font';
+import { ReactLenis } from '@/utils/lenis';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,11 +19,13 @@ export default function RootLayout({
   const hideFooterRoutes = ['/schedule'];
   return (
     <html lang="en">
-      <body className={`${google_sans.className}`}>
-        <DFIHeader />
-        {children}
-        <DFIFooter />
-      </body>
+      <ReactLenis root>
+        <body className={`${google_sans.className}`}>
+          <DFIHeader />
+          {children}
+          <DFIFooter />
+        </body>
+      </ReactLenis>
     </html>
   );
 }

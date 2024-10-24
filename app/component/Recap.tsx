@@ -1,3 +1,4 @@
+'use client';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -27,21 +28,42 @@ const Recap = () => {
                 <ArrowUpRight />
               </Link>
             </div>
-            {/* will be replaced with the proper content when available */}
-            <div className="w-full relative z-10 flex gap-10 overflow-x-scroll no-scrollbar">
-              {recapImages.map((each, idx) => (
-                <Image
-                  key={idx}
-                  src={each}
-                  alt="devfest recap"
-                  className="h-[430px] w-[405px] object-cover rounded-xl"
-                />
-              ))}
+
+            <div className="scroll-container overflow-hidden relative">
+              <div className="scrolling-wrapper flex gap-10">
+                {recapImages.map((each, idx) => (
+                  <Image
+                    key={idx}
+                    src={each}
+                    alt="devfest recap"
+                    className="h-[430px] w-[405px] object-cover rounded-xl"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
         <IconsArt className="flex flex-col -mt-[200px] md:-mt-[390px]" />
       </div>
+
+      <style jsx>{`
+        .scroll-container {
+          width: 100%;
+        }
+
+        .scrolling-wrapper {
+          animation: scroll-horizontal 30s linear infinite;
+        }
+
+        @keyframes scroll-horizontal {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
     </>
   );
 };
