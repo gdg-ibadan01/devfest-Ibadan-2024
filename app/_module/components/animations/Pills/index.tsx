@@ -1,11 +1,10 @@
-import { FC } from 'react';
+import { FC, useEffect, useState, CSSProperties } from 'react';
 import Styles from './styles.module.scss';
 
 interface iPills {
   text: string;
   bgColor?: string;
   padding?: string;
-  url?: string;
   randomAngle: number;
   handleRoute?: () => void;
 }
@@ -17,14 +16,44 @@ const Pills: FC<iPills> = ({
   handleRoute,
   randomAngle,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleIntersection: IntersectionObserverCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.1,
+    });
+
+    const currentElement = document.getElementById(text);
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
+
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [text]);
+
   return (
     <div
-      className={Styles.container}
-      style={{
-        background: bgColor,
-        padding: padding,
-        transform: `rotate(${randomAngle}deg)`,
-      }}
+      id={text}
+      className={`${Styles.container} ${isVisible ? Styles.fallIn : ''}`}
+      style={
+        {
+          background: bgColor,
+          padding: padding,
+          '--rotate-angle': `${randomAngle}deg`,
+        } as CSSProperties & Record<string, any>
+      }
       onClick={handleRoute}
     >
       <p>{text || 'NFT ARTIST'}</p>

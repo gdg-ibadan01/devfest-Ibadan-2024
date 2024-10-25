@@ -23,7 +23,9 @@ const MenuLink: FC<MenuLinkProps> = ({ slur, label }) => {
       >
         {label}
       </Link> */}
-      {['speakers', 'schedule', 'sponsors', 'team'].indexOf(slur) > -1 ? (
+      {['speakers', 'organizers', 'schedule', 'sponsors', 'team'].indexOf(
+        slur
+      ) > -1 ? (
         <Link
           href={`/${slur}`}
           aria-label={label}
