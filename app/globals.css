@@ -202,3 +202,14 @@ html.lenis body {
 .visible .headers {
   opacity: 1;
 }
+
+@media (max-width: 500px) {
+  .organizer-bg {
+    background-size: contain;
+    min-height: 77vh;
+  }
+
+  .mains {
+    min-height: 85vh;
+  }
+}

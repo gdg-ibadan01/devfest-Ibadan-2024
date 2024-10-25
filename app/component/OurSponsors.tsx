@@ -14,66 +14,22 @@ import heyfood from '@/public/logo-long.svg';
 import ship from '@/public/shiip.png';
 import halal from '@/public/SuegFTtO_400x400.jpg';
 import { Button } from '../_module/components/ui/button';
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionValue,
-  useVelocity,
-  useAnimationFrame,
-} from 'framer-motion';
-import { useRef } from 'react';
-import { wrap } from '@motionone/utils';
 
-interface ParallaxProps {
+interface SponsorImageProps {
   imageSrc: StaticImageData;
   alt: string;
-  baseVelocity: number;
   divClassName: string;
 }
 
-function ParallaxImage({
-  imageSrc,
-  alt,
-  baseVelocity = 100,
-  divClassName,
-}: ParallaxProps) {
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
-  });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false,
-  });
-
-  const x = useTransform(baseX, (v) => `${wrap(-300, 300, v)}%`);
-  const directionFactor = useRef<number>(1);
-
-  useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
-    }
-
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
-    baseX.set(baseX.get() + moveBy);
-  });
-
+function SponsorImage({ imageSrc, alt, divClassName }: SponsorImageProps) {
   return (
-    <motion.div className={divClassName} style={{ x }}>
+    <div className={divClassName}>
       <Image
         src={imageSrc}
         alt={alt}
         className="h-full object-center object-contain"
-      />{' '}
-    </motion.div>
+      />
+    </div>
   );
 }
 
@@ -94,72 +50,59 @@ const OurSponsors = () => {
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-24 overflow-hidden">
-            <ParallaxImage
+            <SponsorImage
               imageSrc={oneapp}
               alt="OneApp"
-              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={turing}
               alt="Turing"
-              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={altschool}
               alt="AltSchool"
-              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={cardify}
-              alt="cardify"
-              baseVelocity={-30}
+              alt="Cardify"
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-
-            <ParallaxImage
+            <SponsorImage
               imageSrc={codemagic}
               alt="Codemagic"
-              baseVelocity={30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={digitalocean}
               alt="DigitalOcean"
-              baseVelocity={30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={google}
               alt="Google"
-              baseVelocity={30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={youverify}
               alt="YouVerify"
-              baseVelocity={30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-
-            <ParallaxImage
+            <SponsorImage
               imageSrc={heyfood}
               alt="Heyfood"
-              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={ship}
               alt="Ship"
-              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <ParallaxImage
+            <SponsorImage
               imageSrc={halal}
               alt="Halal"
-              baseVelocity={-30}
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
           </div>
