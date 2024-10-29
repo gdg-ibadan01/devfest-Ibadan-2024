@@ -213,3 +213,14 @@ html.lenis body {
     min-height: 85vh;
   }
 }
+
+@media (max-width: 400px) {
+  .organizer-bg {
+    background-size: contain;
+    min-height: 94.1vh;
+  }
+
+  .mains {
+    min-height: 85vh;
+  }
+}
