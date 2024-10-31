@@ -46,7 +46,7 @@ const Pills: FC<iPills> = ({
   return (
     <div
       id={text}
-      className={`${Styles.container} ${isVisible ? Styles.fallIn : ''}`}
+      className={`${Styles.container} ${isVisible ? Styles.fallIn : ''} mb-[2rem] md:mb-[0rem]`}
       style={
         {
           background: bgColor,

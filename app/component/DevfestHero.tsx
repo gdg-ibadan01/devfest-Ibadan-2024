@@ -48,13 +48,21 @@ const DevfestHero = () => {
       <main ref={sectionRef} className="pt-[150px] bg-pastel-yellow">
         <div className="w-full md:max-w-[1500px] mx-auto relative z-10">
           <header className="container headers flex gap-4 md:gap-7 flex-col items-center justify-between">
-            <h1 className="font-bold text-4xl md:text-8xl">
+            {/* <h1 className="font-bold text-4xl md:text-8xl">
               {wrapLetters("Devfest Ibadan '24")}
+            </h1> */}
+            <h1 className="font-bold text-[2rem] leading-[2.5rem] md:text-8xl">
+              Devfest Ibadan &apos;24
             </h1>
-            <p className="text-[#4D4D4D] text-lg md:text-2xl text-center md:w-[1000px]">
+            {/* <p className="text-[#4D4D4D] text-lg md:text-2xl text-center md:w-[1000px]">
               {wrapLetters(
                 'Whatsup Ibadan!!!. Be a part of the largest tech event in Ibadan where tech enthusiasts come together to explore cutting-edge technology and shape the future'
               )}
+            </p> */}
+            <p className="text-[#4D4D4D] text-lg md:text-2xl text-center md:w-[1000px]">
+              Whatsup Ibadan!!!. Be a part of the largest tech event in Ibadan
+              where tech enthusiasts come together to explore cutting-edge
+              technology and shape the future
             </p>
             <p className="text-center font-bold">December 3rd 2024 at 9:00PM</p>
             <div className="flex flex-col md:flex-row gap-3 md:gap-5 text-sm'">
