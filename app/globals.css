@@ -166,8 +166,9 @@ html.lenis body {
   color: #1f1246;
   transform: rotateY(180deg);
   height: 315px;
-  width: 400px;
+  width: 350px;
 }
+
 .flip-card-back p {
   padding-left: 2rem;
   padding-right: 2rem;
