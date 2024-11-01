@@ -139,7 +139,7 @@ const DFIFooter = (): ReactNode => {
           className="doodleContainer w-full lg:w-[240px]"
           variants={dropInVariants}
         >
-          <CurlyBraces fill="fill-pastel-green" stroke="stroke-black" />
+          <CurlyBraces className="fill-pastel-green stroke-black" />
         </motion.div>
         <motion.div
           className="doodleContainer w-full lg:w-[240px] "

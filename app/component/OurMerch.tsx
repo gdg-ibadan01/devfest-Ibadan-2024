@@ -6,6 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import IconsArt_S from './IconsArt_S';
+import IconsArt from './IconsArt';
 
 const OurMerch = () => {
   return (
@@ -57,7 +58,8 @@ const OurMerch = () => {
             </div>
           </div>
         </div>
-        <IconsArt_S className="flex flex-col -mt-0 md:-mt-124" />
+        {/* <IconsArt_S className="flex flex-col -mt-0 md:-mt-124" /> */}
+        <IconsArt className="" showFull={false} />
       </div>
     </>
   );

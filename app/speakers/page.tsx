@@ -33,7 +33,16 @@ export default function Speakers() {
     //   </main>
     // </div>
     <div>
-      <ComingSoon page="Speakers" />
+      <ComingSoon
+        page="Speakers"
+        subtitle={
+          <>
+            We&apos;re lining up an incredible roster of experts, thought
+            leaders, and innovators ready to inspire and share their knowledge
+            with you. Stay tuned—our full speaker lineup will be revealed soon!
+          </>
+        }
+      />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import IconsArt_S from './IconsArt_S';
 import { Button } from '../_module/components/ui/button';
+import IconsArt from './IconsArt';
 
 const Venue = () => {
   return (
@@ -61,7 +62,8 @@ const Venue = () => {
             </div>
           </div>
         </div>
-        <IconsArt_S className="hidden md:flex flex-col -mt-124" />
+        {/* <IconsArt_S className="hidden md:flex flex-col -mt-124" /> */}
+        <IconsArt className="" showFull={false} />
       </div>
     </>
   );
