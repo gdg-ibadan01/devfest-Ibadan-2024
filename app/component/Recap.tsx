@@ -1,7 +1,8 @@
-import RecapImage from '@/public/Recap.png';
+'use client';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { recapImages } from '../_module/data/recap-images';
 import IconsArt from './IconsArt';
 
 const Recap = () => {
@@ -16,7 +17,7 @@ const Recap = () => {
               </h1>
               <Link
                 href=""
-                className="hidden md:block py-7 px-52 border-[1px] border-black bg-white  text-black hover:text-white hover:bg-core-blue rounded-[100px]"
+                className="hidden md:block py-7 px-52 border-[1px] border-black hover:border-core-blue bg-white  text-black hover:text-white hover:bg-core-blue rounded-[100px]"
               >
                 Devfest &apos;23 website
               </Link>
@@ -27,16 +28,42 @@ const Recap = () => {
                 <ArrowUpRight />
               </Link>
             </div>
-            {/* will be replaced with the proper content when available */}
-            <Image
-              src={RecapImage}
-              alt="devfest recap"
-              className="w-full relative z-10"
-            />
+
+            <div className="scroll-container overflow-hidden relative">
+              <div className="scrolling-wrapper flex gap-10">
+                {recapImages.map((each, idx) => (
+                  <Image
+                    key={idx}
+                    src={each}
+                    alt="devfest recap"
+                    className="h-[430px] w-[405px] object-cover rounded-xl"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <IconsArt className="flex flex-col -mt-[200px] md:-mt-[390px]" />
       </div>
+
+      <style jsx>{`
+        .scroll-container {
+          width: 100%;
+        }
+
+        .scrolling-wrapper {
+          animation: scroll-horizontal 30s linear infinite;
+        }
+
+        @keyframes scroll-horizontal {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
     </>
   );
 };

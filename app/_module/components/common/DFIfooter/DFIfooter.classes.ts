@@ -1,5 +1,5 @@
 export const footerClass = {
-  footer: 'bg-pastel-yellow pt-56',
+  footer: 'w-full bg-pastel-yellow pt-56',
   wrapper: 'container mx-auto flex flex-col gap-4',
   logoContainer:
     'flex items-center w-124 h-32 hover:scale-110 transition-transform duration-300 ease-in-out',
@@ -11,7 +11,7 @@ export const footerClass = {
   socialsWrapper: 'flex flex-col gap-20 text-center lg:text-left',
   socials: 'flex justify-around lg:justify-start gap-72',
   socialLink: 'inline-block h-48 w-48',
-  btn: 'text-sm rounded-3xl hover:bg-core-blue hover:border border-solid border-black order-1 lg:order-2',
+  btn: 'text-sm rounded-3xl hover:bg-core-blue border-solid border-black order-1 lg:order-2',
   location: 'max-w-[500px]',
   pSm: 'text-sm',
   socialsCopyright:

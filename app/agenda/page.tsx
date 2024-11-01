@@ -43,7 +43,7 @@ export default function Agenda() {
             </p>
           </section>
           <p className={Styles.headerText}>
-            Mark your calendar for for a day filled with{' '}
+            Mark your calendar for a day filled with{' '}
             <span className={Styles.inspirationText}>inspiration,</span>{' '}
             <span className={Styles.innovationText}>innovation,</span>{' '}
             <span className={Styles.connectionText}>and connection.</span>

@@ -1,9 +1,12 @@
-import Image from 'next/image';
-import IconsArt_S from './IconsArt_S';
-import backpack from '@/public/bagpack.png';
-import hoodie from '@/public/hoodie.jpeg';
-import Link from 'next/link';
+import bucket_cap from '@/public/bucket-cap.jpeg';
+import backpack from '@/public/dev-backpack.jpeg';
+import t_shirt from '@/public/t-shirt.jpeg';
+import thermo_bottle from '@/public/thermo-bottle.jpeg';
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import IconsArt_S from './IconsArt_S';
+import IconsArt from './IconsArt';
 
 const OurMerch = () => {
   return (
@@ -14,7 +17,7 @@ const OurMerch = () => {
             <div className="flex flex-col md:flex-row justify-between items-start">
               <div className="w-full md:w-3/5 flex flex-col gap-5">
                 <h1 className="font-bold text-3xl md:text-5xl">
-                  Explore our Merch
+                  Explore our merch
                 </h1>
                 <p className="tracking-wider text-xl text-left">
                   Show your DevFest spirit with our exclusive event merchandise!
@@ -26,7 +29,7 @@ const OurMerch = () => {
               </div>
               <Link
                 href="https://selar.co/m/gdg-ibadan1"
-                className="mt-10 bg-black py-4 px-20 md:px-52 border-[1px] md:text-lg border-black text-white hover:bg-core-blue hover:text-white rounded-[100px] flex items-center"
+                className="mt-10 bg-black py-4 px-20 md:px-52 border-[1px] md:text-lg text-white hover:bg-core-blue hover:text-white rounded-[100px] flex items-center"
               >
                 Get Now <ArrowUpRight />
               </Link>
@@ -35,27 +38,28 @@ const OurMerch = () => {
               <Image
                 src={backpack}
                 alt="backpack"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black"
+                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover object-center"
               />
               <Image
-                src={hoodie}
-                alt="hoodie"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover"
+                src={bucket_cap}
+                alt="bucket cap"
+                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover object-center"
               />
               <Image
-                src={hoodie}
-                alt="hoodie"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover"
+                src={t_shirt}
+                alt="t shirt"
+                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black object-cover object-center"
               />
               <Image
-                src={backpack}
-                alt="backpack"
-                className="w-full md:w-1/4 rounded-2xl border-[1px] border-black"
+                src={thermo_bottle}
+                alt="thermo bottle"
+                className="w-full md:w-1/5 rounded-2xl border-[1px] border-black object-cover object-center"
               />
             </div>
           </div>
         </div>
-        <IconsArt_S className="flex flex-col -mt-0 md:-mt-124" />
+        {/* <IconsArt_S className="flex flex-col -mt-0 md:-mt-124" /> */}
+        <IconsArt className="" showFull={false} />
       </div>
     </>
   );
