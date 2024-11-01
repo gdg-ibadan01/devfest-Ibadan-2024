@@ -4,13 +4,17 @@ import { menuItems } from '@/app/_module/config/constants/globals';
 import useMediaQueryWatcher from '@/app/_module/config/hooks/useMediaQueryWatcher';
 import Link from 'next/link';
 import { ReactNode, useEffect, useState } from 'react';
-import { DevfestLogo } from '../../icons';
-import Cancel from '../../icons/Cancel';
-import Hamburger from '../../icons/Hamburger';
+// import { DevfestLogo } from '../../icons';
+// import Cancel from '../../icons/Cancel';
+// import Hamburger from '../../icons/Hamburger';
+import Hamburger from '../../icons/Hamburger.svg';
+import DevfestLogo from '../../icons/DevfestLogo.svg';
+import Cancel from '../../icons/Cancel.svg';
 import MenuLink from '../../menulink';
 
 import { Button } from '../../ui/button';
 import { headerClass as styles } from './DFIheader.classes';
+import Image from 'next/image';
 
 const DFIHeader = (): ReactNode => {
   const [showMenu, setShowMenu] = useState(false);
@@ -43,7 +47,8 @@ const DFIHeader = (): ReactNode => {
     >
       <div className={styles.wrapper}>
         <Link href="/" className={styles.logoContainer}>
-          <DevfestLogo fill="fill-black" stroke="stroke-black" />
+          {/* <DevfestLogo fill="fill-black" stroke="stroke-black" /> */}
+          <Image src={DevfestLogo} alt="DevfestLogo" />
         </Link>
         {isTablet && (
           <>
@@ -77,9 +82,12 @@ const DFIHeader = (): ReactNode => {
           onClick={showMenuFunc}
         >
           {!showMenu ? (
-            <Hamburger color="fill-black" />
+            // <Hamburger color="fill-black" />
+            <Image src={Hamburger} alt="Hamburger" />
           ) : (
-            <Cancel color="stroke-black" />
+            // 'test'
+            <Image src={Cancel} alt="Cancel" />
+            // <Cancel color="stroke-black" />
           )}
         </button>
       </div>

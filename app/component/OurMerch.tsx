@@ -17,7 +17,7 @@ const OurMerch = () => {
             <div className="flex flex-col md:flex-row justify-between items-start">
               <div className="w-full md:w-3/5 flex flex-col gap-5">
                 <h1 className="font-bold text-3xl md:text-5xl">
-                  Explore our Merch
+                  Explore our merch
                 </h1>
                 <p className="tracking-wider text-xl text-left">
                   Show your DevFest spirit with our exclusive event merchandise!

@@ -1,7 +1,7 @@
 export const headerClass = {
   // header: 'fixed w-full bg-pastel-yellow lg:bg-transparent py-24 lg:py-36 z-20',
   header:
-    'transition-opacity duration-500 fixed w-full bg-pastel-yellow py-24 lg:py-36 z-20fixed w-full bg-pastel-yellow lg:bg-transparent py-24 lg:py-36 z-20',
+    'transition-opacity duration-500 fixed w-full bg-pastel-yellow py-24 lg:py-36 lg:bg-transparent z-20',
   wrapper: 'container mx-auto flex justify-between items-center',
   logoContainer:
     'flex items-center w-124 h-32 hover:scale-110 transition-transform duration-300 ease-in-out',
