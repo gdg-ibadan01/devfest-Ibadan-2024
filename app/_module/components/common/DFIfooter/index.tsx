@@ -57,9 +57,8 @@ const DFIFooter = (): ReactNode => {
         </div>
         <div className={styles.middle}>
           <p className={styles.location}>
-            Devfest is taking place on December 3rd, 2024 from 9:00 AM to 5:00
-            PM at Kakanfo Inn & Conference Center - Kakanfo Inn & Conference
-            Center. Kakanfo Inn & Conference Center Conference Center.
+            Devfest is taking place on November 23rd, 2024 from 9:00 AM to 5:00
+            PM at Aweni Arena Oke Ado.
           </p>
           <div className={styles.menuWrapper}>
             <ul className={styles.menu}>
@@ -139,7 +138,7 @@ const DFIFooter = (): ReactNode => {
           className="doodleContainer w-full lg:w-[240px]"
           variants={dropInVariants}
         >
-          <CurlyBraces className="fill-pastel-green stroke-black" />
+          <CurlyBraces fill="fill-pastel-green" stroke="stroke-black" />
         </motion.div>
         <motion.div
           className="doodleContainer w-full lg:w-[240px] "
