@@ -12,7 +12,7 @@ export default function Speakers() {
     //     <header className={Styles.header}>
     //       <section className={Styles.headerSection}>
     //         <h1 className={Styles.headerSectionHeading}>
-    //           Meet Our amazing Speakers
+    //           Meet our amazing speakers
     //         </h1>
     //         <p className={Styles.headerSectionParagraph}>
     //           Our speakers are industry leaders, innovative thinkers, and

@@ -16,11 +16,11 @@ const OurSpeakers = () => {
     <>
       <div className="bg-[#fcfcfc] w-full">
         <div className="w-full md:max-w-[1500px] mx-auto py-32 md:py-80">
-          <div className="container flex flex-col gap-52">
+          <div className="container flex flex-col gap-5 md:gap-52">
             <h1 className="text-2xl md:text-6xl font-bold">
               Meet our amazing speakers
             </h1>
-            <div className="flex flex-row gap-5">
+            <div className="flex flex-row gap-2 md:gap-5">
               <Link href="/speakers">
                 <Button className="text-sm md:text-xl rounded-[100px] hover:bg-core-blue px-20 md:px-52 py-4 md:py-10 flex items-center">
                   View All <ArrowUpRight />

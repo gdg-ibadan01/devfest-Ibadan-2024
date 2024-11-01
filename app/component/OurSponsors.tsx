@@ -38,7 +38,7 @@ const OurSponsors = () => {
     <div className="bg-[#fcfcfc]">
       <div className="w-full md:max-w-[1500px] mx-auto py-32 md:py-80 px-24">
         <div className="container flex flex-col gap-52">
-          <div className="w-full flex flex-row items-center justify-between">
+          <div className="w-full flex md:flex-row flex-col gap-3 items-center justify-between">
             <h1 className="font-bold text-xl md:text-5xl">Our sponsors</h1>
             <Link
               href="https://drive.google.com/file/d/11f8zdyoxljJ4TYRcHBDMfYtLqFkQDl_0/view"

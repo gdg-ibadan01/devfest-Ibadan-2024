@@ -3,7 +3,7 @@ export const menuItems = [
   { label: 'Organizers', slur: 'organizers' },
   { label: 'Schedule', slur: 'schedule' },
   { label: 'Merch', slur: 'https://selar.co/m/gdg-ibadan1' },
-  { label: 'Team', slur: 'team' },
+  // { label: 'Team', slur: 'team' },
 ];
 
 export const footerItems = {
