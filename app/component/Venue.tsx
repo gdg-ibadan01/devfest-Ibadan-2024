@@ -9,7 +9,7 @@ import { Button } from '../_module/components/ui/button';
 const Venue = () => {
   return (
     <>
-      <div className="bg-pastel-red">
+      <div className="w-full bg-pastel-red">
         <div className="w-full md:max-w-[1500px] mx-auto py-32 md:pt-100 md:pb-0">
           <div className="container flex flex-col md:flex-row gap-14">
             <div className="w-full md:w-1/3 flex flex-col gap-10">

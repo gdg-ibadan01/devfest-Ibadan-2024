@@ -14,11 +14,11 @@ const OurSpeakers = () => {
   const Speakers = SpeakersList.slice(0, 3);
   return (
     <>
-      <div className="bg-[#fcfcfc]">
+      <div className="bg-[#fcfcfc] w-full">
         <div className="w-full md:max-w-[1500px] mx-auto py-32 md:py-80">
           <div className="container flex flex-col gap-52">
             <h1 className="text-2xl md:text-6xl font-bold">
-              Meet Our amazing Speakers
+              Meet our amazing speakers
             </h1>
             <div className="flex flex-row gap-5">
               <Link href="/speakers">

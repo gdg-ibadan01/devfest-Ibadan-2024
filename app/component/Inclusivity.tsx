@@ -37,7 +37,7 @@ const Inclusivity = () => {
               </p>
             </div>
             <p className="text-xl text-center">
-              Mark your calendar for for a day filled with{' '}
+              Mark your calendar for a day filled with{' '}
               <span className="text-core-blue">inspiration,</span>{' '}
               <span className="text-core-red">innovation,</span>{' '}
               <span className="text-core-green">and connection.</span>
