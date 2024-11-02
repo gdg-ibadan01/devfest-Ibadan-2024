@@ -57,8 +57,8 @@ const DFIFooter = (): ReactNode => {
         </div>
         <div className={styles.middle}>
           <p className={styles.location}>
-            Devfest is taking place on November 23rd, 2024 from 9:00 AM to 5:00
-            PM at Aweni Arena Oke Ado.
+            Devfest is taking place on November 23rd, 2024 at 8AM Prompt at
+            Aweni Arena Oke Ado.
           </p>
           <div className={styles.menuWrapper}>
             <ul className={styles.menu}>
