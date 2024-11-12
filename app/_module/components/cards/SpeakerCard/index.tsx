@@ -5,7 +5,7 @@ import { speakersCardClass as Styles } from './speaker-card';
 export type TspeakerProps = {
   name: string;
   title: string;
-  src: StaticImageData;
+  src: StaticImageData | string;
 };
 
 const SpeakerCard: FC<TspeakerProps> = (props) => {

@@ -11,7 +11,7 @@ import SpeakerCard from '../_module/components/cards/SpeakerCard';
 import IconsArt from './IconsArt';
 
 const OurSpeakers = () => {
-  const Speakers = SpeakersList.slice(0, 3);
+  const Speakers = SpeakersList.slice(0, 4);
   return (
     <>
       <div className="bg-[#fcfcfc] w-full">
@@ -27,24 +27,24 @@ const OurSpeakers = () => {
                 </Button>
               </Link>
 
-              {/* <Link
+              <Link
                 href="https://sessionize.com/devfest-ibadan-2024"
                 target="_blank"
               >
                 <Button className="bg-white text-black hover:border-core-blue hover:bg-core-blue  text-sm md:text-xl px-20 md:px-52 py-4 md:py-10 border-[1px] border-black rounded-[100px]">
                   Apply to Speak
                 </Button>
-              </Link> */}
+              </Link>
             </div>
-            {/* <section className="flex flex-col md:flex-row gap-24">
+            <section className="grid grid-cols-4 gap-24">
               {Speakers.map((data, idx) => (
                 <Fragment key={idx}>
                   <SpeakerCard {...data} />
                 </Fragment>
               ))}
-            </section> */}
+            </section>
 
-            <section className="flex gap-5 flex-col items-center py-24">
+            {/* <section className="flex gap-5 flex-col items-center py-24">
               <h1 className="text-5xl font-bold text-center">
                 Speakers Coming Soon
               </h1>
@@ -53,7 +53,7 @@ const OurSpeakers = () => {
                 industry leaders, tech innovators, and creative thinkers who
                 will transform your DevFest experience.
               </p>
-            </section>
+            </section> */}
           </div>
         </div>
         <IconsArt className="flex flex-col -mt-64 md:-mt-[150px]" />
