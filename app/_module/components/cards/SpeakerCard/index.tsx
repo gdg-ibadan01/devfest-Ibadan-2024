@@ -5,13 +5,15 @@ import { speakersCardClass as Styles } from './speaker-card';
 export type TspeakerProps = {
   name: string;
   title: string;
-  src: StaticImageData;
+  src: StaticImageData|string;
   brief?: string;
   onClick?: () => void;
 };
 
 const SpeakerCard: FC<TspeakerProps> = (props) => {
+
   const { name, src, title, onClick } = props;
+
   return (
     <div className={Styles.wrapper} onClick={onClick}>
       <section className={Styles.section}>
