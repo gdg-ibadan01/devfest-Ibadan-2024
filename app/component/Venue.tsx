@@ -1,10 +1,11 @@
-import venue from '@/public/venue-home.jpg';
-import venuee from '@/public/venue-home-2.jpg';
+import venue from '@/public/venue1.jpeg';
+import venuee from '@/public/venue2.jpeg';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import IconsArt_S from './IconsArt_S';
 import { Button } from '../_module/components/ui/button';
+import IconsArt from './IconsArt';
 
 const Venue = () => {
   return (
@@ -12,7 +13,7 @@ const Venue = () => {
       <div className="w-full bg-pastel-red">
         <div className="w-full md:max-w-[1500px] mx-auto py-32 md:pt-100 md:pb-0">
           <div className="container flex flex-col md:flex-row gap-14">
-            <div className="w-full md:w-1/3 flex flex-col gap-10">
+            <div className="w-full md:w-1/3 md:flex flex-col gap-10 hidden">
               <div className="flip-card">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
@@ -24,9 +25,7 @@ const Venue = () => {
                   </div>
                   <div className="flip-card-back">
                     <p className="text-xl text-left leading-7 tracking-wider">
-                      Kakanfo Inn & Conference Center - Kakanfo Inn & Conference
-                      Center. Kakanfo Inn & Conference Center - Kakanfo Inn &
-                      Conference Center.
+                      Aweni Arena events center - Oke Ado, Ibadan.
                     </p>
                   </div>
                 </div>
@@ -61,7 +60,8 @@ const Venue = () => {
             </div>
           </div>
         </div>
-        <IconsArt_S className="hidden md:flex flex-col -mt-124" />
+        {/* <IconsArt_S className="hidden md:flex flex-col -mt-124" /> */}
+        <IconsArt className="" showFull={false} />
       </div>
     </>
   );

@@ -7,8 +7,7 @@ export const headerClass = {
     'flex items-center w-124 h-32 hover:scale-110 transition-transform duration-300 ease-in-out',
   headerMenu:
     'w-full pl-0 flex flex-col lg:flex-row items-center sm:gap-1 lg:gap-4 xl:gap-48',
-  showMenu:
-    'bg-pastel-blue absolute top-80 left-0 w-full p-20 flex lg:hidden z-10',
+  showMenu: 'bg-white absolute top-80 left-0 w-full p-20 flex lg:hidden z-10',
   toggleMenuBtn:
     'lg:hidden h-24 w-24 flex justify-center items-center border-none bg-transparent p-0',
   list: 'text-center my-4',

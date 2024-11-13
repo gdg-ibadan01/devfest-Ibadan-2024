@@ -55,7 +55,9 @@ const DFIHeader = (): ReactNode => {
             <nav className="lg:block">
               <ul className={styles.headerMenu}>
                 {menuItems.map(({ label, slur }) => (
-                  <MenuLink key={slur} label={label} slur={slur} />
+                  <div key={slur} onClick={showMenuFunc}>
+                    <MenuLink key={slur} label={label} slur={slur} />
+                  </div>
                 ))}
                 <Link href="https://dev2024-game.vercel.app/" target="_blank">
                   <Button className={styles.btn}>Play Puzzle Game</Button>
@@ -68,7 +70,9 @@ const DFIHeader = (): ReactNode => {
           <nav className={styles.showMenu}>
             <ul className={styles.headerMenu}>
               {menuItems.map(({ label, slur }) => (
-                <MenuLink key={slur} label={label} slur={slur} />
+                <div key={slur} onClick={showMenuFunc}>
+                  <MenuLink key={slur} label={label} slur={slur} />
+                </div>
               ))}
               <Link href="https://dev2024-game.vercel.app/" target="_blank">
                 <Button className={styles.btn}>Play Puzzle Game</Button>

@@ -33,7 +33,7 @@ const Inclusivity = () => {
             <div className="flex flex-col md:flex-row items-center gap-4">
               <Calendar />
               <p className="font-bold text-xl w-[320px] text-center md:text-left">
-                December 3rd, 2024, and join us from 9:00 AM to 5:00 PM{' '}
+                November 23rd, 2024, and join us by 8:00 AM prompt{' '}
               </p>
             </div>
             <p className="text-xl text-center">
