@@ -6,12 +6,14 @@ export type TspeakerProps = {
   name: string;
   title: string;
   src: StaticImageData;
+  brief?: string;
+  onClick?: () => void;
 };
 
 const SpeakerCard: FC<TspeakerProps> = (props) => {
-  const { name, src, title } = props;
+  const { name, src, title, onClick } = props;
   return (
-    <div className={Styles.wrapper}>
+    <div className={Styles.wrapper} onClick={onClick}>
       <section className={Styles.section}>
         <Image
           alt={`${name}-${title}`}
