@@ -20,9 +20,9 @@ export const agendaClass = {
   accordionItem: 'px-[10px] lg:px-[38px] border-y border-x-2 border-[#1E1E1E]',
   accordionContentContainer: 'mb-[30px] flex flex-col gap-[35px]',
   accordionTrigger:
-    'mb-5 font-bold text-[15px] lg:text-[20px] hover:no-underline',
+    'mb-5 font-bold text-[15px] text-left lg:text-[20px] hover:no-underline',
   accordionContent: 'flex flex-row items-center justify-between lg:gap-0 gap-5',
-  accordionContentTitle: 'text-[15px] lg:text-[20px] lg:w-auto w-[80%]',
+  accordionContentTitle: 'text-[15px] lg:text-[19px] lg:w-auto w-[80%]',
   accordionContentButton:
-    'border rounded-[63px] text-white border-[accordion-item-border] w-[80px] lg:w-[60px] h-[48px]',
+    'border rounded-[22px] text-white border-[accordion-item-border] w-[80px] lg:w-[85px] h-[35px]',
 };
