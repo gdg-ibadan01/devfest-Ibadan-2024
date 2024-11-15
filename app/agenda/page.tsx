@@ -214,7 +214,7 @@ export default function Agenda() {
           <section className={Styles.dateContainer}>
             <Calendar />
             <p className={Styles.date}>
-              December 3rd, 2024, and join us from 9:00 AM to 5:00 PM
+              November 23rd, 2024, and join us from 8:00 AM prompt
             </p>
           </section>
           <p className={Styles.headerText}>
