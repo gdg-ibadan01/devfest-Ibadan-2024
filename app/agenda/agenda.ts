@@ -21,8 +21,9 @@ export const agendaClass = {
   accordionContentContainer: 'mb-[30px] flex flex-col gap-[35px]',
   accordionTrigger:
     'mb-5 font-bold lg:w-[100%] text-[15px] text-left lg:text-[20px] hover:no-underline',
-  accordionContent: 'flex flex-row items-center justify-between lg:gap-0 gap-5',
-  accordionContentTitle: 'text-[15px] lg:text-[16px] lg:w-auto w-[80%]',
+  accordionContent:
+    'flex flex-row items-center justify-between lg:gap-0 gap-0 w-[100%]',
+  accordionContentTitle: 'text-[12px] lg:text-[16px] lg:w-auto w-[80%]',
   accordionContentButton:
-    'border-none rounded-[22px] text-white border-[accordion-item-border] px-[10px] h-[35px]',
+    'border-none rounded-[22px] text-white border-[accordion-item-border] lg:px-[10px] px-[15px] h-[35px] lg:text-[14px] text-[11px] leading-[10px] font-bold',
 };

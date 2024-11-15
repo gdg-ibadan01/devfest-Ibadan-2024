@@ -246,7 +246,7 @@ export default function Agenda() {
                   >
                     <section key={index} className={Styles.accordionContent}>
                       {item.title && (
-                        <div className="flex flex-col gap-6">
+                        <div className="flex flex-col gap-6 w-[80%]">
                           {item.title.map((titles, i) => (
                             <p key={i} className={Styles.accordionContentTitle}>
                               {titles}
@@ -255,7 +255,7 @@ export default function Agenda() {
                         </div>
                       )}
                       {item.details && (
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 lg:w-[12%] w-[30%] font-bold">
                           {item.details.map((detail, i) => (
                             <button
                               key={i}
