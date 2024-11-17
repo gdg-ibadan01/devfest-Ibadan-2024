@@ -1,4 +1,5 @@
 export const menuItems = [
+  { label: 'Agenda', slur: 'agenda' },
   { label: 'Speakers', slur: 'speakers' },
   { label: 'Organizers', slur: 'organizers' },
   { label: 'Schedule', slur: 'schedule' },
@@ -8,6 +9,7 @@ export const menuItems = [
 
 export const footerItems = {
   frameOne: [
+    { label: 'Agenda', slur: 'agenda' },
     { label: 'Sponsors', slur: 'sponsors' },
     { label: 'Organizers', slur: 'organizers' },
     { label: 'Schedule', slur: 'schedule' },
