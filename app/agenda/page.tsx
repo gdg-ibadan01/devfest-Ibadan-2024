@@ -48,24 +48,27 @@ export default function Agenda() {
       details: ['Hall Gemini'],
     },
     {
-      activity: 'Speaker Session 1 - Dr. Olusola Ayoola (Group Mailing)',
-      time: '9:20 am - 9:45 am',
-      title: ['Speaker Session 1 - Dr. Olusola Ayoola (Group Mailing)'],
-      details: ['Hall Gemini'],
-    },
-    {
       activity:
-        'Speaker Session 2 - Esther Ubeng (Creating valuable products that captivate and retain users)',
-      time: '9:50 am - 10:15 am',
+        'Speaker Session 1 - Raheem Nasirudeen (Principles of Responsible AI, Why, What, & How?)',
+      time: '9:20 am - 9:45 am',
       title: [
-        'Speaker Session 2 - Esther Ubeng (Creating valuable products that captivate and retain users)',
+        'Raheem Nasirudeen - (Principles of Responsible AI, Why, What, & How?)',
       ],
       details: ['Hall Gemini'],
     },
     {
-      activity: 'Keynote Speech 1',
+      activity:
+        'Speaker Session 2 - Feranmi Olowoyo (The Impact of Community on Developer Career Growth)',
+      time: '9:50 am - 10:15 am',
+      title: [
+        'Feranmi Olowoyo - (The Impact of Community on Developer Career Growth)',
+      ],
+      details: ['Hall Gemini'],
+    },
+    {
+      activity: 'Keynote Speech - Seye Bandele, CEO, PaidHR',
       time: '10:20 am - 10:50 am',
-      title: ['Keynote Speech 1'],
+      title: ['Keynote Speech - Seye Bandele, CEO, PaidHR'],
       details: ['Hall Gemini'],
     },
     {
@@ -75,17 +78,17 @@ export default function Agenda() {
       details: ['Hall Gemini'],
     },
     {
-      activity: 'Networking/Break',
+      activity: 'Networking',
       time: '11:00 am - 11:20 am',
-      title: ['Networking/Break'],
+      title: ['Networking'],
       details: ['Hall Gemini'],
     },
     {
       activity:
-        'Speaker Session 3 - Feranmi Olowoyo (The Impact of Community on Developer Career Growth)',
+        'Speaker Session 3 - Samuel Abada (The Power of Continuous Learning: Thriving in a Rapidly Evolving Tech Landscape)',
       time: '11:20 am - 11:45 am',
       title: [
-        'Speaker Session 3 - Feranmi Olowoyo (The Impact of Community on Developer Career Growth)',
+        'Samuel Abada - (The Power of Continuous Learning: Thriving in a Rapidly Evolving Tech Landscape)',
       ],
       details: ['Hall Gemini'],
     },
@@ -112,8 +115,12 @@ export default function Agenda() {
     {
       activity: 'Breakout Speaker Sessions 4 & 5 & 6',
       time: '01:25 pm - 01:50 pm',
-      title: ['Breakout Speaker Sessions 4 & 5 & 6'],
-      details: ['Hall Gemini'],
+      title: [
+        'Awosan Oyinkansola - (Accessible documentation: a win for all)',
+        'Uchenna Nnamadim - (QA"s Role in Startups: Moving Fast Without Breaking Things)',
+        'Dára Sobaloju - (Bridging Design and Development: Using LLMs to Facilitate Cross-Functional Collaboration)',
+      ],
+      details: ['Hall Gemini', 'Hall Vertex', 'Hall Gamma'],
     },
     {
       activity: 'Pictures / Item 7',
@@ -122,13 +129,14 @@ export default function Agenda() {
       details: ['Hall Gemini'],
     },
     {
-      activity: 'Panel Session',
+      activity: 'Panel Session - Responsible AI (Moderator - Ope Omole)',
       time: '02:25 pm - 03:10 pm',
       title: [
         'Ahmed Olanrewaju',
         'Israel Odeajo',
         'Aminat Akinyemi Ayoola',
         'Kingsley Owadara',
+        'Gift Ojeabulu',
       ],
       details: ['Hall Gemini'],
     },
@@ -169,14 +177,14 @@ export default function Agenda() {
       details: ['Hall Gemini'],
     },
     {
-      activity: 'Product Demo (Sponsors)',
-      time: '03:50 pm - 04:00 pm',
-      title: ['Product Demo (Sponsors)'],
+      activity: 'Presentation - TON Society (Sponsors)',
+      time: '03:50 pm - 04:05pm',
+      title: ['Presentation - TON (Sponsors)'],
       details: ['Hall Gemini'],
     },
     {
       activity: 'Organizer’s Speech/Presenting the Organizing Team',
-      time: '04:00 pm - 04:10 pm',
+      time: '04:05 pm - 04:15 pm',
       title: ['Organizer’s Speech/Presenting the Organizing Team'],
       details: ['Hall Gemini'],
     },
