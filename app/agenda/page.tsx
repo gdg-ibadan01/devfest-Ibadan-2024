@@ -65,10 +65,16 @@ export default function Agenda() {
       ],
       details: ['Hall Gemini'],
     },
+    // {
+    //   activity: 'Keynote Speech - Seye Bandele, CEO, PaidHR',
+    //   time: '10:20 am - 10:50 am',
+    //   title: ['Keynote Speech - Seye Bandele, CEO, PaidHR'],
+    //   details: ['Hall Gemini'],
+    // },
     {
-      activity: 'Keynote Speech - Seye Bandele, CEO, PaidHR',
+      activity: 'Keynote Speech - #',
       time: '10:20 am - 10:50 am',
-      title: ['Keynote Speech - Seye Bandele, CEO, PaidHR'],
+      title: ['Keynote Speech - #'],
       details: ['Hall Gemini'],
     },
     {
@@ -108,9 +114,10 @@ export default function Agenda() {
       title: [
         'Mustapha Adekunle - (Vertex AI Embeddings API + Vector Search Grounding LLMs made easy)',
         'Rebecca Saka - (Exploring Dart Beyond Flutter: Building CLI Applications and Best Practices)',
-        'Motunrayo Koyejo - (Building Scalable Backend Systems: From Prototype to Production)',
+        // 'Motunrayo Koyejo - (Building Scalable Backend Systems: From Prototype to Production)',
       ],
-      details: ['Hall Vertex', 'Hall Gemini', 'Hall Gamma'],
+      // details: ['Hall Vertex', 'Hall Gemini', 'Hall Gamma'],
+      details: ['Hall Vertex', 'Hall Gemini'],
     },
     {
       activity: 'Breakout Speaker Sessions 4 & 5 & 6',
