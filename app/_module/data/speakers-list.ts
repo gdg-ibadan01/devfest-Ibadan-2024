@@ -39,13 +39,13 @@ export const SpeakersList: TspeakerProps[] = [
   // },
 
   {
-    name: 'John O. Ajeigbe',
-    title: 'Software Engineer at AltSchool Africa',
-    src: '/speakers/john-o-ajeigbe.jpg',
+    name: 'Samuel Abada',
+    title: 'Google Developer Expert, Flutter & Dart',
+    src: '/speakers/samuel-abada.png',
     brief:
-      'John O. Ajeigbe is a Senior Software Engineer full-stack development, focusing on React, React-Native, Node.js, Golang, and TypeScript ecosystems, serving as a valuable Engineer at AltSchool Africa and also contributing as a dedicated Frontend Engineering Instructor at Beyond Theory. With a passion for both software development and education, John has made significant contributions to the tech industry and the growth of aspiring and Junior engineers.',
-    x: ' @john_pels',
-    linkedin: 'https://www.linkedin.com/in/ajeigbejohn',
+      'Samuel is a Google Developer Expert for Flutter and Dart and leads the mobile engineering efforts at Shuttlers Mobility. With 8 years of experience in the software industry, Samuel has spent the last 6 years focusing on mobile development, particularly with Flutter. They are a co-organizer of the Flutter Lagos and Flutter Akure communities, as well as the Google Developers Group Akure. Passionate about open-source technologies and building developer tooling, Samuel enjoys sharing knowledge through technical articles and speaking at events and conferences. Outside of coding, Samuel is an avid gamer, lover of anime.',
+    x: '@mastersam_',
+    linkedin: 'https://www.linkedin.com/in/abada-samuel',
   },
   {
     name: 'Great Oloyede',
@@ -155,13 +155,13 @@ export const SpeakersList: TspeakerProps[] = [
     linkedin: 'https://www.linkedin.com/in/nasirudeen-raheem-mscds-926b23157/',
   },
   {
-    name: 'Samuel Abada',
-    title: 'Google Developer Expert, Flutter & Dart',
-    src: '/speakers/samuel-abada.png',
+    name: 'John O. Ajeigbe',
+    title: 'Software Engineer at AltSchool Africa',
+    src: '/speakers/john-o-ajeigbe.jpg',
     brief:
-      'Samuel is a Google Developer Expert for Flutter and Dart and leads the mobile engineering efforts at Shuttlers Mobility. With 8 years of experience in the software industry, Samuel has spent the last 6 years focusing on mobile development, particularly with Flutter. They are a co-organizer of the Flutter Lagos and Flutter Akure communities, as well as the Google Developers Group Akure. Passionate about open-source technologies and building developer tooling, Samuel enjoys sharing knowledge through technical articles and speaking at events and conferences. Outside of coding, Samuel is an avid gamer, lover of anime.',
-    x: '@mastersam_',
-    linkedin: 'https://www.linkedin.com/in/abada-samuel',
+      'John O. Ajeigbe is a Senior Software Engineer full-stack development, focusing on React, React-Native, Node.js, Golang, and TypeScript ecosystems, serving as a valuable Engineer at AltSchool Africa and also contributing as a dedicated Frontend Engineering Instructor at Beyond Theory. With a passion for both software development and education, John has made significant contributions to the tech industry and the growth of aspiring and Junior engineers.',
+    x: ' @john_pels',
+    linkedin: 'https://www.linkedin.com/in/ajeigbejohn',
   },
   {
     name: 'Ahmed Olanrewaju',
