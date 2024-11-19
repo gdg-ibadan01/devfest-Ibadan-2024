@@ -38,7 +38,7 @@ const OurSpeakers = () => {
                 </Button>
               </Link> */}
             </div>
-            <section className="grid grid-cols-4 gap-24">
+            <section className="grid grid-cols-1 md:grid-cols-4 gap-24">
               {Speakers.map((data, idx) => (
                 <Fragment key={idx}>
                   <SpeakerCard {...data} />
