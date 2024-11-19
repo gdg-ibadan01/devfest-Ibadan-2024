@@ -4,19 +4,17 @@ import Cancel from '../../_module/components/icons/Cancel.svg';
 import Link from 'next/link';
 import XIcon from '@/public/X_icon.svg';
 import { Linkedin } from '../../_module/components/icons';
+import { TspeakerProps } from '@/app/_module/components/cards/SpeakerCard';
 
 type SpeakerModalProps = {
   setModal: Dispatch<SetStateAction<boolean>>;
-  speakerData: {
-    [key: string]: any;
-  };
+  speakerData: TspeakerProps;
 };
 
 const SpeakerModal: React.FC<SpeakerModalProps> = ({
   setModal,
   speakerData,
 }) => {
-  console.log('Modal', speakerData);
   const handleClose = (e: any) => {
     if (e.target.id === 'target') {
       setModal(false);
@@ -43,27 +41,24 @@ const SpeakerModal: React.FC<SpeakerModalProps> = ({
                 className="w-full object-cover border-2 border-black rounded-2xl"
                 src={speakerData.src}
                 alt={`${speakerData.name}-${speakerData.title}`}
-                width={100}
-                height={100}
+                width={500}
+                height={500}
               />
               <Link
-                href={'#'}
+                href={speakerData.mediaLink || '#'}
                 className="w-full block text-center py-5 bg-black text-white text-xl rounded-[65px]"
               >
                 Download Speaker Slide
               </Link>
-              {/* <div className="flex gap-5">
-                <Link href={'#'} className="p-2 bg-black rounded-full"></Link>
-              </div> */}
               <ul className="flex gap-3">
                 <li className="w-48 h-48 bg-black rounded-full p-2">
-                  <a href="#" target="_blank">
+                  <a href={speakerData.linkedin} target="_blank">
                     <Linkedin color="fill-white" fill="fill-social-dark" />
                   </a>
                 </li>
 
                 <li className="w-48 h-48 bg-black rounded-full p-2">
-                  <a href="#" target="_blank">
+                  <a href={`https://x.com/${speakerData.x}`} target="_blank">
                     <Image src={XIcon} alt="XIcon" className="rounded-lg" />
                   </a>
                 </li>

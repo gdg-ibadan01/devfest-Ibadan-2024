@@ -1,7 +1,9 @@
 'use client';
 
 import { Fragment, useState } from 'react';
-import SpeakerCard from '../_module/components/cards/SpeakerCard';
+import SpeakerCard, {
+  TspeakerProps,
+} from '../_module/components/cards/SpeakerCard';
 import { Button } from '../_module/components/ui/button';
 import { SpeakersList } from '../_module/data/speakers-list';
 import { speakersClass as Styles } from './speakers';
@@ -13,12 +15,7 @@ export default function Speakers() {
   const [modal, setModal] = useState(false);
   const [speakerData, setSpeakerData] = useState<{}>({});
 
-  const handleClick = (data: {
-    name: string;
-    title: string;
-    brief?: string;
-    src: StaticImageData;
-  }) => {
+  const handleClick = (data: TspeakerProps) => {
     setModal(true);
     setSpeakerData(data);
   };
@@ -42,7 +39,7 @@ export default function Speakers() {
         <section className={Styles.speakersListWrapper}>
           {SpeakersList.map((data, idx) => (
             <Fragment key={idx}>
-              <SpeakerCard onClick={handleClick} {...data} />
+              <SpeakerCard handleClick={handleClick} {...data} />
             </Fragment>
           ))}
         </section>
