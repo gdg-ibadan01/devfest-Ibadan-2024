@@ -13,7 +13,7 @@ export const agendaClass = {
   dateContainer:
     'flex items-center justify-center gap-[29px] max-w-[500px] mx-auto mb-[17px]',
   date: 'font-bold text-[20px] lg:text-[24px]',
-  headerText: 'text-[20px] lg:text-[24px] font-bold',
+  headerText: 'text-[20px] lg:text-[24px] font-bold text-center',
   inspirationText: 'text-[accordionButton2]',
   innovationText: 'text-[accordionButton1]',
   connectionText: 'text-[accordionButton4]',
