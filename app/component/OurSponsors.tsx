@@ -13,6 +13,9 @@ import youverify from '@/public/logo_iffgzd.svg';
 import heyfood from '@/public/logo-long.svg';
 import ship from '@/public/shiip.png';
 import halal from '@/public/SuegFTtO_400x400.jpg';
+import ton from '@/public/TONSociety.png';
+import github from '@/public/White2.png';
+import interswitch from '@/public/interswitch.jpg';
 import { Button } from '../_module/components/ui/button';
 
 interface SponsorImageProps {
@@ -23,7 +26,9 @@ interface SponsorImageProps {
 
 function SponsorImage({ imageSrc, alt, divClassName }: SponsorImageProps) {
   return (
-    <div className={divClassName}>
+    <div
+      className={`${divClassName} hover:scale-110 transition-transform duration-300`}
+    >
       <Image
         src={imageSrc}
         alt={alt}
@@ -39,7 +44,12 @@ const OurSponsors = () => {
       <div className="w-full md:max-w-[1500px] mx-auto py-32 md:py-80 px-24">
         <div className="container flex flex-col gap-52">
           <div className="w-full flex md:flex-row flex-col gap-3 items-center justify-between">
-            <h1 className="font-bold text-xl md:text-5xl">Our sponsors</h1>
+            <div>
+              <h1 className="font-bold text-xl md:text-5xl">Our sponsors</h1>
+              <p className="font-medium text-base pt-3 md:text-xl">
+                Meet our present sponsors
+              </p>
+            </div>
             <Link
               href="https://drive.google.com/file/d/11f8zdyoxljJ4TYRcHBDMfYtLqFkQDl_0/view"
               target="_blank"
@@ -51,23 +61,23 @@ const OurSponsors = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-24 overflow-hidden">
             <SponsorImage
+              imageSrc={google}
+              alt="Google"
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <SponsorImage
+              imageSrc={ton}
+              alt="Ton Society"
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <SponsorImage
+              imageSrc={github}
+              alt="Github Campus"
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <SponsorImage
               imageSrc={oneapp}
               alt="OneApp"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={turing}
-              alt="Turing"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={altschool}
-              alt="AltSchool"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={cardify}
-              alt="Cardify"
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <SponsorImage
@@ -76,35 +86,59 @@ const OurSponsors = () => {
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <SponsorImage
-              imageSrc={digitalocean}
-              alt="DigitalOcean"
+              imageSrc={interswitch}
+              alt="Interswitch"
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
-            <SponsorImage
-              imageSrc={google}
-              alt="Google"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={youverify}
-              alt="YouVerify"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={heyfood}
-              alt="Heyfood"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={ship}
-              alt="Ship"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={halal}
-              alt="Halal"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
+          </div>
+
+          <div className="">
+            <h1 className="font-bold text-xl md:text-3xl pb-5">
+              Meet our past sponsors
+            </h1>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-24 overflow-hidden">
+              <SponsorImage
+                imageSrc={turing}
+                alt="Turing"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+              <SponsorImage
+                imageSrc={altschool}
+                alt="AltSchool"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+              <SponsorImage
+                imageSrc={cardify}
+                alt="Cardify"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+              <SponsorImage
+                imageSrc={digitalocean}
+                alt="DigitalOcean"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+              <SponsorImage
+                imageSrc={youverify}
+                alt="YouVerify"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+              <SponsorImage
+                imageSrc={heyfood}
+                alt="Heyfood"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+              <SponsorImage
+                imageSrc={ship}
+                alt="Ship"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+              <SponsorImage
+                imageSrc={halal}
+                alt="Halal"
+                divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+              />
+            </div>
           </div>
         </div>
       </div>
