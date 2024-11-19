@@ -19,15 +19,16 @@ export const SpeakersList: TspeakerProps[] = [
     linkedin: 'https://linkedin.com/in/darasoba',
     x: '@darasoba',
   },
-  {
-    name: 'Motunrayo Koyejo',
-    title: 'Software Engineer, Brass',
-    src: '/speakers/motunrayo-koyejo.jpeg',
-    brief:
-      'Motunrayo Koyejo is a highly accomplished backend engineer with over 5 years of experience in crafting secure and scalable financial applications. Known for her innovative approach to solving complex challenges, she brings a practical and results-oriented perspective to every project. Beyond her technical work, Motunrayo is a dedicated mentor, guiding the next generation of engineers through volunteer initiatives. Her commitment to excellence and clear communication makes her a sought-after speaker for technical conferences and events.',
-    x: '@Motushbae',
-    linkedin: 'https://www.linkedin.com/in/motunrayokoyejo/',
-  },
+
+  // {
+  //   name: 'Motunrayo Koyejo',
+  //   title: 'Software Engineer, Brass',
+  //   src: '/speakers/motunrayo-koyejo.jpeg',
+  //   brief:
+  //     'Motunrayo Koyejo is a highly accomplished backend engineer with over 5 years of experience in crafting secure and scalable financial applications. Known for her innovative approach to solving complex challenges, she brings a practical and results-oriented perspective to every project. Beyond her technical work, Motunrayo is a dedicated mentor, guiding the next generation of engineers through volunteer initiatives. Her commitment to excellence and clear communication makes her a sought-after speaker for technical conferences and events.',
+  //   x: '@Motushbae',
+  //   linkedin: 'https://www.linkedin.com/in/motunrayokoyejo/',
+  // },
 
   {
     name: 'John O. Ajeigbe',
@@ -39,23 +40,6 @@ export const SpeakersList: TspeakerProps[] = [
     linkedin: 'https://www.linkedin.com/in/ajeigbejohn',
   },
   {
-    name: 'Feranmi Olowoyo',
-    title: 'Product Growth Manger - Zarttech',
-    src: 'https://sessionize.com/image/46b2-200o200o2-TGq13XouHfQB6gv2YPAdDy.jpg',
-    brief:
-      "Feranmi is an emerging voice in Nigeria's tech marketing ecosystem. Currently working as a Product Growth Manager at Zarttech, she drives growth through innovative marketing strategies and community engagement. With nearly five years of experience in community management, product marketing, growth marketing, content creation, and social media management, Feranmi has made her mark across various sectors within tech, including blockchain, edtech, venture capital, and talent outsourcing.",
-    linkedin: 'https://www.linkedin.com/in/feranmi-olowoyo',
-    x: '@feranmiolowoyo',
-  },
-  {
-    name: 'Esther Uben',
-    title: 'Glover Technology, Product Manager',
-    src: 'https://sessionize.com/image/1a9e-200o200o2-Be1V7WJZEvcvyUJcqN1qYW.jpg',
-    brief:
-      "As a Product Manager, I've been the driving force behind some exciting developments. From spearheading the integration of a gamified loyalty reward system, and segmenting user KYC levels and limits, to ensuring our products are not just functional, but truly resonate with our users, I'm all about crafting experiences that matter.",
-    x: '@tzz_ehstee',
-  },
-  {
     name: 'Great Oloyede',
     title: 'Content Manager',
     src: '/speakers/great-oloyede.jpg',
@@ -65,14 +49,22 @@ export const SpeakersList: TspeakerProps[] = [
     linkedin: 'https://www.linkedin.com/in/great-oloyede',
   },
   {
-    name: 'Makinde Daniel',
-    title: 'True Path Vison (USA), Senior Mobile Developer',
-    src: 'https://sessionize.com/image/e400-200o200o2-S3jPcVT6pZEaVXxGAX5V7z.jpg',
+    name: 'Feranmi Olowoyo',
+    title: 'Product Growth Manger - Zarttech',
+    src: 'https://sessionize.com/image/46b2-200o200o2-TGq13XouHfQB6gv2YPAdDy.jpg',
     brief:
-      'Daniel Makinde is an award-winning senior software developer with over 6 years of experience in the tech industry. Daniel is very passionate about helping companies, and start-up likewise, in the deployment of technology to grow their business. Daniel has built more than fifteen (15) mobile applications, that are presently on PlayStore and AppStore, he has also worked on notable projects in Nigeria, the UK, the USA, Sierra Leone, Ghana, and India, some of which are popular WAEC app (West Africa), FRSC mobile app, FirstBank mobile apps, Energy apps of EKEDC, IKEDC, EEDC, E-commerce app and Fintech apps. It is very important to note that he combined the execution of these projects with the mentoring of over ten (15) developers who are currently enjoying great success in the industry',
-    x: '@Makindedaniel',
-    linkedin: 'https://www.linkedin.com/in/makinde-daniel/',
+      "Feranmi is an emerging voice in Nigeria's tech marketing ecosystem. Currently working as a Product Growth Manager at Zarttech, she drives growth through innovative marketing strategies and community engagement. With nearly five years of experience in community management, product marketing, growth marketing, content creation, and social media management, Feranmi has made her mark across various sectors within tech, including blockchain, edtech, venture capital, and talent outsourcing.",
+    linkedin: 'https://www.linkedin.com/in/feranmi-olowoyo',
+    x: '@feranmiolowoyo',
   },
+  // {
+  //   name: 'Esther Uben',
+  //   title: 'Glover Technology, Product Manager',
+  //   src: 'https://sessionize.com/image/1a9e-200o200o2-Be1V7WJZEvcvyUJcqN1qYW.jpg',
+  //   brief:
+  //     "As a Product Manager, I've been the driving force behind some exciting developments. From spearheading the integration of a gamified loyalty reward system, and segmenting user KYC levels and limits, to ensuring our products are not just functional, but truly resonate with our users, I'm all about crafting experiences that matter.",
+  //   x: '@tzz_ehstee',
+  // },
   {
     name: 'Mustapha Adekunle',
     title: 'Data Engineer and Advocate. 5X Google Cloud Certified.',
@@ -83,8 +75,18 @@ export const SpeakersList: TspeakerProps[] = [
     linkedin: 'https://www.linkedin.com/in/mustaphaadekunle/',
   },
   {
+    name: 'Makinde Daniel',
+    title: 'True Path Vison (USA), Senior Mobile Developer',
+    src: 'https://sessionize.com/image/e400-200o200o2-S3jPcVT6pZEaVXxGAX5V7z.jpg',
+    brief:
+      'Daniel Makinde is an award-winning senior software developer with over 6 years of experience in the tech industry. Daniel is very passionate about helping companies, and start-up likewise, in the deployment of technology to grow their business. Daniel has built more than fifteen (15) mobile applications, that are presently on PlayStore and AppStore, he has also worked on notable projects in Nigeria, the UK, the USA, Sierra Leone, Ghana, and India, some of which are popular WAEC app (West Africa), FRSC mobile app, FirstBank mobile apps, Energy apps of EKEDC, IKEDC, EEDC, E-commerce app and Fintech apps. It is very important to note that he combined the execution of these projects with the mentoring of over ten (15) developers who are currently enjoying great success in the industry',
+    x: '@Makindedaniel',
+    linkedin: 'https://www.linkedin.com/in/makinde-daniel/',
+  },
+
+  {
     name: 'Oyinkansola Awosan',
-    title: 'Technical Writer, Remita',
+    title: 'Technical Writer',
     src: '/speakers/oyinkansola-awosan.jpeg',
     brief:
       'Oyinkansola is a Technical Writer with experience in Machine Learning and DevOps. She is interested in NLP research, particularly for African languages, and has contributed to a couple of research projects. When she is not cooking up some sweet documentation or article, she is contributing to communities, volunteering, reading books, traveling, or watching Friends for the 100th time.',
@@ -152,5 +154,56 @@ export const SpeakersList: TspeakerProps[] = [
       'Samuel is a Google Developer Expert for Flutter and Dart and leads the mobile engineering efforts at Shuttlers Mobility. With 8 years of experience in the software industry, Samuel has spent the last 6 years focusing on mobile development, particularly with Flutter. They are a co-organizer of the Flutter Lagos and Flutter Akure communities, as well as the Google Developers Group Akure. Passionate about open-source technologies and building developer tooling, Samuel enjoys sharing knowledge through technical articles and speaking at events and conferences. Outside of coding, Samuel is an avid gamer, lover of anime.',
     x: '@mastersam_',
     linkedin: 'https://www.linkedin.com/in/abada-samuel',
+  },
+  {
+    name: 'Ahmed Olanrewaju',
+    title: 'Assistant Chief System Analyst, University of Ibadan',
+    src: '/speakers/ahmed-olanrewaju.jpg',
+    brief:
+      'Ahmed Babajide Olanrewaju serves as the Assistant Chief System Analyst at the University of Ibadan, where he has significantly advanced the technological landscape through his expertise in digital systems and data science. With a Master’s in Computer Science, Ahmed has been instrumental in pioneering and managing the University’s Learning Management System, Online Journal System, enhancing digital literacy through tailored training programs, and leading the adoption of GIS tools across campus. His work extends beyond academia into impactful community engagement, where he leads initiatives to democratize AI and machine learning technologies. A co-founder of AI Saturdays Ibadan, Ibadan R users group, IndabaX Nigeria. He is an active member of the Nigeria Computer Society and the Geo-Information Society of Nigeria, Ahmed’s dedication to technology and education has facilitated numerous workshops and seminars, contributing to a broader understanding and application of tech solutions in educational settings. At DevFest Ibadan 2024, Ahmed looks forward to sharing insights from his extensive experience in harnessing technology to foster educational and societal growth.',
+    x: '@abono2000',
+    linkedin: 'https://www.linkedin.com/in/ahmed-olanrewaju-093b7b4a/',
+  },
+
+  {
+    name: 'Israel Odeajo',
+    title: 'AI Engineer, Join momemtum, UK',
+    src: '/speakers/odeajo-israel.jpg',
+    brief:
+      'Israel Odeajo is a highly accomplished technology professional known for his deep expertise in AI, data science, machine learning, and software development. Certified as a Microsoft Responsible AI Coach, Google TensorFlow Developer, Google Web/Mobile Developer, and Google IT Support Specialist, Israel has applied his skills to create impactful AI solutions across diverse sectors. With a career spanning software development, engineering, database administration, and programming, Israel has built and implemented AI-driven projects that address real-world challenges. His projects include predictive models for crime forecasting, hospital readmission risk prediction, and customer purchase propensity in e-commerce. These solutions, built using cutting-edge techniques, help organizations optimize operations, improve decision-making, and enhance user experiences.',
+    x: '@israelkingz1',
+    linkedin: 'https://www.linkedin.com/in/odeajo-israel/',
+  },
+
+  {
+    name: 'Aminat Akinyemi Ayoola',
+    title:
+      'Academic Director and course facilitator at Robotics and Artificial Intelligence Nigeria (RAIN)',
+    src: '/speakers/aminat-akinyemi.png',
+    brief:
+      'Mrs. Aminat Akinyemi Ayoola is a highly esteemed AI researcher in Nigeria. As the Academic Director and course facilitator at Robotics and Artificial Intelligence Nigeria (RAIN), she plays a pivotal role in shaping the future of AI education and innovation in the country. Aminat is responsible for designing the curriculum for the Artificial Intelligence and Machine Learning course at RAIN, where she also teaches Python programming, machine learning, data science, and deep learning. Additionally, she supervises the projects of trainees, ensuring they gain hands-on experience and practical knowledge.',
+    x: '#',
+    linkedin:
+      'https://www.linkedin.com/in/aminat-akinyemi-ayoola-52b5a3107/?originalSubdomain=uk',
+  },
+
+  {
+    name: 'Kingsley Owadara',
+    title: 'AI Ethicist, Pan-Africa Center for AI Ethics',
+    src: '/speakers/kingsley-owadara.jpeg',
+    brief:
+      'Kingsley Owadara (He/Him) is an AI Ethicist at the Pan-Africa Center for AI Ethics, a dedicated not-for-profit organization committed to fostering the development, deployment and use of AI in a manner that prioritizes human-centric values. At the heart of his role, he spearheads the initiative to craft and refine ethical frameworks and AI policies, ensuring that artificial intelligence technologies are developed and deployed with a strong emphasis on human values, ethics, and inclusivity.',
+    x: '@kingsbami',
+    linkedin: 'https://www.linkedin.com/in/kingsley-owadara/',
+  },
+
+  {
+    name: 'Gift Ojeabulu',
+    title: 'Co-founder of Data Community Africa',
+    src: '/speakers/gift-ojeabulu.jpg',
+    brief:
+      'Gift Ojeabulu is a distinguished Data scientist, Co-founder of Data Community Africa, and advisory board member at DevNetwork, AWS ML Community Builder and an ML Developer Advocate. His professional expertise lies in machine learning, focusing particularly on sports analytics and developer relations. As a dedicated AI and Python advocate, Gift has made significant strides in empowering African data communities. He spearheaded the African Data Community Newsletter, a widely read publication reaching audiences across 45 countries and 8 U.S. states, with over 2,200 subscribers. This initiative has evolved over time, spawning impactful projects like MLOps Lagos and a full-fledged non-profit organization popular known for orchestrating the DatafestAfrica conference.',
+    x: '@giftojeabulu_',
+    linkedin: 'https://www.linkedin.com/in/gift-ojabu/',
   },
 ];

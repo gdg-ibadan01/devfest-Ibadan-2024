@@ -15,7 +15,7 @@ const Recap = () => {
               <h1 className="font-bold text-2xl md:text-3xl">
                 Recap of DevFest Ibadan &apos;23
               </h1>
-              <Link
+              {/* <Link
                 href=""
                 className="hidden md:block py-7 px-52 border-[1px] border-black hover:border-core-blue bg-white  text-black hover:text-white hover:bg-core-blue rounded-[100px]"
               >
@@ -26,7 +26,7 @@ const Recap = () => {
                 className="block md:hidden p-5 md:px-52 border-[1px] border-black bg-black text-white hover:bg-core-blue hover:text-white rounded-full"
               >
                 <ArrowUpRight />
-              </Link>
+              </Link> */}
             </div>
 
             <div className="scroll-container overflow-hidden relative">

@@ -10,6 +10,7 @@ import { speakersClass as Styles } from './speakers';
 import ComingSoon from '../_module/components/common/ComingSoon';
 import SpeakerModal from './components/speaker-modal';
 import { StaticImageData } from 'next/image';
+import clsx from 'clsx';
 
 export default function Speakers() {
   const [modal, setModal] = useState(false);
@@ -25,8 +26,8 @@ export default function Speakers() {
   };
 
   return (
-    <div className={Styles.container}>
-      <main className={Styles.main}>
+    <div className={clsx(Styles.container)}>
+      <main className={clsx(Styles.main, '3xl:max-w-[1440px] mx-auto')}>
         <header className={Styles.header}>
           <section className={Styles.headerSection}>
             <h1 className={Styles.headerSectionHeading}>
@@ -38,7 +39,7 @@ export default function Speakers() {
               and experiences with you.{' '}
             </p>
           </section>
-          <Button className={Styles.headerButton}> Apply to Speak </Button>
+          {/* <Button className={Styles.headerButton}> Apply to Speak </Button> */}
         </header>
         <section className={Styles.speakersListWrapper}>
           {SpeakersList.map((data, idx) => (

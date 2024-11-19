@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 import { speakersCardClass as Styles } from './speaker-card';
+import clsx from 'clsx';
 
 export type TspeakerProps = {
   name: string;
@@ -32,7 +33,7 @@ const SpeakerCard: FC<TspeakerProps> = (props) => {
           height={500}
         />
       </section>
-      <div className={Styles.nameTitleWrapper}>
+      <div className={clsx(Styles.nameTitleWrapper, 'h-full')}>
         <h1 className={Styles.name}>{name}</h1>
         <p className={Styles.title}>{title}</p>
       </div>

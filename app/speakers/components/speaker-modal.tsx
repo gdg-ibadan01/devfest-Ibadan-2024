@@ -24,11 +24,11 @@ const SpeakerModal: React.FC<SpeakerModalProps> = ({
   return (
     <>
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs flex justify-center items-center px-5 md:px-10 z-10 overflow-scroll"
+        className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs flex justify-center items-center px-5 md:px-10 z-[999] overflow-scroll"
         id="target"
         onClick={handleClose}
       >
-        <div className="w-full max-w-[1200px] mx-auto bg-white rounded-xl p-5 md:p-10 ">
+        <div className="w-full max-w-[1200px] mx-auto bg-white rounded-xl p-5 md:p-10">
           <Image
             src={Cancel}
             alt="Cancel"
@@ -42,14 +42,15 @@ const SpeakerModal: React.FC<SpeakerModalProps> = ({
                 src={speakerData.src}
                 alt={`${speakerData.name}-${speakerData.title}`}
                 width={500}
-                height={500}
+                height={400}
+                style={{ height: '400px' }}
               />
-              <Link
+              {/* <Link
                 href={speakerData.mediaLink || '#'}
                 className="w-full block text-center py-5 bg-black text-white text-xl rounded-[65px]"
               >
                 Download Speaker Slide
-              </Link>
+              </Link> */}
               <ul className="flex gap-3">
                 <li className="w-48 h-48 bg-black rounded-full p-2">
                   <a href={speakerData.linkedin} target="_blank">

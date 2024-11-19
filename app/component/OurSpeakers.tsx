@@ -29,14 +29,14 @@ const OurSpeakers = () => {
                 </Button>
               </Link>
 
-              <Link
+              {/* <Link
                 href="https://sessionize.com/devfest-ibadan-2024"
                 target="_blank"
               >
                 <Button className="bg-white text-black hover:border-core-blue hover:bg-core-blue  text-sm md:text-xl px-20 md:px-52 py-4 md:py-10 border-[1px] border-black rounded-[100px]">
                   Apply to Speak
                 </Button>
-              </Link>
+              </Link> */}
             </div>
             <section className="grid grid-cols-4 gap-24">
               {Speakers.map((data, idx) => (
