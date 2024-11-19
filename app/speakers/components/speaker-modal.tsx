@@ -28,7 +28,7 @@ const SpeakerModal: React.FC<SpeakerModalProps> = ({
         id="target"
         onClick={handleClose}
       >
-        <div className="w-full max-w-[1200px] mx-auto bg-white rounded-xl p-5 md:p-10">
+        <div className="w-full max-w-[1200px] relative mx-auto bg-white rounded-xl p-5 md:p-10 h-full max-h-[80vh] md:h-auto overflow-scroll">
           <Image
             src={Cancel}
             alt="Cancel"
@@ -38,12 +38,12 @@ const SpeakerModal: React.FC<SpeakerModalProps> = ({
           <div className="w-full flex flex-col-reverse md:flex-row gap-5 md:gap-10">
             <div className="w-full md:w-2/5 flex flex-col gap-3">
               <Image
-                className="w-full object-cover border-2 border-black rounded-2xl"
+                className="w-full object-cover border-2 border-black rounded-2xl !h-[300px] md:!h-[400px]"
                 src={speakerData.src}
                 alt={`${speakerData.name}-${speakerData.title}`}
                 width={500}
                 height={400}
-                style={{ height: '400px' }}
+                // style={{ height: '400px' }}
               />
               {/* <Link
                 href={speakerData.mediaLink || '#'}
