@@ -9,11 +9,11 @@ export const footerClass = {
   menuWrapper: 'flex flex-col lg:flex-row justify-between gap-48 lg:gap-80',
   menu: 'flex flex-col gap-16 text-left',
   socialsWrapper: 'flex flex-col gap-20 text-center lg:text-left',
-  socials: 'flex justify-around lg:justify-start gap-72',
+  socials: 'flex justify-around lg:justify-start gap-48 md:gap-72',
   socialLink: 'inline-block h-48 w-48',
   btn: 'text-sm rounded-3xl hover:bg-core-blue border-solid border-black order-1 lg:order-2',
   location: 'max-w-[500px]',
   pSm: 'text-sm',
   socialsCopyright:
-    'flex flex-col order-2 lg:order-1 gap-4 text-center lg:text-left',
+    'w-fit flex flex-col order-2 lg:order-1 gap-4 text-center lg:text-left',
 };

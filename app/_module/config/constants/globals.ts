@@ -1,16 +1,18 @@
 export const menuItems = [
+  { label: 'Agenda', slur: 'agenda' },
   { label: 'Speakers', slur: 'speakers' },
   { label: 'Organizers', slur: 'organizers' },
-  { label: 'Schedule', slur: 'schedule' },
+  // { label: 'Schedule', slur: 'schedule' },
   { label: 'Merch', slur: 'https://selar.co/m/gdg-ibadan1' },
   // { label: 'Team', slur: 'team' },
 ];
 
 export const footerItems = {
   frameOne: [
+    { label: 'Agenda', slur: 'agenda' },
     { label: 'Sponsors', slur: 'sponsors' },
     { label: 'Organizers', slur: 'organizers' },
-    { label: 'Schedule', slur: 'schedule' },
+    // { label: 'Schedule', slur: 'schedule' },
     { label: 'Speakers', slur: 'speakers' },
     { label: 'Merch', slur: 'https://selar.co/m/gdg-ibadan1' },
   ],
