@@ -65,18 +65,18 @@ export default function Agenda() {
       ],
       details: ['Hall Gemini'],
     },
-    // {
-    //   activity: 'Keynote Speech - Seye Bandele, CEO, PaidHR',
-    //   time: '10:20 am - 10:50 am',
-    //   title: ['Keynote Speech - Seye Bandele, CEO, PaidHR'],
-    //   details: ['Hall Gemini'],
-    // },
     {
-      activity: 'Keynote Speech - #',
+      activity: 'Keynote Speech - Seye Bandele, CEO, PaidHR',
       time: '10:20 am - 10:50 am',
-      title: ['Keynote Speech - #'],
+      title: ['Keynote Speech - Seye Bandele, CEO, PaidHR'],
       details: ['Hall Gemini'],
     },
+    // {
+    //   activity: 'Keynote Speech - #',
+    //   time: '10:20 am - 10:50 am',
+    //   title: ['Keynote Speech - #'],
+    //   details: ['Hall Gemini'],
+    // },
     {
       activity: 'Product Demo (Sponsors)',
       time: '10:50 am - 11:00 am',

@@ -1,7 +1,6 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { SetStateAction, Dispatch } from 'react';
 import Cancel from '../../_module/components/icons/Cancel.svg';
-import Link from 'next/link';
 import XIcon from '@/public/X_icon.svg';
 import { Linkedin } from '../../_module/components/icons';
 import { TspeakerProps } from '@/app/_module/components/cards/SpeakerCard';

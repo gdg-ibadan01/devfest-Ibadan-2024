@@ -1,7 +1,15 @@
 import { TspeakerProps } from '../components/cards/SpeakerCard';
-import SpeakerImg from '@/public/speakerimg.png';
 
 export const SpeakersList: TspeakerProps[] = [
+  {
+    name: 'Seye Bandele',
+    title: 'CEO - PaidHR',
+    src: '/speakers/seye-ban.png',
+    brief:
+      "Meet Seye Bandele; co-founder and CEO of PaidHR, a fast-growing HR & Payroll tech company dedicated to streamlining & simplifying HR & Payroll processes comprehensively across the continent. A graduate of Agric Science, Seye has over 14 years experience in various disciplines in Tech, leading teams across prestigious organizations like Dealdey, Yudala & Konga and now PaidHR. He has also supported organizations like Flour Mills of Nigeria and Coscharis Group via his marketing consulting practice. Alongside his role at PaidHR, Seye is an avid advocate for Africa's potential, particularly in the realm of future work. He believes that Africa has the potential to become the world’s most productive continent and is helping to build the future where work is simplified and the lives of African workers are improved. He's also deeply committed to empowering entrepreneurs, helping to facilitate over $3 million in funding for startups across diverse sectors over the past three years.",
+    linkedin: 'https://www.linkedin.com/in/seye-bandele-9550573b/',
+    x: '@seyedele',
+  },
   {
     name: 'Oluwole Adebiyi',
     title: 'Moniepoint - Program Manager',
