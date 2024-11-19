@@ -13,7 +13,11 @@ import { StaticImageData } from 'next/image';
 
 export default function Speakers() {
   const [modal, setModal] = useState(false);
-  const [speakerData, setSpeakerData] = useState<{}>({});
+  const [speakerData, setSpeakerData] = useState<TspeakerProps>({
+    name: '',
+    title: '',
+    src: null as unknown as StaticImageData,
+  });
 
   const handleClick = (data: TspeakerProps) => {
     setModal(true);
