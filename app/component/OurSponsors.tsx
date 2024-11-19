@@ -15,7 +15,8 @@ import ship from '@/public/shiip.png';
 import halal from '@/public/SuegFTtO_400x400.jpg';
 import ton from '@/public/TONSociety.png';
 import github from '@/public/White2.png';
-import interswitch from '@/public/interswitch.jpg';
+// import interswitch from '@/public/interswitch.jpg';
+import interswitch from '@/public/inter-switch.png';
 import { Button } from '../_module/components/ui/button';
 
 interface SponsorImageProps {
@@ -66,8 +67,18 @@ const OurSponsors = () => {
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <SponsorImage
+              imageSrc={codemagic}
+              alt="Codemagic"
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <SponsorImage
               imageSrc={ton}
               alt="Ton Society"
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <SponsorImage
+              imageSrc={interswitch}
+              alt="Interswitch"
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <SponsorImage
@@ -78,16 +89,6 @@ const OurSponsors = () => {
             <SponsorImage
               imageSrc={oneapp}
               alt="OneApp"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={codemagic}
-              alt="Codemagic"
-              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
-            />
-            <SponsorImage
-              imageSrc={interswitch}
-              alt="Interswitch"
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
           </div>
