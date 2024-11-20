@@ -10,7 +10,7 @@ export const menuItems = [
 export const footerItems = {
   frameOne: [
     { label: 'Agenda', slur: 'agenda' },
-    { label: 'Sponsors', slur: 'sponsors' },
+    // { label: 'Sponsors', slur: 'sponsors' },
     { label: 'Organizers', slur: 'organizers' },
     // { label: 'Schedule', slur: 'schedule' },
     { label: 'Speakers', slur: 'speakers' },
