@@ -15,14 +15,17 @@ import ship from '@/public/shiip.png';
 import halal from '@/public/SuegFTtO_400x400.jpg';
 import ton from '@/public/TONSociety.png';
 import github from '@/public/White2.png';
+import lorry from '@/public/lorry.png';
 // import interswitch from '@/public/interswitch.jpg';
 import interswitch from '@/public/inter-switch.png';
 import { Button } from '../_module/components/ui/button';
+import { cn } from '../_module/lib/utils';
 
 interface SponsorImageProps {
   imageSrc: StaticImageData;
   alt: string;
   divClassName: string;
+  imgDimension?: string;
 }
 
 function SponsorImage({ imageSrc, alt, divClassName }: SponsorImageProps) {
@@ -33,7 +36,7 @@ function SponsorImage({ imageSrc, alt, divClassName }: SponsorImageProps) {
       <Image
         src={imageSrc}
         alt={alt}
-        className="h-full object-center object-contain"
+        className={cn('h-full object-center object-contain')}
       />
     </div>
   );
@@ -84,6 +87,11 @@ const OurSponsors = () => {
             <SponsorImage
               imageSrc={github}
               alt="Github Campus"
+              divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
+            />
+            <SponsorImage
+              imageSrc={lorry}
+              alt="Lorry Project"
               divClassName="bg-white p-5 md:p-10 border-[1px] border-[#f0f0f0] rounded-2xl h-[100px] md:h-[200px]"
             />
             <SponsorImage
