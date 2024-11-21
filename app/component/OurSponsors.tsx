@@ -15,7 +15,7 @@ import ship from '@/public/shiip.png';
 import halal from '@/public/SuegFTtO_400x400.jpg';
 import ton from '@/public/TONSociety.png';
 import github from '@/public/White2.png';
-import lorry from '@/public/lorry.png';
+import lorry from '@/public/lorry.jpg';
 // import interswitch from '@/public/interswitch.jpg';
 import interswitch from '@/public/inter-switch.png';
 import { Button } from '../_module/components/ui/button';

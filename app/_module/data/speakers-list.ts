@@ -214,4 +214,22 @@ export const SpeakersList: TspeakerProps[] = [
     x: '@giftojeabulu_',
     linkedin: 'https://www.linkedin.com/in/gift-ojabu/',
   },
+  {
+    name: 'Nkpozi Marcel',
+    title: 'Mobile engineer',
+    src: '/speakers/nkpozi-marcel.png',
+    brief:
+      'A graduate of Electrical Engineering with 3+ years of professional experience in flutter. I am passionate about the health and energy sector and believe technology is the key to realizing these aspirations and making a difference in both areas. Beyond my professional endeavors, I enjoy technical debates with peers, volunteering, reading, and playing football, and can be described more from the meaning of my favorite quote: UMUNTU NGUMUNTU NGABANTU',
+    x: '@_Captured_Heart',
+    linkedin: 'https://www.linkedin.com/in/nkpozi-marcel/',
+  },
+  {
+    name: 'Uchenna Agams',
+    title: 'Co-builder TON,',
+    src: '/speakers/agamidodaigwe.jpg',
+    brief:
+      'Uchenna is a Web3 professional with experience and expertise in community building, blockchain research, analysis, and education. He believes that blockchain technology is the future and as such adequate education and healthy community ideals are key to its adoption',
+    x: '@agamidodaigwe',
+    linkedin: 'https://www.linkedin.com/in/agams/',
+  },
 ];
