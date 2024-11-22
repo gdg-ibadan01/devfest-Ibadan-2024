@@ -17,6 +17,7 @@ export const SpeakersList: TspeakerProps[] = [
     brief:
       'I have worked with several startups in Nigeria and built my own, which was acquired. From working with Flutterwave to build plugins for merchants to use, to leading the frontend development effort at Cowrywise, and building Buyfood and Grocel—processing over 4.5 billion naira in transaction volume—I now lead the effort on business tools at Moniepoint.',
     linkedin: 'https://www.linkedin.com/in/adebiyi-oluwole-b66bb1107/',
+    x: '@__wole__',
   },
   {
     name: 'Dara Sobaloju',
@@ -59,7 +60,7 @@ export const SpeakersList: TspeakerProps[] = [
   {
     name: 'Feranmi Olowoyo',
     title: 'Product Growth Manger - Zarttech',
-    src: 'https://sessionize.com/image/46b2-200o200o2-TGq13XouHfQB6gv2YPAdDy.jpg',
+    src: '/speakers/feranmi-olowoyo.jpg',
     brief:
       "Feranmi is an emerging voice in Nigeria's tech marketing ecosystem. Currently working as a Product Growth Manager at Zarttech, she drives growth through innovative marketing strategies and community engagement. With nearly five years of experience in community management, product marketing, growth marketing, content creation, and social media management, Feranmi has made her mark across various sectors within tech, including blockchain, edtech, venture capital, and talent outsourcing.",
     linkedin: 'https://www.linkedin.com/in/feranmi-olowoyo',
