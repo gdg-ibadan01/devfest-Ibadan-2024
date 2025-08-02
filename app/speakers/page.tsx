@@ -28,7 +28,18 @@ export default function Speakers() {
   return (
     <div className={clsx(Styles.container)}>
       <main className={clsx(Styles.main, '3xl:max-w-[1440px] mx-auto')}>
-        <header className={Styles.header}>
+        <section className="flex gap-5 flex-col items-center py-24">
+          <h1 className="text-5xl font-bold text-center">
+            Speakers Coming Soon
+          </h1>
+          <p className="text-xl font-extralight text-[#4D4D4D] md:w-[820px] text-center">
+            Our speaker lineup is almost here! Prepare to be inspired by
+            industry leaders, tech innovators, and creative thinkers who will
+            transform your DevFest experience.
+          </p>
+        </section>
+
+        {/* <header className={Styles.header}>
           <section className={Styles.headerSection}>
             <h1 className={Styles.headerSectionHeading}>
               Meet our amazing speakers
@@ -39,17 +50,17 @@ export default function Speakers() {
               and experiences with you.{' '}
             </p>
           </section>
-          {/* <Button className={Styles.headerButton}> Apply to Speak </Button> */}
-        </header>
-        <section className={Styles.speakersListWrapper}>
+        </header> */}
+        {/* <Button className={Styles.headerButton}> Apply to Speak </Button> */}
+        {/* <section className={Styles.speakersListWrapper}>
           {SpeakersList.map((data, idx) => (
             <Fragment key={idx}>
               <SpeakerCard handleClick={handleClick} {...data} />
             </Fragment>
           ))}
-        </section>
+        </section> */}
       </main>
-      {modal && <SpeakerModal setModal={setModal} speakerData={speakerData} />}
+      {/* {modal && <SpeakerModal setModal={setModal} speakerData={speakerData} />} */}
     </div>
   );
 }
