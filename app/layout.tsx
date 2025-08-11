@@ -6,7 +6,7 @@ import { google_sans } from './shared/font';
 import { ReactLenis } from '@/utils/lenis';
 
 export const metadata: Metadata = {
-  title: 'Devfest Ibadan 2024',
+  title: 'Devfest Ibadan 2025',
   description: 'The Biggest GDG Event in Ibadan',
 };
 

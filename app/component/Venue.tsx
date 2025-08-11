@@ -25,7 +25,8 @@ const Venue = () => {
                   </div>
                   <div className="flip-card-back">
                     <p className="text-xl text-left leading-7 tracking-wider">
-                      Aweni Arena events center - Oke Ado, Ibadan.
+                      Jogor Center, No. 1 Harvester Drive, Liberty Road, New
+                      GRA, Ibadan
                     </p>
                   </div>
                 </div>
