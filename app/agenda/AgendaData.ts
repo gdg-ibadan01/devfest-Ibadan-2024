@@ -5,7 +5,7 @@ export type AgendaItem = {
   highlight?: boolean;
 };
 
-export const agendaData = {
+export const agendaData: { day1: AgendaItem[]; day2: AgendaItem[] } = {
   day1: [
     {
       time: '9:00 am - 9:30 am',
