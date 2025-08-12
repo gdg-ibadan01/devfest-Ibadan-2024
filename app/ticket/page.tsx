@@ -4,9 +4,16 @@ import CheckOut from './components/CheckOut';
 import Summary from './components/Summary';
 import { AnimatePresence, motion } from 'framer-motion';
 import useMediaQueryWatcher from '../_module/config/hooks/useMediaQueryWatcher';
+import TicketComp from './components/TicketComp';
 
 export default function Ticket() {
   const isTablet = useMediaQueryWatcher('(min-width: 1024px)')
+  const [selectedPackage, setSelectedPackage] = useState({
+    key: '',
+    day: '',
+    activityType: '',
+    price: 0,
+  });
   const [view, setView] = useState('checkout');
   const [formData, setFormData] = useState({
     fullName: '',
@@ -20,16 +27,22 @@ export default function Ticket() {
       case 'checkout':
         return (
           <CheckOut
+            selectedPackage={selectedPackage}
+            setSelectedPackage={setSelectedPackage}
             formData={formData}
             setFormData={setFormData}
             setView={setView}
           />
         );
       case 'summary':
-        return <Summary setView={setView} formData={formData} />;
+        return <Summary setView={setView} selectedPackage={selectedPackage} />;
+      case 'success':
+        return <TicketComp selectedPackage={selectedPackage} />;
       default:
         return (
           <CheckOut
+            selectedPackage={selectedPackage}
+            setSelectedPackage={setSelectedPackage}
             formData={formData}
             setFormData={setFormData}
             setView={setView}
