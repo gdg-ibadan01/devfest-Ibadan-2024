@@ -1,6 +1,6 @@
 export const agendaClass = {
   container: 'bg-white min-h-[100vh] pb-[100px]',
-  main: 'container mx-auto pt-[160px] px-7 md:px-[70px] lg:px-[100px] flex flex-col font-sans',
+  main: 'container mx-auto pt-[160px] flex flex-col font-sans',
   header: 'flex flex-col items-center justify-center mb-[54px]',
   headerSection: 'w-full lg:w-[60%]',
   headerSectionHeading: 'font-bold text-[32px] md:text-[52px] leading-[1.5]',
