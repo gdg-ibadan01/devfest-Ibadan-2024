@@ -69,9 +69,7 @@ const DevfestHero = () => {
             </div>
             <div className="flex flex-col md:flex-row gap-3 md:gap-5 text-sm'">
               <Link
-                // href="https://gdg.community.dev/events/details/google-gdg-ibadan-presents-devfest-ibadan-2024/"
-                href="#"
-                target="_blank"
+                href="/ticket"
                 className="bg-black py-4 px-52 text-white hover:bg-core-blue hover:text-white rounded-[100px] flex"
               >
                 Get Ticket <ArrowUpRight />

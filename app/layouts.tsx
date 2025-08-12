@@ -38,15 +38,18 @@ const HomeLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  // Define the route where you want to hide the footer
-  const hideFooterRoutes = ['/schedule'];
+  const pathname = usePathname();
+  // Define routes where you want to hide the header/footer
+  const hideUIRoutes = ['/ticket'];
+  const hideUI = hideUIRoutes.includes(pathname);
+  
   return (
     <html lang="en">
       <ReactLenis root>
         <body className={`${google_sans.className}`}>
-          <DFIHeader />
+          {!hideUI && <DFIHeader />}
           {children}
-          <DFIFooter />
+          {!hideUI && <DFIFooter />}
         </body>
       </ReactLenis>
     </html>
