@@ -4,6 +4,7 @@ import DFIHeader from './_module/components/common/DFIheader';
 import DFIFooter from './_module/components/common/DFIfooter';
 import { google_sans } from './shared/font';
 import { ReactLenis } from '@/utils/lenis';
+import LayoutWrapper from './_module/components/ui/LayoutWrapper';
 
 export const metadata: Metadata = {
   title: 'Devfest Ibadan 2025',
@@ -21,9 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <ReactLenis root>
         <body className={`${google_sans.className}`}>
-          <DFIHeader />
-          {children}
-          <DFIFooter />
+          <LayoutWrapper>{children}</LayoutWrapper>
         </body>
       </ReactLenis>
     </html>
