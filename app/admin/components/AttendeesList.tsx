@@ -1,42 +1,226 @@
-import React from 'react';
+'use client';
+
+import React, { useMemo } from 'react';
 import { TableClass as styles } from '../styles/admin.classes';
+import {
+  useReactTable,
+  getCoreRowModel,
+  getPaginationRowModel,
+  flexRender,
+  ColumnDef,
+} from '@tanstack/react-table';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { ChevronDown } from 'lucide-react';
+import CheckCircleIcon from '@/app/_module/components/icons/CheckCircleIcon';
 
 const AttendeesList = () => {
+  const data = useMemo(
+    () => [
+      {
+        ticketId: '#DF82481',
+        datetime: 'July 25, 2025',
+        fullname: 'Mary Esivue',
+        email: 'maryesivue@gmail.com',
+        code: 'WKS-18820',
+        eventDays: 'Sat + Fri',
+        amount: '#8,000',
+        status: 'Successful',
+      },
+      {
+        ticketId: '#DF82482',
+        datetime: 'July 26, 2025',
+        fullname: 'John Doe',
+        email: 'john@example.com',
+        code: 'WKS-18821',
+        eventDays: 'Sat',
+        amount: '#10,000',
+        status: 'Pending',
+      },
+      {
+        ticketId: '#DF82483',
+        datetime: 'July 27, 2025',
+        fullname: 'Jane Doe',
+        email: 'jane@example.com',
+        code: 'WKS-18822',
+        eventDays: 'Fri',
+        amount: '#12,000',
+        status: 'Successful',
+      },
+      {
+        ticketId: '#DF82481',
+        datetime: 'July 25, 2025',
+        fullname: 'Mary Esivue',
+        email: 'maryesivue@gmail.com',
+        code: 'WKS-18820',
+        eventDays: 'Sat + Fri',
+        amount: '#8,000',
+        status: 'Successful',
+      },
+      {
+        ticketId: '#DF82482',
+        datetime: 'July 26, 2025',
+        fullname: 'John Doe',
+        email: 'john@example.com',
+        code: 'WKS-18821',
+        eventDays: 'Sat',
+        amount: '#10,000',
+        status: 'Pending',
+      },
+      {
+        ticketId: '#DF82483',
+        datetime: 'July 27, 2025',
+        fullname: 'Jane Doe',
+        email: 'jane@example.com',
+        code: 'WKS-18822',
+        eventDays: 'Fri',
+        amount: '#12,000',
+        status: 'Successful',
+      },
+      {
+        ticketId: '#DF82481',
+        datetime: 'July 25, 2025',
+        fullname: 'Mary Esivue',
+        email: 'maryesivue@gmail.com',
+        code: 'WKS-18820',
+        eventDays: 'Sat + Fri',
+        amount: '#8,000',
+        status: 'Successful',
+      },
+      {
+        ticketId: '#DF82482',
+        datetime: 'July 26, 2025',
+        fullname: 'John Doe',
+        email: 'john@example.com',
+        code: 'WKS-18821',
+        eventDays: 'Sat',
+        amount: '#10,000',
+        status: 'Pending',
+      },
+      {
+        ticketId: '#DF82483',
+        datetime: 'July 27, 2025',
+        fullname: 'Jane Doe',
+        email: 'jane@example.com',
+        code: 'WKS-18822',
+        eventDays: 'Fri',
+        amount: '#12,000',
+        status: 'Successful',
+      },
+    ],
+    []
+  );
+
+  const columns = useMemo<ColumnDef<any>[]>(
+    () => [
+      { accessorKey: 'ticketId', header: 'Ticket Id' },
+      { accessorKey: 'datetime', header: 'Datetime' },
+      { accessorKey: 'fullname', header: 'Fullname' },
+      { accessorKey: 'email', header: 'Email' },
+      { accessorKey: 'code', header: 'Code' },
+      { accessorKey: 'eventDays', header: 'Event Day(s)' },
+      { accessorKey: 'amount', header: 'Amount' },
+      { accessorKey: 'status', header: 'Payment Status' },
+      {
+        id: 'action',
+        header: 'Action',
+        cell: () => <input type="checkbox" />,
+      },
+    ],
+    []
+  );
+
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+  });
+
   return (
-    <table className={styles.table}>
-      <thead className={styles.thead}>
-        <tr>
-          <th className={styles.th}>Ticket Id</th>
-          <th className={styles.th}>Datetime</th>
-          <th className={styles.th}>Fullname</th>
-          <th className={styles.th}>Email</th>
-          <th className={styles.th}>Code</th>
-          <th className={styles.th}>Event Day(s)</th>
-          <th className={styles.th}>Amount</th>
-          <th className={styles.th}>Payment Status</th>
-          <th className={styles.th}>Action</th>
-        </tr>
-      </thead>
-      <tbody className={styles.tbody}>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => {
-          return (
-            <tr key={item}>
-              <td className={styles.td}>#DF82481</td>
-              <td className={styles.td}>July 25, 2025</td>
-              <td className={styles.td}>Mary Esivue</td>
-              <td className={styles.td}>maryesivue@gmail.com</td>
-              <td className={styles.td}>WKS-18820</td>
-              <td className={styles.td}>Sat + Fri</td>
-              <td className={styles.td}>#8,000</td>
-              <td className={styles.td}>Successful</td>
-              <td className={styles.td}>
-                <input type="checkbox" />
-              </td>
+    <div>
+      {/* Table */}
+      <table className={styles.table}>
+        <thead className={styles.thead}>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th key={header.id} className={styles.th}>
+                  {flexRender(
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+                </th>
+              ))}
             </tr>
-          );
-        })}
-      </tbody>
-    </table>
+          ))}
+        </thead>
+        <tbody className={styles.tbody}>
+          {table.getRowModel().rows.map((row) => (
+            <tr key={row.id}>
+              {row.getVisibleCells().map((cell) => (
+                <td key={cell.id} className={styles.td}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Pagination Controls */}
+      <div className="flex items-center justify-center gap-5 mt-4">
+        <button
+          onClick={() => table.previousPage()}
+          disabled={!table.getCanPreviousPage()}
+          className="px-6 py-[10px] border rounded font-normal text-[#474C52] text-[14px] bg-white disabled:opacity-50"
+        >
+          Previous
+        </button>
+        <span>
+          Page{' '}
+          <strong>
+            {table.getState().pagination.pageIndex + 1} of{' '}
+            {table.getPageCount()}
+          </strong>
+        </span>
+        <button
+          onClick={() => table.nextPage()}
+          disabled={!table.getCanNextPage()}
+          className="px-6 py-[10px] font-normal border text-[#474C52] text-[14px] rounded bg-white disabled:opacity-50"
+        >
+          Next
+        </button>
+
+        {/* Rows per page selector */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild className={styles.dropdown}>
+            <button className="flex items-center justify-between">
+              Show {table.getState().pagination.pageSize}{' '}
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-[130px]">
+            {[5, 10, 15].map((s) => (
+              <DropdownMenuItem
+                key={s}
+                onClick={() => table.setPageSize(s)}
+                className="flex items-center text-[#474C52] text-[14px] font-normal justify-between"
+              >
+                {s}
+                {table.getState().pagination.pageSize === s && (
+                  <CheckCircleIcon />
+                )}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ import DevfestLogo from '../../icons/DevfestLogo.svg';
 import { headerClass as styles } from './DFIheader.classes';
 import Image from 'next/image';
 import NotificationBell from '../../icons/NotificationBell';
-import AvatarComponent from '../../Avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const DFIHeader = (): ReactNode => {
   const [showMenu, setShowMenu] = useState(false);
@@ -45,7 +45,10 @@ const DFIHeader = (): ReactNode => {
         </Link>
         <div className={styles.rightSection}>
           <NotificationBell />
-          <AvatarComponent />
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
         </div>
       </div>
     </header>
