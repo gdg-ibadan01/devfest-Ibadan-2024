@@ -1,9 +1,25 @@
+'use client';
+
 import React from 'react';
 import { AdminClass as styles } from './styles/admin.classes';
 import AttendeesList from './components/AttendeesList';
 import ExportIcon from '../_module/components/icons/ExportIcon';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Check, ChevronDown } from 'lucide-react';
+import CheckCircleIcon from '../_module/components/icons/CheckCircleIcon';
 
-const page = () => {
+const Page = () => {
+  const [day, setDay] = React.useState('Day');
+  const [status, setStatus] = React.useState('All');
+
+  const days = ['Day', 'Sat + Fri', 'Sat', 'Fri'];
+  const statuses = ['All', 'Successful', 'Pending', 'Failed'];
+  const exports = ['CSV', 'PDF', 'Excel'];
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -15,24 +31,67 @@ const page = () => {
               placeholder="Search by name/email/code"
               className={styles.searchInput}
             />
-            <select name="day" id="" className={styles.dropdown}>
-              <option value="">Day</option>
-              <option value="">Sat + Fri</option>
-              <option value="">Sat</option>
-              <option value="">Fri</option>
-            </select>
-            <select name="status" id="" className={styles.dropdown}>
-              <option value="">Status</option>
-              <option value="">All Status</option>
-              <option value="">Successful</option>
-              <option value="">Pending</option>
-              <option value="">Failed</option>
-            </select>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild className={styles.dropdown}>
+                <button className="flex items-center justify-between">
+                  {day} <ChevronDown className="w-4 h-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[150px]">
+                {days.map((d) => (
+                  <DropdownMenuItem
+                    key={d}
+                    onClick={() => setDay(d)}
+                    className="flex items-center text-[#474C52] text-[14px] font-normal justify-between"
+                  >
+                    {d}
+                    {day === d && <CheckCircleIcon />}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Status Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild className={styles.dropdown}>
+                <button className="flex items-center justify-between">
+                  {status} <ChevronDown className="w-4 h-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[150px]">
+                {statuses.map((s) => (
+                  <DropdownMenuItem
+                    key={s}
+                    onClick={() => setStatus(s)}
+                    className="flex items-center text-[#474C52] text-[14px] font-normal justify-between"
+                  >
+                    {s}
+                    {status === s && <CheckCircleIcon />}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <div className={styles.actionBtnsContainer}>
-            <button className={styles.exportBtn}>
-              <ExportIcon /> <span>Export</span>
-            </button>
+            {/* Export Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className={styles.exportBtn}>
+                  <ExportIcon /> <span>Export</span>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {exports.map((e) => (
+                  <DropdownMenuItem
+                    key={e}
+                    onClick={() => alert(`Exporting as ${e}`)}
+                    className="text-[#474C52] text-[14px] font-normal"
+                  >
+                    {e}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button className={styles.addBtn}>Add attendee</button>
           </div>
         </div>
@@ -42,4 +101,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

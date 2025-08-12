@@ -7,7 +7,7 @@ export const AdminClass = {
   searchInput:
     'border border-[#F0F0F0] rounded-sm py-[11px] px-[16px] w-[240px] text-[14px] font-light text-[#474C52]',
   dropdown:
-    'rounded-sm border border-[#F0F0F0] py-[11px] w-[120px] text-[14px] text-[#474C52] font-normal',
+    'rounded-sm border border-[#F0F0F0] py-[11px] min-w-[150px] px-5 text-[14px] text-[#474C52] bg-white font-normal',
   exportBtn:
     'border border-[#4D4D4D] py-[11px] px-[25px] rounded-[100px] text-[16px] font-medium text-[#1e1e1e] flex items-center gap-2',
   actionBtnsContainer: 'flex items-center space-x-[16px]',
@@ -22,4 +22,6 @@ export const TableClass = {
   tr: '',
   th: 'py-[21px] px-[28px] text-left text-[14px] text-[#1E1E1E] font-semibold',
   td: 'py-[21px] px-[28px] text-left text-[13px] text-[#1E1E1E] font-light border-b border-[#F0F0F0]',
+  dropdown:
+    'rounded-sm border border-[#F0F0F0] py-[10px] min-w-[130px] px-5 text-[14px] text-[#474C52] bg-white font-normal',
 };
