@@ -23,6 +23,7 @@ export class TransformerInterceptor implements NestInterceptor {
       map((result) => {
         const statusCode: number = response.statusCode ?? 200;
         const method: string = (request?.method ?? 'GET').toUpperCase();
+        const entity = this._extractEntityFromPath(request?.path ?? '');
 
         if (result && typeof result === 'object') {
           const hasMessage = 'message' in result;
@@ -30,7 +31,7 @@ export class TransformerInterceptor implements NestInterceptor {
 
           if (hasMessage || hasData) {
             const message =
-              result.message ?? this._defaultMessage(method, result);
+              result.message ?? this._defaultMessage(method, entity, result);
             const data = result.data ?? this._stripMessage(result);
             return {
               statusCode,
@@ -49,7 +50,7 @@ export class TransformerInterceptor implements NestInterceptor {
           };
         }
 
-        const message = this._defaultMessage(method, result);
+        const message = this._defaultMessage(method, entity, result);
         return {
           statusCode,
           success: true,
@@ -60,36 +61,41 @@ export class TransformerInterceptor implements NestInterceptor {
     );
   }
 
-  private _defaultMessage(method: string, data: any): string {
+  private _defaultMessage(method: string, entity: string, data: any): string {
     switch (method) {
       case 'POST':
-        return this._guessCreateMessage(data);
+        return `${entity} created successfully`;
       case 'PUT':
       case 'PATCH':
-        return 'Resource updated successfully';
+        return `${entity} updated successfully`;
       case 'DELETE':
-        return 'Resource deleted successfully';
+        return `${entity} deleted successfully`;
       case 'GET':
       default:
-        return 'Request successful';
+        return Array.isArray(data)
+          ? `${entity} list retrieved successfully`
+          : `${entity} retrieved successfully`;
     }
   }
 
-  private _guessCreateMessage(data: any): string {
-    if (data && typeof data === 'object') {
-      if ('fullName' in data) return 'Attendee created successfully';
-      if ('title' in data) return 'Event created successfully';
-      if ('transactionId' in data || 'amount' in data)
-        return 'Payment processed successfully';
-      if ('ticketNumber' in data || 'ticketType' in data)
-        return 'Ticket created successfully';
-      if ('username' in data || 'role' in data)
-        return 'Admin created successfully';
-      if ('email' in data && !('fullName' in data))
-        return 'Resource created successfully';
-      return 'Resource created successfully';
-    }
-    return 'Resource created successfully';
+  private _extractEntityFromPath(path: string): string {
+    // Extract first path segment after "/"
+    const match = path.match(/^\/?([^/]+)/);
+    const entityMap: Record<string, string> = {
+      events: 'Event',
+      event: 'Event',
+      tickets: 'Ticket',
+      ticket: 'Ticket',
+      payments: 'Payment',
+      payment: 'Payment',
+      admins: 'Admin',
+      admin: 'Admin',
+      attendees: 'Attendee',
+      attendee: 'Attendee',
+    };
+
+    const rawEntity = match ? match[1].toLowerCase() : 'Resource';
+    return entityMap[rawEntity] || 'Resource';
   }
 
   private _stripMessage(obj: Record<string, any>) {

@@ -8,13 +8,14 @@ export default tseslint.config(
   {
     ignores: [
       'eslint.config.mjs',
-      'dist/**',
-      'node_modules',
+      '**/dist/**',
+      '**/node_modules/**',
       '.eslintrc.js',
       '.next',
       'coverage',
       'app/**',
       'public/**',
+      '../frontend/**',
     ],
   },
   eslint.configs.recommended,
@@ -28,7 +29,7 @@ export default tseslint.config(
       },
       sourceType: 'commonjs',
       parserOptions: {
-        project: './backend/tsconfig.json',
+        project: './tsconfig.json',
         tsconfigRootDir: import.meta.dirname,
       },
     },
