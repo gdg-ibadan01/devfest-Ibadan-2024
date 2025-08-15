@@ -28,7 +28,7 @@ export default tseslint.config(
       },
       sourceType: 'commonjs',
       parserOptions: {
-        projectService: true,
+        project: './backend/tsconfig.json',
         tsconfigRootDir: import.meta.dirname,
       },
     },
