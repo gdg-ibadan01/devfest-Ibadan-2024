@@ -69,7 +69,7 @@ const CheckOut: React.FC<CheckOutProps> = ({
       }}
     >
       <button
-        className="w-fit flex flex-col md:flex-row justify-center items-start mdl:items-center gap-3 text-gray-400"
+        className="w-fit flex flex-col md:flex-row justify-center items-start md:items-center gap-3 text-gray-600"
         onClick={() => router.back()}
       >
         <ArrowLeft />

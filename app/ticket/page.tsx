@@ -4,8 +4,10 @@ import CheckOut from './components/CheckOut';
 import Summary from './components/Summary';
 import { AnimatePresence, motion } from 'framer-motion';
 import TicketComp from './components/TicketComp';
+import useMediaQueryWatcher from '../_module/config/hooks/useMediaQueryWatcher';
 
 export default function Ticket() {
+  const isTablet = useMediaQueryWatcher('(min-width: 1024px)');
   const [selectedPackage, setSelectedPackage] = useState({
     key: '',
     day: '',
@@ -52,7 +54,9 @@ export default function Ticket() {
       <div
         className="h-screen w-full flex items-center justify-center px-5"
         style={{
-          backgroundImage: "url('/ticket_bg.png')",
+          backgroundImage: isTablet
+            ? "url('/ticket_bg.png')"
+            : "url('/ticket_mobile_bg.png')",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'cover',

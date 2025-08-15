@@ -16,7 +16,7 @@ const Summary: React.FC<SummaryProps> = ({ setView, selectedPackage }) => {
   return (
     <div className="bg-white px-4 md:px-28 py-48 rounded-2xl flex flex-col gap-10 border md:border-none">
       <button
-        className="w-fit flex flex-col md:flex-row justify-center items-start mdl:items-center gap-3 text-gray-400"
+        className="w-fit flex flex-col md:flex-row justify-center items-start mdl:items-center gap-3 text-gray-600"
         onClick={() => setView('checkout')}
       >
         <ArrowLeft />
