@@ -68,11 +68,6 @@ const TicketComp: React.FC<TicketCompProps> = ({ selectedPackage }) => {
           </div>
         </div>
         <hr className="border-t-1 border-dashed " />
-        {/* <div className=" my-5">
-          <div className="absolute w-[28px] h-[28px] md:w-[52px] md:h-[52px] bg-[#d0f2fa] rounded-r-[100px] -left-3" />
-          <hr className="border-t-1 border-dashed " />
-          <div className="absolute w-[28px] h-[28px] md:w-[52px] md:h-[52px] bg-[#D0F2FA99]" />
-        </div> */}
         <Image
           src={'/barcode.svg'}
           alt="barcode"
