@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { TableClass as styles } from '../styles/admin.classes';
 import {
   useReactTable,
@@ -17,8 +17,19 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { ChevronDown } from 'lucide-react';
 import CheckCircleIcon from '@/app/_module/components/icons/CheckCircleIcon';
+import SuccessModal from './SuccessModal';
 
 const AttendeesList = () => {
+  // State for managing the success modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedAttendee, setSelectedAttendee] = useState<string>('');
+
+  // Handler for checkbox change
+  const handleCheckboxChange = (attendeeName: string) => {
+    setSelectedAttendee(attendeeName);
+    setIsModalOpen(true);
+  };
+
   const data = useMemo(
     () => [
       {
@@ -128,10 +139,16 @@ const AttendeesList = () => {
       {
         id: 'action',
         header: 'Action',
-        cell: () => <input type="checkbox" />,
+        cell: ({ row }) => (
+          <input
+            type="checkbox"
+            onChange={() => handleCheckboxChange(row.original.fullname)}
+            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+          />
+        ),
       },
     ],
-    []
+    [handleCheckboxChange]
   );
 
   const table = useReactTable({
@@ -220,6 +237,13 @@ const AttendeesList = () => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+
+      {/* Success Modal */}
+      <SuccessModal
+        message={`Action completed successfully for ${selectedAttendee}!`}
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
+      />
     </div>
   );
 };
