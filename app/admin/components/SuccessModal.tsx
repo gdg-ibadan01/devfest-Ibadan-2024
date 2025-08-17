@@ -16,8 +16,6 @@ const SuccessModal = ({ message, open, onOpenChange }: SuccessModalProps) => {
       const timer = setTimeout(() => {
         onOpenChange(false);
       }, 3000);
-
-      // Cleanup timer if component unmounts or modal closes early
       return () => clearTimeout(timer);
     }
   }, [open, onOpenChange]);
@@ -40,7 +38,6 @@ const SuccessModal = ({ message, open, onOpenChange }: SuccessModalProps) => {
           <div className="flex-shrink-0 w-10 h-6 bg-green-500 rounded-full flex items-center justify-center">
             <SuccessToastIcon />
           </div>
-
           {/* Message */}
           <div className="flex-1">
             <p className="text-sm font-medium text-green-800 leading-tight">
