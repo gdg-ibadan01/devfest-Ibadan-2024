@@ -20,7 +20,13 @@ const AdminLayout = ({
         <body className={`${google_sans.className}`}>
           <AdminHeader />
           {children}
-          <Toaster />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              closeButton: false,
+            }}
+            closeButton={false}
+          />
         </body>
       </ReactLenis>
     </html>

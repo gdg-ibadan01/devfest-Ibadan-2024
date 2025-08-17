@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Check, ChevronDown } from 'lucide-react';
 import CheckCircleIcon from '../_module/components/icons/CheckCircleIcon';
+import SuccessToast from './components/SuccessModal';
 
 const Page = () => {
   const [day, setDay] = React.useState('Day');
