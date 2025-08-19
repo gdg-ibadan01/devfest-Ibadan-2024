@@ -4,6 +4,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ArrowLeft, Copy, Check, Building2 } from 'lucide-react';
 import React, { useState } from 'react';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import BankIcon from '@/app/_module/components/icons/BankIcon';
+import SuccessModalIcon from '@/app/_module/components/icons/SuccessModalIcon';
 
 interface Step {
   step: 'inputDetails' | 'sendPaymentLink' | 'showSuccessMessage';
@@ -29,9 +32,9 @@ const SuccessModal: React.FC<
   Step & { attendeeData: AttendeeData; setStep: any }
 > = ({ step, setStep, attendeeData }) => {
   return (
-    <div className="flex flex-col items-center justify-center py-8 px-6 text-center">
-      <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6">
-        <Check className="w-8 h-8 text-white" />
+    <div className="flex flex-col items-center justify-center py-14 px-6 text-center">
+      <div className="w-[100px] h-[100px] bg-green-500 rounded-full flex items-center justify-center mb-6">
+        <SuccessModalIcon />
       </div>
 
       <h2 className="text-2xl font-semibold text-gray-900 mb-2">Successful</h2>
@@ -40,15 +43,16 @@ const SuccessModal: React.FC<
         Payment link sent!
       </h3>
 
-      <p className="text-gray-600 mb-8 max-w-sm">
+      <p className="mb-[40px] text-[15px] tracking-[0.7px]">
         The payment link has been sent to {attendeeData.email}. Please inform
         the attendee to check their inbox (or spam folder) and complete the
         payment to secure their spot.
       </p>
 
       <Button
-        className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg"
+        className="w-full bg-[#1E1E1E] text-white text-white py-[30px] rounded-[100px]"
         onClick={() => setStep('inputDetails')}
+        // disabled={!isFormValid}
       >
         Go to Dashboard
       </Button>
@@ -56,6 +60,7 @@ const SuccessModal: React.FC<
   );
 };
 
+// screen to display user details and send payment link goes here
 const SendPaymentLink: React.FC<
   Step & { attendeeData: AttendeeData; setStep: any }
 > = ({ step, setStep, attendeeData }) => {
@@ -91,41 +96,36 @@ const SendPaymentLink: React.FC<
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
-        <h2 className="text-xl font-semibold text-gray-900">Payment Link</h2>
+        <h2 className="text-[20px] font-bold text-[#515151]">Payment Link</h2>
       </div>
 
       <div className="flex flex-col items-center text-center mb-8">
-        <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-          <Building2 className="w-8 h-8 text-gray-600" />
+        <div className="w-[63px] h-[63px] bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+          <BankIcon />
         </div>
 
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">
-          Payment Link
-        </h3>
+        <h3 className="text-xl font-bold mb-4">Payment Link</h3>
 
-        <p className="text-gray-600 text-sm mb-6 max-w-sm">
+        <p className="text-[16px] mb-6 tracking-[0.5px]">
           You are about to send a payment link to the attendee email. Please
           confirm that the email address is correct before proceeding.
         </p>
 
-        <div className="w-full bg-gray-50 rounded-lg p-4 mb-4 flex items-center justify-between">
-          <span className="text-sm font-mono text-gray-700">{paymentLink}</span>
+        <div className="w-full bg-[#F7F7F7] rounded-[32px] pl-5 mb-4 flex items-center justify-between">
+          <span className="text-sm py-3 font-mono text-gray-700">
+            {paymentLink}
+          </span>
           <Button
-            variant="outline"
-            size="sm"
+            variant="ghost"
             onClick={handleCopy}
-            className="ml-2"
+            className="bg-[#4D4D4D] rounded-[32px] text-white font-bold text-[16px] h-full"
           >
-            {copied ? (
-              <Check className="w-4 h-4" />
-            ) : (
-              <Copy className="w-4 h-4" />
-            )}
+            Copy
           </Button>
         </div>
       </div>
 
-      <div className="space-y-4 mb-8">
+      <div className="space-y-4 mb-[50px]">
         <div className="flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
           <span className="text-gray-600 font-medium">Email</span>
           <span className="font-semibold text-gray-900">
@@ -147,8 +147,9 @@ const SendPaymentLink: React.FC<
       </div>
 
       <Button
-        className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg"
+        className="w-full bg-[#1E1E1E] text-white text-white py-[30px] rounded-[100px]"
         onClick={() => setStep('showSuccessMessage')}
+        // disabled={!isFormValid}
       >
         Send payment link
       </Button>
@@ -156,6 +157,7 @@ const SendPaymentLink: React.FC<
   );
 };
 
+// Add attendees form goes here
 const AddAttendeeDetails: React.FC<
   Step & { attendeeData: AttendeeData; setAttendeeData: any; setStep: any }
 > = ({ step, setStep, attendeeData, setAttendeeData }) => {
@@ -178,22 +180,40 @@ const AddAttendeeDetails: React.FC<
     attendeeData.email.trim() !== '' &&
     attendeeData.email.includes('@');
 
+  const plans = [
+    {
+      label: 'Friday',
+      description: 'Workshop',
+      price: 4000,
+    },
+    {
+      label: 'Saturday',
+      description: 'Main event & Workshop',
+      price: 8000,
+    },
+    {
+      label: 'Both',
+      description: 'Main event & Workshop',
+      price: 12000,
+    },
+  ];
+
   return (
     <div className="p-6">
-      <div className="flex items-center mb-6">
-        <button className="mr-4 p-1 hover:bg-gray-100 rounded">
+      <div className="flex items-center mb-6 gap-6">
+        <button className="p-1 hover:bg-gray-100 rounded">
           <ArrowLeft className="w-5 h-5" />
         </button>
-        <h2 className="text-xl font-semibold text-gray-900">
-          <span className="underline">Add an Attendee</span>
+        <h2 className="text-[20px] font-bold text-[#515151]">
+          Add an Attendee
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-2 gap-4 mb-[32px]">
         <div>
           <Label
             htmlFor="fullName"
-            className="text-gray-700 font-medium mb-2 block"
+            className="text-[#4D4D4D] text-[16px] font-medium mb-1 block"
           >
             Full Name
           </Label>
@@ -202,14 +222,14 @@ const AddAttendeeDetails: React.FC<
             placeholder="Enter Full Name"
             value={attendeeData.fullName}
             onChange={(e) => handleInputChange('fullName', e.target.value)}
-            className="w-full"
+            className="w-full border border-[#E6E6E6] rounded-[8px] h-[50px] outline-none focus:outline-none focus:ring-0"
           />
         </div>
 
         <div>
           <Label
             htmlFor="email"
-            className="text-gray-700 font-medium mb-2 block"
+            className="text-[#4D4D4D] text-[16px] font-medium mb-1 block"
           >
             Email Address
           </Label>
@@ -219,118 +239,68 @@ const AddAttendeeDetails: React.FC<
             placeholder="Enter email address"
             value={attendeeData.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
-            className="w-full"
+            className="w-full border border-[#E6E6E6] rounded-[8px] h-[50px] outline-none focus:outline-none focus:ring-none"
           />
         </div>
       </div>
 
-      <div className="mb-8">
-        <Label className="text-gray-700 font-medium mb-4 block">
+      <div className="mb-[32px]">
+        <Label className="text-[#878787] font-medium mb-[24px] block">
           Kindly Select your Ticket Package
         </Label>
 
-        <div className="space-y-3">
-          <div
-            className={`border rounded-lg p-4 cursor-pointer transition-colors ${
-              attendeeData.selectedPackage === 'friday'
-                ? 'bg-blue-50 border-blue-200'
-                : 'border-gray-200 hover:border-gray-300'
-            }`}
-            onClick={() => handlePackageSelect('friday')}
-          >
-            <div className="flex items-center">
-              <div
-                className={`w-4 h-4 rounded-full border-2 mr-3 flex items-center justify-center ${
-                  attendeeData.selectedPackage === 'friday'
-                    ? 'border-blue-500 bg-blue-500'
-                    : 'border-gray-300'
-                }`}
-              >
-                {attendeeData.selectedPackage === 'friday' && (
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                )}
-              </div>
-              <div>
-                <div className="font-medium text-blue-600">
-                  Friday <span className="text-gray-500">(Workshop)</span>
-                </div>
-                <div className="text-xl font-semibold text-blue-600">
-                  ₦ 4,000.00
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className={`border rounded-lg p-4 cursor-pointer transition-colors ${
-              attendeeData.selectedPackage === 'saturday'
-                ? 'bg-gray-50 border-gray-300'
-                : 'border-gray-200 hover:border-gray-300'
-            }`}
-            onClick={() => handlePackageSelect('saturday')}
-          >
-            <div className="flex items-center">
-              <div
-                className={`w-4 h-4 rounded-full border-2 mr-3 flex items-center justify-center ${
-                  attendeeData.selectedPackage === 'saturday'
-                    ? 'border-gray-500 bg-gray-500'
-                    : 'border-gray-300'
-                }`}
-              >
-                {attendeeData.selectedPackage === 'saturday' && (
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                )}
-              </div>
-              <div>
-                <div className="font-medium text-gray-700">
-                  Saturday{' '}
-                  <span className="text-gray-500">(Main event & Workshop)</span>
-                </div>
-                <div className="text-xl font-semibold text-gray-700">
-                  ₦ 4,000.00
+        <RadioGroup
+          defaultValue="friday"
+          className="flex flex-col space-y-[10px]"
+        >
+          {plans.map((plan) => (
+            <Label
+              key={plan.label}
+              htmlFor={`plan-${plan.label.toLowerCase()}`}
+              className={`border rounded-lg p-4 cursor-pointer transition-colors ${
+                attendeeData.selectedPackage === plan.label.toLowerCase()
+                  ? 'bg-[#C3ECF6] border-[#9AE0F1]'
+                  : 'border-[#DEDEDE]'
+              }`}
+              onClick={() =>
+                handlePackageSelect(
+                  plan.label.toLowerCase() as 'friday' | 'saturday' | 'both'
+                )
+              }
+            >
+              <div className="flex items-center gap-4">
+                <RadioGroupItem
+                  value={plan.label.toLowerCase()}
+                  id={`plan-${plan.label.toLowerCase()}`}
+                  className={`${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#4285F4] bg-[#C3ECF6] border border-[#4285F4]' : 'text-[#6B6B6B] bg-white border border-[#6b6b6b]'}`}
+                />
+                <div className="flex flex-col gap-[9px]">
+                  <div
+                    className={`font-medium text-[19px] ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#5787D6]' : 'text-[#636363]'} `}
+                  >
+                    {plan.label}{' '}
+                    <span
+                      className={`font-light text-[13px] ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#5787D6]' : 'text-[#636363]'}`}
+                    >
+                      ({plan.description})
+                    </span>
+                  </div>
+                  <div
+                    className={`text-[24px] font-semibold ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#4285F4]' : 'text-[#6B6B6B]'}`}
+                  >
+                    ₦ {plan.price}
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div
-            className={`border rounded-lg p-4 cursor-pointer transition-colors ${
-              attendeeData.selectedPackage === 'both'
-                ? 'bg-gray-50 border-gray-300'
-                : 'border-gray-200 hover:border-gray-300'
-            }`}
-            onClick={() => handlePackageSelect('both')}
-          >
-            <div className="flex items-center">
-              <div
-                className={`w-4 h-4 rounded-full border-2 mr-3 flex items-center justify-center ${
-                  attendeeData.selectedPackage === 'both'
-                    ? 'border-gray-500 bg-gray-500'
-                    : 'border-gray-300'
-                }`}
-              >
-                {attendeeData.selectedPackage === 'both' && (
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                )}
-              </div>
-              <div>
-                <div className="font-medium text-gray-700">
-                  Friday & Saturday{' '}
-                  <span className="text-gray-500">(Main event & Workshop)</span>
-                </div>
-                <div className="text-xl font-semibold text-gray-700">
-                  ₦ 8,000.00
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            </Label>
+          ))}
+        </RadioGroup>
       </div>
 
       <Button
-        className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-[#1E1E1E] text-white text-white py-[30px] rounded-[100px]"
         onClick={() => setStep('sendPaymentLink')}
-        disabled={!isFormValid}
+        // disabled={!isFormValid}
       >
         Check out
       </Button>
