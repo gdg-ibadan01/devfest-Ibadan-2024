@@ -40,6 +40,7 @@ export class EventsService {
       registrationStart: new Date(createEventDto.registrationStart),
       registrationEnd: new Date(createEventDto.registrationEnd),
       createdById: adminId,
+      bannerImage: createEventDto.bannerImage,
     };
 
     const createdEvent = await this.prisma.event.create({
@@ -70,7 +71,7 @@ export class EventsService {
     };
   }
 
-  async findAll(query: EventQueryDto) {
+  async findAll(query: Partial<EventQueryDto>) {
     const {
       search,
       status,
@@ -80,7 +81,9 @@ export class EventsService {
       page = 1,
       limit = 10,
     } = query;
-    const skip = (page - 1) * limit;
+    const pageNum = Number(page) || 1;
+    const limitNum = Number(limit) || 10;
+    const skip = (pageNum - 1) * limitNum;
 
     const where: any = {};
 
@@ -89,6 +92,7 @@ export class EventsService {
         { title: { contains: search, mode: 'insensitive' } },
         { description: { contains: search, mode: 'insensitive' } },
         { venue: { contains: search, mode: 'insensitive' } },
+        { address: { contains: search, mode: 'insensitive' } },
       ];
     }
 
@@ -105,14 +109,14 @@ export class EventsService {
     }
 
     if (tag) {
-      where.tags = { has: tag };
+      where.AND = [...(where.AND || []), { tags: { has: tag } }];
     }
 
     const [events, total] = await Promise.all([
       this.prisma.event.findMany({
         where,
         skip,
-        take: limit,
+        take: limitNum,
         orderBy: { createdAt: 'desc' },
         include: {
           createdBy: {
@@ -136,9 +140,9 @@ export class EventsService {
       data: events,
       meta: {
         total,
-        page,
-        limit,
-        totalPages: Math.ceil(total / limit),
+        page: pageNum,
+        limit: limitNum,
+        totalPages: Math.ceil(total / limitNum),
       },
     };
   }

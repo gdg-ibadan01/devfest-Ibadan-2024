@@ -10,6 +10,8 @@ import {
   UnauthorizedException,
   Query,
   Delete,
+  HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 import { Request } from 'express';
 import {
@@ -28,6 +30,9 @@ import { InviteAdminDto } from './dto/invite-admin.dto';
 import { ChangePasswordDto } from './dto/change-password.dto';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
 import { UpdateAdminStatusDto } from './dto/update-status.dto';
+import { AttendeeService } from '../attendee/attendee.service';
+import { CreateAttendeeDto } from '../attendee/dto/create-attendee.dto';
+import { ICreateAttendee } from '../attendee/interfaces/attendee.interface';
 import { RolesGuard } from './guards/roles.guard';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import {
@@ -39,7 +44,10 @@ import {
 @ApiTags('Admin')
 @Controller('admin')
 export class AdminController {
-  constructor(private readonly adminService: AdminService) {}
+  constructor(
+    private readonly adminService: AdminService,
+    private readonly attendeeService: AttendeeService,
+  ) {}
 
   @Post('signup')
   @ApiOperation({ summary: 'Register a super admin account' })
@@ -61,6 +69,28 @@ export class AdminController {
   @ApiResponse({ status: 401, description: 'Invalid credentials.' })
   async login(@Body() loginDto: LoginAdminDto): Promise<ILoginResponse> {
     return this.adminService.login(loginDto);
+  }
+
+  @Post('attendee/create')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(Role.SUPER_ADMIN)
+  @ApiOperation({ summary: 'Add a new attendee (Super-admin only)' })
+  @ApiResponse({
+    status: 201,
+    description: 'Attendee successfully created',
+    type: CreateAttendeeDto,
+  })
+  @ApiResponse({
+    status: 409,
+    description: 'Attendee with this email already exists',
+  })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
+  async createAttendee(
+    @Body() createAttendeeDto: CreateAttendeeDto,
+  ): Promise<ICreateAttendee> {
+    return this.attendeeService.create(createAttendeeDto);
   }
 
   @Post('invite')
