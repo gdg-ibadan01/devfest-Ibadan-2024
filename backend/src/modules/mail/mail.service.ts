@@ -11,12 +11,12 @@ export class MailService {
   private transporter: nodemailer.Transporter;
   constructor(private readonly configService: ConfigService) {
     this.transporter = nodemailer.createTransport({
-      host: this.configService.get<string>('gmail.host'),
-      port: this.configService.get<number>('gmail.port'),
-      secure: this.configService.get<number>('gmail.port') === 465,
+      host: this.configService.get<string>('cpanel.host'),
+      port: this.configService.get<number>('cpanel.port'),
+      secure: this.configService.get<number>('cpanel.port') === 465,
       auth: {
-        user: this.configService.get<string>('gmail.user'),
-        pass: this.configService.get<string>('gmail.password'),
+        user: this.configService.get<string>('cpanel.user'),
+        pass: this.configService.get<string>('cpanel.password'),
       },
     });
   }
@@ -35,7 +35,7 @@ export class MailService {
       'https://example.com/default-logo.png';
 
     const supportEmail =
-      this.configService.get<string>('gmail.user') ?? 'noreply@example.com';
+      this.configService.get<string>('cpanel.user') ?? 'noreply@gdgibadan.com';
 
     const html = ticketConfirmationTemplate(
       fullName,
@@ -65,7 +65,7 @@ export class MailService {
       'https://example.com/default-logo.png';
 
     const supportEmail =
-      this.configService.get<string>('gmail.user') ?? 'noreply@example.com';
+      this.configService.get<string>('cpanel.user') ?? 'noreply@gdgibadan.com';
 
     const html = paymentFailedTemplate(
       firstName,
@@ -94,7 +94,7 @@ export class MailService {
       'https://example.com/default-logo.png';
 
     const supportEmail =
-      this.configService.get<string>('gmail.user') ?? 'noreply@example.com';
+      this.configService.get<string>('cpanel.user') ?? 'noreply@gdgibadan.com';
 
     await this.transporter.sendMail({
       from: `"GDG Event Manager" <${supportEmail}>`,
@@ -117,7 +117,7 @@ export class MailService {
       'https://example.com/default-logo.png';
 
     await this.transporter.sendMail({
-      from: `"GDG Event Manager" <${this.configService.get<string>('gmail.user')}>`,
+      from: `"GDG Event Manager" <${this.configService.get<string>('cpanel.user')}>`,
       to: email,
       subject: 'You are invited as an Admin',
       html: adminInviteTemplate(fullName, tempPassword, logoUrl),

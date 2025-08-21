@@ -15,7 +15,6 @@ import { LoginAdminDto } from './dto/login-admin.dto';
 import { InviteAdminDto } from './dto/invite-admin.dto';
 import { AdminQueryDto } from './dto/admin-query.dto';
 import { ChangePasswordDto } from './dto/change-password.dto';
-import { RefreshTokenDto } from './dto/refresh-token.dto';
 import {
   IAdmin,
   ILoginResponse,
