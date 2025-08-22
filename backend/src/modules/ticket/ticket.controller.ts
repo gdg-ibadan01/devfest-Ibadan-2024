@@ -68,6 +68,7 @@ export class TicketsController {
   }
 
   @Get('event/:eventId')
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.ADMIN, Role.SUPER_ADMIN)
   @ApiOperation({ summary: 'Get tickets for event' })
