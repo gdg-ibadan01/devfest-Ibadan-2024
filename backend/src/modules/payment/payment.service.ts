@@ -122,6 +122,7 @@ export class PaymentsService {
   async verifyPayment(verifyPaymentDto: VerifyPaymentDto): Promise<IPayment> {
     const { reference } = verifyPaymentDto;
 
+    // Call Paystack API to verify transaction
     const paystackResponse = await axios.get(
       `${this.paystackBaseUrl}/transaction/verify/${reference}`,
       {
@@ -135,6 +136,7 @@ export class PaymentsService {
 
     const paymentData = paystackResponse.data.data;
 
+    // Find existing payment by paystackReference
     const payment = await this.prisma.payment.findUnique({
       where: { paystackReference: reference },
       include: { registration: { include: { attendee: true, event: true } } },
@@ -142,6 +144,15 @@ export class PaymentsService {
 
     if (!payment) throw new NotFoundException('Payment record not found');
 
+    // If payment is already successful, just return it
+    if (payment.status === PaymentStatus.SUCCESS) {
+      return {
+        ...payment,
+        amount: Number(payment.amount),
+      } as IPayment;
+    }
+
+    // Update the payment with Paystack result
     const updatedPayment = await this.prisma.payment.update({
       where: { id: payment.id },
       data: {
@@ -167,6 +178,7 @@ export class PaymentsService {
       },
     });
 
+    // Update registration & send email if successful
     if (paymentData.status === 'success') {
       await this.prisma.registration.update({
         where: { id: payment.registrationId },
