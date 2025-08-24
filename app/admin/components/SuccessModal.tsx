@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { X, Check } from 'lucide-react';
 import SuccessToastIcon from '@/app/_module/components/icons/SuccessToastIcon';
 
 interface SuccessModalProps {
@@ -12,7 +11,6 @@ interface SuccessModalProps {
 const SuccessModal = ({ message, open, onOpenChange }: SuccessModalProps) => {
   useEffect(() => {
     if (open) {
-      // Auto-close the modal after 3 seconds
       const timer = setTimeout(() => {
         onOpenChange(false);
       }, 3000);

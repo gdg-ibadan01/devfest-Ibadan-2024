@@ -2,7 +2,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { ArrowLeft, Copy, Check, Building2 } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import React, { useState } from 'react';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import BankIcon from '@/app/_module/components/icons/BankIcon';
@@ -52,7 +52,6 @@ const SuccessModal: React.FC<
       <Button
         className="w-full bg-[#1E1E1E] text-white text-white py-[30px] rounded-[100px]"
         onClick={() => setStep('inputDetails')}
-        // disabled={!isFormValid}
       >
         Go to Dashboard
       </Button>
@@ -60,7 +59,6 @@ const SuccessModal: React.FC<
   );
 };
 
-// screen to display user details and send payment link goes here
 const SendPaymentLink: React.FC<
   Step & { attendeeData: AttendeeData; setStep: any }
 > = ({ step, setStep, attendeeData }) => {
@@ -126,19 +124,19 @@ const SendPaymentLink: React.FC<
       </div>
 
       <div className="space-y-4 mb-[50px]">
-        <div className="flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
+        <div className="flex justify-between items-center py-3 px-4 border border-[#DEDEDE] rounded-sm">
           <span className="text-gray-600 font-medium">Email</span>
           <span className="font-semibold text-gray-900">
             {attendeeData.email}
           </span>
         </div>
 
-        <div className="flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
+        <div className="flex justify-between items-center py-3 px-4 border border-[#DEDEDE] rounded-sm">
           <span className="text-gray-600 font-medium">Amount</span>
           <span className="font-semibold text-gray-900">{getAmount()}</span>
         </div>
 
-        <div className="flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
+        <div className="flex justify-between items-center py-3 px-4 border border-[#DEDEDE] rounded-sm">
           <span className="text-gray-600 font-medium">Description</span>
           <span className="font-semibold text-gray-900">
             DevFest_Ibadan_2025_Ticket
@@ -147,9 +145,8 @@ const SendPaymentLink: React.FC<
       </div>
 
       <Button
-        className="w-full bg-[#1E1E1E] text-white text-white py-[30px] rounded-[100px]"
+        className="w-full bg-[#1E1E1E] text-white py-[30px] rounded-[100px]"
         onClick={() => setStep('showSuccessMessage')}
-        // disabled={!isFormValid}
       >
         Send payment link
       </Button>
@@ -157,7 +154,6 @@ const SendPaymentLink: React.FC<
   );
 };
 
-// Add attendees form goes here
 const AddAttendeeDetails: React.FC<
   Step & { attendeeData: AttendeeData; setAttendeeData: any; setStep: any }
 > = ({ step, setStep, attendeeData, setAttendeeData }) => {
@@ -300,7 +296,6 @@ const AddAttendeeDetails: React.FC<
       <Button
         className="w-full bg-[#1E1E1E] text-white text-white py-[30px] rounded-[100px]"
         onClick={() => setStep('sendPaymentLink')}
-        // disabled={!isFormValid}
       >
         Check out
       </Button>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import { TableClass as styles } from '../styles/admin.classes';
 import {
   useReactTable,
@@ -19,18 +19,27 @@ import { ChevronDown } from 'lucide-react';
 import CheckCircleIcon from '@/app/_module/components/icons/CheckCircleIcon';
 import SuccessModal from './SuccessModal';
 
+interface AttendeeData {
+  ticketId: string;
+  datetime: string;
+  fullname: string;
+  email: string;
+  code: string;
+  eventDays: string;
+  amount: string;
+  status: 'Successful' | 'Pending' | 'Failed';
+}
+
 const AttendeesList = () => {
-  // State for managing the success modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedAttendee, setSelectedAttendee] = useState<string>('');
 
-  // Handler for checkbox change
-  const handleCheckboxChange = (attendeeName: string) => {
+  const handleCheckboxChange = useCallback((attendeeName: string) => {
     setSelectedAttendee(attendeeName);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const data = useMemo(
+  const data = useMemo<AttendeeData[]>(
     () => [
       {
         ticketId: '#DF82481',
@@ -60,7 +69,7 @@ const AttendeesList = () => {
         code: 'WKS-18822',
         eventDays: 'Fri',
         amount: '#12,000',
-        status: 'Successful',
+        status: 'Failed',
       },
       {
         ticketId: '#DF82481',
@@ -90,7 +99,7 @@ const AttendeesList = () => {
         code: 'WKS-18822',
         eventDays: 'Fri',
         amount: '#12,000',
-        status: 'Successful',
+        status: 'Failed',
       },
       {
         ticketId: '#DF82481',
@@ -100,6 +109,26 @@ const AttendeesList = () => {
         code: 'WKS-18820',
         eventDays: 'Sat + Fri',
         amount: '#8,000',
+        status: 'Successful',
+      },
+      {
+        ticketId: '#DF82482',
+        datetime: 'July 26, 2025',
+        fullname: 'John Doe',
+        email: 'john@example.com',
+        code: 'WKS-18821',
+        eventDays: 'Sat',
+        amount: '#10,000',
+        status: 'Pending',
+      },
+      {
+        ticketId: '#DF82483',
+        datetime: 'July 27, 2025',
+        fullname: 'Jane Doe',
+        email: 'jane@example.com',
+        code: 'WKS-18822',
+        eventDays: 'Fri',
+        amount: '#12,000',
         status: 'Successful',
       },
       {
@@ -126,7 +155,7 @@ const AttendeesList = () => {
     []
   );
 
-  const columns = useMemo<ColumnDef<any>[]>(
+  const columns = useMemo<ColumnDef<AttendeeData>[]>(
     () => [
       { accessorKey: 'ticketId', header: 'Ticket Id' },
       { accessorKey: 'datetime', header: 'Datetime' },
@@ -135,7 +164,26 @@ const AttendeesList = () => {
       { accessorKey: 'code', header: 'Code' },
       { accessorKey: 'eventDays', header: 'Event Day(s)' },
       { accessorKey: 'amount', header: 'Amount' },
-      { accessorKey: 'status', header: 'Payment Status' },
+      {
+        accessorKey: 'status',
+        header: 'Payment Status',
+        cell: ({ row }) => {
+          const status = row.original.status;
+          return (
+            <span
+              className={`px-2 py-1 rounded font-medium ${
+                status === 'Successful'
+                  ? 'text-[#34A853]'
+                  : status === 'Pending'
+                    ? 'text-[#FFD427]'
+                    : 'text-[#EA4335]'
+              }`}
+            >
+              {status}
+            </span>
+          );
+        },
+      },
       {
         id: 'action',
         header: 'Action',
@@ -151,7 +199,7 @@ const AttendeesList = () => {
     [handleCheckboxChange]
   );
 
-  const table = useReactTable({
+  const table = useReactTable<AttendeeData>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
@@ -190,11 +238,11 @@ const AttendeesList = () => {
       </table>
 
       {/* Pagination Controls */}
-      <div className="flex items-center justify-center gap-5 mt-4">
+      <div className="flex items-center justify-center gap-5 fixed bottom-4 left-1/2 -translate-x-1/2 z-10">
         <button
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="px-6 py-[10px] border rounded font-normal text-[#474C52] text-[14px] bg-white disabled:opacity-50"
+          className="px-6 py-[8px] border rounded font-normal text-[#474C52] text-[14px] bg-white disabled:cursor-not-allowed"
         >
           Previous
         </button>
@@ -208,7 +256,7 @@ const AttendeesList = () => {
         <button
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="px-6 py-[10px] font-normal border text-[#474C52] text-[14px] rounded bg-white disabled:opacity-50"
+          className="px-6 py-[8px] font-normal border text-[#474C52] text-[14px] rounded bg-white disabled:cursor-not-allowed"
         >
           Next
         </button>
