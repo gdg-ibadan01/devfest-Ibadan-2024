@@ -207,7 +207,7 @@ const AttendeesList = () => {
   });
 
   return (
-    <div>
+    <div className="overflow-auto">
       {/* Table */}
       <table className={styles.table}>
         <thead className={styles.thead}>
@@ -238,7 +238,7 @@ const AttendeesList = () => {
       </table>
 
       {/* Pagination Controls */}
-      <div className="flex items-center justify-center gap-5 fixed bottom-4 left-1/2 -translate-x-1/2 z-10">
+      <div className="w-full flex items-center justify-center gap-2 lg:gap-5 fixed bottom-4 left-1/2 -translate-x-1/2">
         <button
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
