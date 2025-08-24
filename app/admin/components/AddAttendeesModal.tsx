@@ -272,19 +272,19 @@ const AddAttendeeDetails: React.FC<
                 />
                 <div className="flex flex-col gap-[9px]">
                   <div
-                    className={`font-medium text-[19px] ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#5787D6]' : 'text-[#636363]'} `}
+                    className={`font-medium text-[17px] ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#5787D6]' : 'text-[#636363]'} `}
                   >
                     {plan.label}{' '}
                     <span
-                      className={`font-light text-[13px] ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#5787D6]' : 'text-[#636363]'}`}
+                      className={`font-light text-[12px] ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#5787D6]' : 'text-[#636363]'}`}
                     >
                       ({plan.description})
                     </span>
                   </div>
                   <div
-                    className={`text-[24px] font-semibold ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#4285F4]' : 'text-[#6B6B6B]'}`}
+                    className={`text-[20px] font-semibold ${attendeeData.selectedPackage === plan.label.toLowerCase() ? 'text-[#4285F4]' : 'text-[#6B6B6B]'}`}
                   >
-                    ₦ {plan.price}
+                    ₦{plan.price}
                   </div>
                 </div>
               </div>
