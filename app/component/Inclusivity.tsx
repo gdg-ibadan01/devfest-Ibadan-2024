@@ -30,12 +30,27 @@ const Inclusivity = () => {
               No matter where you are on your tech journey, DevFest Ibadan 2024
               is the place for you.
             </p>
-            <div className="flex flex-col md:flex-row items-center gap-4">
+            {/* <div className="flex flex-col md:flex-row items-center gap-4">
               <Calendar />
               <p className="font-bold text-xl w-[320px] text-center md:text-left">
                 November 23rd, 2024, and join us by 8:00 AM prompt{' '}
               </p>
+            </div> */}
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <Calendar />
+              <div className="text-center md:text-left">
+                <p className="font-bold text-xl w-[320px]">
+                  November 28th, 2024
+                </p>
+                <p className="font-bold text-xl w-[320px]">
+                  and November 29th, 2025
+                </p>
+                <p className="font-bold text-xl w-[320px]">
+                  join us by 8:00 AM prompt
+                </p>
+              </div>
             </div>
+
             <p className="text-xl text-center">
               Mark your calendar for a day filled with{' '}
               <span className="text-core-blue">inspiration,</span>{' '}
