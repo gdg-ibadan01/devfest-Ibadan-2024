@@ -171,13 +171,12 @@ const AttendeesList = () => {
           const status = row.original.status;
           return (
             <span
-              className={`px-2 py-1 rounded font-medium ${
-                status === 'Successful'
-                  ? 'text-[#34A853]'
-                  : status === 'Pending'
-                    ? 'text-[#FFD427]'
-                    : 'text-[#EA4335]'
-              }`}
+              className={`px-2 py-1 rounded font-medium ${status === 'Successful'
+                ? 'text-[#34A853]'
+                : status === 'Pending'
+                  ? 'text-[#FFD427]'
+                  : 'text-[#EA4335]'
+                }`}
             >
               {status}
             </span>
@@ -207,7 +206,7 @@ const AttendeesList = () => {
   });
 
   return (
-    <div className="overflow-auto">
+    <div className="overflow-x-auto">
       {/* Table */}
       <table className={styles.table}>
         <thead className={styles.thead}>
@@ -238,16 +237,16 @@ const AttendeesList = () => {
       </table>
 
       {/* Pagination Controls */}
-      <div className="w-full flex items-center justify-center gap-2 lg:gap-5 fixed bottom-4 left-1/2 -translate-x-1/2">
+      <div className="w-full flex items-center justify-center gap-2 lg:gap-5 fixed bottom-0 left-1/2 -translate-x-1/2 bg-white py-3 px-5 rounded shadow">
         <button
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="px-6 py-[8px] border rounded font-normal text-[#474C52] text-[14px] bg-white disabled:cursor-not-allowed"
+          className="px-3 py-[3px] border rounded font-normal text-[#474C52] text-[14px] bg-white disabled:cursor-not-allowed"
         >
           Previous
         </button>
         <span>
-          Page{' '}
+          <span className='hidden md:inline-block'>Page</span>    {' '}
           <strong>
             {table.getState().pagination.pageIndex + 1} of{' '}
             {table.getPageCount()}
@@ -256,7 +255,7 @@ const AttendeesList = () => {
         <button
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="px-6 py-[8px] font-normal border text-[#474C52] text-[14px] rounded bg-white disabled:cursor-not-allowed"
+          className="px-3 py-[3px] font-normal border text-[#474C52] text-[14px] rounded bg-white disabled:cursor-not-allowed"
         >
           Next
         </button>

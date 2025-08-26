@@ -66,7 +66,7 @@ export default function RootLayout({
   const pathname = usePathname();
   return (
     <Fragment>
-      {pathname === adminRoute ? (
+      {pathname.startsWith(adminRoute) ? (
         <AdminLayout>{children}</AdminLayout>
       ) : (
         <HomeLayout>{children}</HomeLayout>

@@ -23,7 +23,7 @@ export const TableClass = {
   tbody: 'bg-[#FFFFFF] sm:table-row-group w-full',
   tr: 'block sm:table-row',
   th: 'py-3 sm:py-[21px] px-3 sm:px-[28px] text-left text-xs sm:text-[14px] text-[#1E1E1E] font-semibold whitespace-nowrap',
-  td: 'py-3 sm:py-[21px] px-3 sm:px-[28px] text-left text-xs sm:text-[13px] text-[#1E1E1E] font-light border-b border-[#F0F0F0] sm:table-cell',
+  td: 'py-3 sm:py-[21px] px-3 sm:px-[28px] text-left text-xs sm:text-[13px] text-[#1E1E1E] font-light border-b border-[#F0F0F0] sm:table-cell whitespace-nowrap',
   dropdown:
-    'rounded-sm border border-[#F0F0F0] py-3 sm:py-[10px] min-w-[110px] sm:min-w-[130px] px-3 sm:px-5 text-xs sm:text-[14px] text-[#474C52] bg-white font-normal',
+    'rounded-sm border border-[#F0F0F0] py-2 sm:py-[10px] min-w-[110px] sm:min-w-[130px] px-3 sm:px-5 text-xs sm:text-[14px] text-[#474C52] bg-white font-normal',
 };
