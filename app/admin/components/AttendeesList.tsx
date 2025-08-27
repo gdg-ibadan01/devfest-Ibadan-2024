@@ -175,8 +175,8 @@ const AttendeesList = () => {
                 status === 'Successful'
                   ? 'text-[#34A853]'
                   : status === 'Pending'
-                  ? 'text-[#FFD427]'
-                  : 'text-[#EA4335]'
+                    ? 'text-[#FFD427]'
+                    : 'text-[#EA4335]'
               }`}
             >
               {status}
@@ -247,7 +247,7 @@ const AttendeesList = () => {
           Previous
         </button>
         <span>
-          <span className="hidden md:inline-block">Page</span> {' '}
+          <span className="hidden md:inline-block">Page</span>{' '}
           <strong>
             {table.getState().pagination.pageIndex + 1} of{' '}
             {table.getPageCount()}
@@ -265,7 +265,7 @@ const AttendeesList = () => {
         <DropdownMenu>
           <DropdownMenuTrigger asChild className={styles.dropdown}>
             <button className="flex items-center justify-between">
-              Show {table.getState().pagination.pageSize} {' '}
+              Show {table.getState().pagination.pageSize}{' '}
               <ChevronDown className="w-4 h-4" />
             </button>
           </DropdownMenuTrigger>
@@ -293,6 +293,7 @@ const AttendeesList = () => {
         onOpenChange={setIsModalOpen}
       />
     </div>
+  );
 };
 
 export default AttendeesList;
