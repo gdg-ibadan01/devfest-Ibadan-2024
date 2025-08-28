@@ -26,7 +26,7 @@ const Inclusivity = () => {
             <h1 className="text-5xl font-bold text-center">
               The Future is Here. And It&lsquo;s For Everybody 🚀
             </h1>
-            <p className="text-xl font-extralight text-[#4D4D4D] text-center">
+            <p className="text-xl font-extralight text-[#4D4D4D] text-center md:w-[1000px]">
               Whether you&lsquo;re just starting your tech journey or
               you&lsquo;re a seasoned expert, DevFest Ibadan 2025 is the perfect
               place to connect, learn, and grow. Join us for a two-day main
