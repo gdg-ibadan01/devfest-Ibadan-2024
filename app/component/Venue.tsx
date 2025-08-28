@@ -1,9 +1,8 @@
-import venue from '@/public/venue1.jpeg';
-import venuee from '@/public/venue2.jpeg';
+import venue from '@/public/jogor-1.jpg';
+import venuee from '@/public/jogor-2.jpg';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import IconsArt_S from './IconsArt_S';
 import { Button } from '../_module/components/ui/button';
 import IconsArt from './IconsArt';
 

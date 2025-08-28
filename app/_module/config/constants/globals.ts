@@ -2,29 +2,24 @@ export const menuItems = [
   { label: 'Agenda', slur: 'agenda' },
   { label: 'Speakers', slur: 'speakers' },
   { label: 'Organizers', slur: 'organizers' },
-  // { label: 'Schedule', slur: 'schedule' },
   { label: 'Merch', slur: 'https://selar.co/m/gdg-ibadan1' },
-  // { label: 'Team', slur: 'team' },
 ];
 
 export const footerItems = {
   frameOne: [
     { label: 'Agenda', slur: 'agenda' },
-    // { label: 'Sponsors', slur: 'sponsors' },
     { label: 'Organizers', slur: 'organizers' },
-    // { label: 'Schedule', slur: 'schedule' },
     { label: 'Speakers', slur: 'speakers' },
     { label: 'Merch', slur: 'https://selar.co/m/gdg-ibadan1' },
   ],
   frameTwo: [
     {
       label: 'Apply to Speak',
-      slur: 'https://sessionize.com/devfest-ibadan-2024',
+      slur: 'https://sessionize.com/devfest-ibadan-2025/',
     },
-    // { label: 'Apply to be a Volunteer', slur: 'apply-to-be-a-volunteer' },
     {
       label: 'Apply to be a Sponsor',
-      slur: 'https://drive.google.com/file/d/11f8zdyoxljJ4TYRcHBDMfYtLqFkQDl_0/view',
+      slur: 'https://tinyurl.com/devfest-ib-sponsorship-deck',
     },
   ],
   frameThree: [
