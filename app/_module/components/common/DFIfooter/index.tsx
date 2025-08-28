@@ -57,8 +57,9 @@ const DFIFooter = (): ReactNode => {
         </div>
         <div className={styles.middle}>
           <p className={styles.location}>
-            Devfest is taking place on November 23rd, 2024 at 8AM Prompt at
-            Aweni Arena Oke Ado.
+            Devfest is taking place on November 28th and 29th, 2025 at 8AM
+            Prompt Jogor Centre. Felicia Hall, Liberty Road, Ibadan 200273,
+            Nigeria
           </p>
           <div className={styles.menuWrapper}>
             <ul className={styles.menu}>
@@ -121,7 +122,9 @@ const DFIFooter = (): ReactNode => {
                 </li>
               </ul>
             </div>
-            <p className={styles.pSm}>@Devfest2024. All Right Reserved</p>
+            <p className={styles.pSm}>
+              @Devfest{new Date().getFullYear()}. All Right Reserved
+            </p>
           </div>
           <Link href="https://dev2024-game.vercel.app/" target="_blank">
             <Button className={styles.btn}>Play Puzzle Game</Button>
