@@ -57,8 +57,8 @@ export class PaymentsService {
       },
     });
 
-    const callbackUrl = `${this.configService.get('APP_URL')}${this.configService.get(
-      'PAYSTACK_CALLBACK_URL',
+    const callbackUrl = `${this.configService.get('app.frontendUrl')}${this.configService.get(
+      'paystack.callbackUrl',
     )}?paymentReference=${payment.paymentReference}&name=${encodeURIComponent(
       attendee.fullName,
     )}&email=${encodeURIComponent(attendee.email)}`;

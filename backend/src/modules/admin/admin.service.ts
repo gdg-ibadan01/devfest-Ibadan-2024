@@ -265,8 +265,8 @@ export class AdminService {
     const paymentReference = `gdg_${Date.now()}_${uuidv4().slice(0, 8)}`;
     const amountInKobo = Math.round(amount * 100);
 
-    const callbackUrl = `${this.configService.get('APP_URL')}${this.configService.get(
-      'PAYSTACK_CALLBACK_URL',
+    const callbackUrl = `${this.configService.get('app.frontendUrl')}${this.configService.get(
+      'paystack.callbackUrl',
     )}?paymentReference=${paymentReference}&name=${encodeURIComponent(
       attendee.fullName,
     )}&email=${encodeURIComponent(attendee.email)}`;
