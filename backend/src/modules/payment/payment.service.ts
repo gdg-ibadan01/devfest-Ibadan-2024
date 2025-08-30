@@ -13,9 +13,8 @@ import {
   IPaystackWebhook,
 } from './interfaces/payment.interface';
 import { PaymentStatus } from '@prisma/client';
-import { RegistrationStatus } from '@prisma/client';
+// import { RegistrationStatus } from '@prisma/client';
 import { TicketStatus } from '@prisma/client';
-
 import { MailService } from '../mail/mail.service';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
@@ -39,35 +38,30 @@ export class PaymentsService {
   async initiatePayment(
     initiatePaymentDto: InitiatePaymentDto,
   ): Promise<IPaystackResponse> {
-    const { eventId, attendeeId, registrationId, email, amount } =
-      initiatePaymentDto;
+    const { attendeeId, email, amount } = initiatePaymentDto;
 
-    const registration = await this.prisma.registration.findUnique({
-      where: { id: registrationId },
-      include: { event: true, attendee: true },
+    const attendee = await this.prisma.attendee.findUnique({
+      where: { id: attendeeId },
     });
-
-    if (!registration) throw new NotFoundException('Registration not found');
-
-    if (
-      registration.eventId !== eventId ||
-      registration.attendeeId !== attendeeId
-    ) {
-      throw new BadRequestException('Invalid registration details');
-    }
-
-    const existingPayment = await this.prisma.payment.findUnique({
-      where: { registrationId },
-    });
-
-    if (existingPayment?.status === PaymentStatus.SUCCESS) {
-      throw new BadRequestException(
-        'Payment already completed for this registration',
-      );
-    }
+    if (!attendee) throw new NotFoundException('Attendee not found');
 
     const paymentReference = `gdg_${Date.now()}_${uuidv4().slice(0, 8)}`;
     const amountInKobo = Math.round(amount * 100);
+
+    const payment = await this.prisma.payment.create({
+      data: {
+        attendeeId,
+        amount,
+        paymentReference,
+        status: PaymentStatus.PENDING,
+      },
+    });
+
+    const callbackUrl = `${this.configService.get('APP_URL')}${this.configService.get(
+      'PAYSTACK_CALLBACK_URL',
+    )}?paymentReference=${payment.paymentReference}&name=${encodeURIComponent(
+      attendee.fullName,
+    )}&email=${encodeURIComponent(attendee.email)}`;
 
     const paystackResponse = await axios.post(
       `${this.paystackBaseUrl}/transaction/initialize`,
@@ -76,13 +70,11 @@ export class PaymentsService {
         amount: amountInKobo,
         reference: paymentReference,
         metadata: {
-          eventId,
           attendeeId,
-          registrationId,
-          eventTitle: registration.event.title,
-          attendeeName: registration.attendee.fullName,
+          attendeeName: attendee.fullName,
+          paymentId: payment.id,
         },
-        callback_url: `${this.configService.get('app.url')}/payment/callback`,
+        callback_url: callbackUrl,
       },
       {
         headers: {
@@ -96,22 +88,10 @@ export class PaymentsService {
       throw new BadRequestException('Failed to initialize payment');
     }
 
-    await this.prisma.payment.upsert({
-      where: { registrationId },
-      create: {
-        eventId,
-        attendeeId,
-        registrationId,
-        amount,
+    await this.prisma.payment.update({
+      where: { id: payment.id },
+      data: {
         paystackReference: paystackResponse.data.data.reference,
-        paymentReference,
-        status: PaymentStatus.PENDING,
-        metadata: { access_code: paystackResponse.data.data.access_code },
-      },
-      update: {
-        paystackReference: paystackResponse.data.data.reference,
-        paymentReference,
-        status: PaymentStatus.PENDING,
         metadata: { access_code: paystackResponse.data.data.access_code },
       },
     });
@@ -122,7 +102,6 @@ export class PaymentsService {
   async verifyPayment(verifyPaymentDto: VerifyPaymentDto): Promise<IPayment> {
     const { reference } = verifyPaymentDto;
 
-    // Call Paystack API to verify transaction
     const paystackResponse = await axios.get(
       `${this.paystackBaseUrl}/transaction/verify/${reference}`,
       {
@@ -136,23 +115,24 @@ export class PaymentsService {
 
     const paymentData = paystackResponse.data.data;
 
-    // Find existing payment by paystackReference
-    const payment = await this.prisma.payment.findUnique({
+    const payment = await this.prisma.payment.findFirst({
       where: { paystackReference: reference },
-      include: { registration: { include: { attendee: true, event: true } } },
+      include: {
+        attendee: {
+          select: {
+            email: true,
+            fullName: true,
+          },
+        },
+      },
     });
 
     if (!payment) throw new NotFoundException('Payment record not found');
 
-    // If payment is already successful, just return it
     if (payment.status === PaymentStatus.SUCCESS) {
-      return {
-        ...payment,
-        amount: Number(payment.amount),
-      } as IPayment;
+      return { ...payment, amount: Number(payment.amount) } as IPayment;
     }
 
-    // Update the payment with Paystack result
     const updatedPayment = await this.prisma.payment.update({
       where: { id: payment.id },
       data: {
@@ -178,28 +158,18 @@ export class PaymentsService {
       },
     });
 
-    // Update registration & send email if successful
     if (paymentData.status === 'success') {
-      await this.prisma.registration.update({
-        where: { id: payment.registrationId },
-        data: { status: RegistrationStatus.CONFIRMED },
-      });
-
-      const ticketType = await this.generateTicket(payment.registrationId);
-
-      await this.mailService.sendTicketConfirmationEmail(
-        payment.registration?.attendee.email,
-        payment.registration?.attendee.fullName,
-        payment.registration?.event.title,
-        payment.registration?.event.startDate.toDateString(),
-        payment.registration?.event.venue,
-        ticketType,
-        paymentData.id ?? paymentData.transactionId ?? 'N/A',
+      const ticketUrl = `${this.configService.get('app.url')}/tickets/${paymentData.ticketId}`;
+      await this.mailService.sendPaymentSuccessEmail(
+        payment.attendee.email,
+        payment.attendee.fullName,
+        payment.amount.toString(),
+        ticketUrl,
       );
     } else {
       await this.mailService.sendPaymentFailedEmail(
-        payment.registration.attendee.email,
-        payment.registration.attendee.fullName,
+        payment.attendee.email,
+        payment.attendee.fullName,
         `${this.configService.get('app.baseUrl')}/retry-payment/${reference}`,
       );
     }
@@ -210,24 +180,23 @@ export class PaymentsService {
     } as IPayment;
   }
 
-  async handleWebhook(payload: IPaystackWebhook): Promise<void> {
+  async handleWebhook(payload: IPaystackWebhook): Promise<string | void> {
     if (payload.event !== 'charge.success' && payload.event !== 'charge.failed')
       return;
 
     const { reference, status, paid_at, channel, gateway_response } =
       payload.data;
 
-    const payment = await this.prisma.payment.findUnique({
+    const payment = await this.prisma.payment.findFirst({
       where: { paystackReference: reference },
       include: {
-        registration: {
-          include: { ticket: true, attendee: true, event: true },
-        },
+        attendee: true,
       },
     });
 
     if (!payment) return;
 
+    // Update payment if status is not already SUCCESS
     if (payment.status !== PaymentStatus.SUCCESS) {
       await this.prisma.payment.update({
         where: { id: payment.id },
@@ -246,31 +215,24 @@ export class PaymentsService {
           },
         },
       });
+    }
+    // Send emails and generate ticket
+    if (status === 'success') {
+      const ticket = await this.generateTicket(payment.attendeeId, payment.id);
 
-      if (status === 'success') {
-        await this.prisma.registration.update({
-          where: { id: payment.registrationId },
-          data: { status: RegistrationStatus.CONFIRMED },
-        });
-
-        const ticketType = await this.generateTicket(payment.registrationId);
-
-        await this.mailService.sendTicketConfirmationEmail(
-          payment.registration.attendee.email,
-          payment.registration.attendee.fullName,
-          payment.registration.event.title,
-          payment.registration.event.startDate.toDateString(),
-          payment.registration.event.venue,
-          ticketType,
-          payment.paystackReference,
-        );
-      } else {
-        await this.mailService.sendPaymentFailedEmail(
-          payment.registration.attendee.email,
-          payment.registration.attendee.fullName,
-          `${this.configService.get('app.baseUrl')}/retry-payment/${reference}`,
-        );
-      }
+      await this.mailService.sendTicketConfirmationEmail(
+        payment.attendee.email,
+        payment.attendee.fullName,
+        ticket.ticketType,
+        payment.paystackReference ?? '',
+      );
+    } else {
+      // Payment failed email
+      await this.mailService.sendPaymentFailedEmail(
+        payment.attendee.email,
+        payment.attendee.fullName,
+        `${this.configService.get('app.url')}/retry-payment/${reference}`,
+      );
     }
   }
 
@@ -282,7 +244,6 @@ export class PaymentsService {
         take: limit,
         orderBy: { createdAt: 'desc' },
         include: {
-          event: { select: { id: true, title: true } },
           attendee: { select: { id: true, fullName: true, email: true } },
         },
       }),
@@ -298,7 +259,6 @@ export class PaymentsService {
   async findOne(id: string): Promise<IPayment> {
     const payment = await this.prisma.payment.findUnique({
       where: { id },
-      include: { event: true, attendee: true, registration: true },
     });
 
     if (!payment) throw new NotFoundException('Payment not found');
@@ -306,34 +266,26 @@ export class PaymentsService {
     return { ...payment, amount: Number(payment.amount) } as IPayment;
   }
 
-  private async generateTicket(registrationId: string): Promise<string> {
-    const registration = await this.prisma.registration.findUnique({
-      where: { id: registrationId },
-      include: { event: true, ticket: true },
-    });
-
-    if (!registration)
-      throw new NotFoundException(
-        'Registration not found for ticket generation',
-      );
-
+  private async generateTicket(attendeeId: string, paymentId: string) {
     const ticketNumber = `GDG${Date.now()}${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
     const qrCode = `${this.configService.get('app.url')}/tickets/verify/${ticketNumber}`;
-    const ticketType = registration.ticketType ?? 'General';
+    const ticketType = 'General'; // Default ticket type, since no registration/event
 
-    await this.prisma.ticket.create({
+    const ticket = await this.prisma.ticket.create({
       data: {
         ticketNumber,
-        eventId: registration.eventId,
-        registrationId,
         qrCode,
-        validFrom: registration.event.startDate,
-        validUntil: registration.event.endDate,
         ticketType,
         status: TicketStatus.ACTIVE,
+        validFrom: new Date(), // Can adjust if you have an event date
+        validUntil: new Date(
+          new Date().setFullYear(new Date().getFullYear() + 1),
+        ),
+        attendeeId,
+        paymentId,
       },
     });
 
-    return ticketType;
+    return ticket;
   }
 }

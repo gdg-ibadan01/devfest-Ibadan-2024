@@ -55,4 +55,14 @@ export class CreateAttendeeDto {
   @IsString()
   @Length(2, 100)
   jobTitle?: string;
+
+  @ApiProperty({
+    description:
+      'Amount to be paid in the smallest currency unit (e.g., Naira kobo)',
+    example: 5000,
+  })
+  @IsOptional()
+  @IsNumber()
+  @IsPositive()
+  amount: number;
 }
