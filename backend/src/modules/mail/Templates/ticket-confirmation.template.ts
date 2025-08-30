@@ -1,7 +1,7 @@
 export function ticketConfirmationTemplate(
   firstName: string,
-  eventDate: string,
-  venue: string,
+  // eventDate: string,
+  // venue: string,
   ticketType: string,
   transactionId: string,
   supportEmail: string,
@@ -40,8 +40,6 @@ export function ticketConfirmationTemplate(
               
               <p style="line-height: 1.8;">
                 <strong>Event:</strong> DevFest Ibadan 2025<br/>
-                <strong>Date:</strong> ${eventDate}<br/>
-                <strong>Venue:</strong> ${venue}<br/>
                 <strong>Ticket Type:</strong> ${ticketType}<br/>
                 <strong>Reference:</strong> ${transactionId}
               </p>
