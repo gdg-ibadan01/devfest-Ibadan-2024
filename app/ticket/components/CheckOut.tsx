@@ -90,7 +90,7 @@ const CheckOut: React.FC<CheckOutProps> = ({
           <input
             type="text"
             id="phoneNumber"
-            placeholder="Enter Phone Number"
+            placeholder="e.g +23359605494"
             required
             value={formData.phoneNumber}
             onChange={(e) =>

@@ -11,8 +11,8 @@ import { toast } from 'sonner';
 import generatePDF, { Resolution, Margin, Options } from 'react-to-pdf';
 
 interface TicketData {
-  ticketId: string;
-  fullName: string;
+  paymentReference: string;
+  name: string;
   email: string;
   eventDate: string;
   amount: number;
@@ -20,7 +20,7 @@ interface TicketData {
 
 const TicketComponent = () => {
   const searchParams = useSearchParams();
-  const ticketId = searchParams.get('ticketId');
+  const paymentRef = searchParams.get('paymentReference');
   const fullName = searchParams.get('fullName');
   const email = searchParams.get('email');
   const amount = searchParams.get('amount');
@@ -31,13 +31,13 @@ const TicketComponent = () => {
 
   // Default ticket data
   const ticketData: TicketData = {
-    ticketId: ticketId || 'DevIb2025',
-    fullName: fullName || 'John Doe',
+    paymentReference: paymentRef || 'DevIb2025',
+    name: fullName || 'John Doe',
     email: email || 'attendee@devfest.com',
     eventDate: new Date('2025-11-29').toDateString(),
     amount: amount ? parseInt(amount) : 4000,
   };
-  const ticketName = `DevFest_Ibadan_2025_Ticket_${ticketData.ticketId}.pdf`
+  const ticketName = `DevFest_Ibadan_2025_Ticket_${ticketData.paymentReference}.pdf`
 
   const options: Options = {
     filename: ticketName,
@@ -136,7 +136,7 @@ const TicketComponent = () => {
                 <div className="flex justify-between gap-4 mb-4">
                   <div>
                     <p className="text-gray-400 text-xs md:text-base">Attendee Name</p>
-                    <p className="font-bold text-gray-500 md:text-xl">{ticketData.fullName}</p>
+                    <p className="font-bold text-gray-500 md:text-xl">{ticketData.name}</p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-xs md:text-base">Email</p>
@@ -150,7 +150,7 @@ const TicketComponent = () => {
                     <p className="text-gray-400 text-xs md:text-base">
                       Ticket ID
                     </p>
-                    <p className="font-bold text-gray-500 md:text-xl">{ticketData.ticketId}</p>
+                    <p className="font-bold text-gray-500 md:text-xl">{ticketData.paymentReference}</p>
                   </div>
                   <div className="w-fit">
                     <p className="text-gray-400 text-xs md:text-base">

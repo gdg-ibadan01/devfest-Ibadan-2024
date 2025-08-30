@@ -117,7 +117,6 @@ export function useAttendeeRegistration() {
   ) => {
     try {
       // First create the attendee
-      console.log('attendeeData', attendeeData);
       const attendeeResponse = await createAttendee.mutateAsync(attendeeData);
       toast.success('Attendee profile created successfully!');
 
@@ -128,7 +127,7 @@ export function useAttendeeRegistration() {
         amount: paymentAmount,
       });
 
-      toast.success('Redirecting to payment...');
+      toast.loading('Redirecting to payment...');
 
       // Redirect to payment URL
       if (typeof window !== 'undefined') {
